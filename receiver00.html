@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Receiver</title>
+</head>
+<body>
+  <h1>Received Messages</h1>
+  <ul id="messageList"></ul>
+
+  <script>
+    const socket = new WebSocket('ws://localhost:3000');
+
+    socket.onopen = () => {
+      console.log('Connected to the server');
+    };
+
+    socket.onmessage = (event) => {
+      const messageList = document.getElementById('messageList');
+      const messageItem = document.createElement('li');
+
+      if (event.data instanceof Blob) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          messageItem.textContent = `Received: ${reader.result}`;
+          messageList.appendChild(messageItem);
+          console.log(reader.result)
+        };
+        reader.readAsText(event.data);
+      } else {
+        messageItem.textContent = `Received: ${event.data}`;
+        messageList.appendChild(messageItem);
+      }
+    };
+  </script>
+</body>
+</html>
