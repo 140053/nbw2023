@@ -57,7 +57,7 @@
                         <div class="row d-flex justify-content-center">
                             <div class="col-lg-5 col-md-5">
                                 
-                                <button class="btn btn-primary btn-lg btn-block">Show</button>
+                                <button id="bannershow" class="btn btn-primary btn-lg btn-block">Show</button>
                                 
                                 <h1>Send a Message</h1>
                                   <input type="text" id="message" />
@@ -254,6 +254,16 @@
               socket.send(JSON.stringify(message));
               messageInput.value = '';
             }
+           
+           function sendCommand(program, status){
+               const cmd = {program: 'banner', status: 'show'};
+               socket.send(JSON.stringify(cmd));
+           }
+           
+           $('#bannershow').on('click', function(){
+               alert('send');
+                sendCommand('banner', 'show'); 
+           });
 
        </script>
       <script defer src="admin.js"></script>
