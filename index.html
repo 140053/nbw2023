@@ -58,6 +58,7 @@
                             <div class="col-lg-5 col-md-5">
                                 
                                 <button id="bannershow" class="btn btn-primary btn-lg btn-block">Show</button>
+                                <button id="bannerhide" class="btn btn-secondary btn-lg btn-block">Hide</button>
                                 
                                 <h1>Send a Message</h1>
                                   <input type="text" id="message" />
@@ -68,7 +69,7 @@
                     </div>
                </div>
                <div class="pd1 col-8 border border-warning rounded p-2 d-none">
-                   <button class="btn btn-lg btn-success">Show</button>
+                   <button id="dap" class="btn btn-lg btn-success">Show</button>
                   <div class="ct1">
                      <div >
                         <!-- Score  -->
@@ -256,16 +257,24 @@
             }
            
            function sendCommand(program, status){
-               const cmd = {program: 'banner', status: 'show'};
+               const cmd = {program: program, status: status};
                socket.send(JSON.stringify(cmd));
            }
            
            $('#bannershow').on('click', function(){
-               alert('send');
+               //alert('send');
                 sendCommand('banner', 'show'); 
+           });
+            $('#bannerhide').on('click', function(){
+               //alert('send');
+                sendCommand('banner', 'hide'); 
+           });
+            $('#dap').on('click', function(){
+               //alert('send');
+                sendCommand('dap', 'show'); 
            });
 
        </script>
-      <script defer src="admin.js"></script>
+      <script defer src="/assets/admin.js"></script>
    </body>
 </html>

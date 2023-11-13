@@ -5,6 +5,10 @@ const WebSocket = require('ws');
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
+const path = require('path');
+
+// Serve static assets from the /assets directory
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Serve HTML for the sender and receiver
 app.get('/', (req, res) => {

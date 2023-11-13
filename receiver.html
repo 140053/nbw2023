@@ -20,11 +20,13 @@
          <div class="container-fluid" >
             <div id="banner" class="row d-flex justify-content-center  ">
                <!-- BANNER -->
-               <div class="col-12 text-center ">
-                  <img height="900px" class="rounded mx-auto d-block" src="assets/banner.gif" alt="banner">                        
+                <!--ul id="messageList"></ul-->
+               <div id="rbanner" class="col-12 text-center d-none">
+                   
+                  <img height="900px" class="rounded mx-auto d-block" src="/assets/banner.gif" alt="banner">                        
                </div>
                <!-- DAPAT ALAM MO  -->
-               <div class="col-12 " >
+               <div id="rdap" class="col-12 d-none" >
                   <div class="container-fluid">
                      <div class="row ">
                         <div class="col-2  mx-auto " style="margin-top: 350px">
@@ -42,13 +44,13 @@
                            <div class="banner">
                               <div class="row ">
                                  <div class="col-3 text-center">
-                                    <img height="250px" alt="h1" src="assets/h2.png" class="rounded mx-auto d-block m-0">
+                                    <img height="250px" alt="h1" src="/assets/h2.png" class="rounded mx-auto d-block m-0">
                                  </div>
                                  <div class="col-4">
-                                    <img height="300px" class="rounded mx-auto d-block" src="assets/dap2.gif" alt="banner">
+                                    <img height="300px" class="rounded mx-auto d-block" src="/assets/dap2.gif" alt="banner">
                                  </div>
                                  <div class="col-4 mt-4 ml-5">
-                                    <img height="250px" src="assets/tem.png" class="rounded mx-auto d-block" alt="thema">
+                                    <img height="250px" src="/assets/tem.png" class="rounded mx-auto d-block" alt="thema">
                                  </div>
                               </div>
                            </div>
@@ -100,7 +102,7 @@
                   </div>
                </div>
                <!-- Question and Answer -->
-               <div class="col-12 ">
+               <div class="col-12 d-none">
                   <div class="container">
                       <div class="row d-flex justify-content-center">
                         <div class="col-12 text-center mt-4">
@@ -377,13 +379,13 @@
                   </div>
                </div>
                <!-- Sure Prize -->
-               <div class="col-12 mt-5 text-center">
+               <div class="col-12 mt-5 text-center d-none">
                    <h1>Sure Prize Jumble Word</h1>
                </div>
             </div>
          </div>
       </div>
-      <ul id="messageList"></ul>
+      
       <!-- FOOTER  -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -403,23 +405,56 @@
            if (typeof event.data === 'string') {
              try {
                const message = JSON.parse(event.data);
-               messageItem.textContent = `Received: ${message.message}`;
+               messageItem.textContent = 'lol'//`Received: ${message.message}`;
              } catch (error) {
-               messageItem.textContent = `Received: ${event.data}`;
+               messageItem.textContent = 'lol'//`Received: ${event.data}`;
              }
            } else if (event.data instanceof Blob) {
              // Handle Blob data
              const reader = new FileReader();
              reader.onload = function () {
-               messageItem.textContent = `Received: ${reader.result}`;
-               messageList.appendChild(messageItem);
+               var msg = JSON.parse(reader.result) 
+               //console.log(msg)  //{program: 'banner', status: 'show'}
+                 //************************************* HERE WORK ******************************//
+                 //console.log(msg.program)
+                 //BANNER
+                 if(msg.program == 'banner' & msg.status == 'show'){
+                     var rbanner = $('#rbanner');
+                      var rdap = $('#rdap');
+                     if (rbanner.hasClass('d-none')){
+                         rbanner.removeClass('d-none');
+                         rdap.addClass('d-none')
+                     }
+                 }
+                 if(msg.program == 'banner' & msg.status == 'hide'){
+                     var rbanner = $('#rbanner');
+                    
+                     if (rbanner.hasClass('d-none') == false){
+                         rbanner.addClass('d-none');
+                         
+                     }
+                 }
+                 //DAPAT ALAM MO
+                 if(msg.program == 'dap' & msg.status == 'show'){
+                     var rbanner = $('#rbanner');
+                     var rdap = $('#rdap');
+                     if (rdap.hasClass('d-none')){
+                         rdap.removeClass('d-none');
+                         rbanner.addClass('d-none')
+                     }
+                 }
+                 
+                 //*************************************HERE WORK *******************************//
+               messageItem.textContent = reader.result; //`Received: ${reader.result}`;
+               //messageList.appendChild(messageItem);
              };
              reader.readAsText(event.data);
            } else {
-             messageItem.textContent = `Received: ${event.data}`;
+             //messageItem.textContent = 'lol'//`Received: ${event.data}`;
            }
-         
-           messageList.appendChild(messageItem);
+           //alert(messageItem);
+           //messageList.appendChild(messageItem);
+            
          };
       </script>
       <!-- FOOTER -->   
