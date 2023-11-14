@@ -21,8 +21,7 @@
             <div id="banner" class="row d-flex justify-content-center  ">
                <!-- BANNER -->
                 <!--ul id="messageList"></ul-->
-               <div id="rbanner" class="col-12 text-center d-none">
-                   
+               <div id="rbanner" class="col-12 text-center d-none">                   
                   <img height="900px" class="rounded mx-auto d-block" src="/assets/banner.gif" alt="banner">                        
                </div>
                <!-- DAPAT ALAM MO  -->
@@ -102,7 +101,7 @@
                   </div>
                </div>
                <!-- Question and Answer -->
-               <div class="col-12 d-none">
+               <div id="rqa" class="col-12 ">
                   <div class="container">
                       <div class="row d-flex justify-content-center">
                         <div class="col-12 text-center mt-4">
@@ -139,10 +138,41 @@
                                  -webkit-transform: translate(0, -50%);
                                  transform: translate(0, -50%);
                                  }
+                                #question h3 {
+                                 font-size: 50px;
+                                 font-weight: bold;
+                                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                 position: absolute;
+                                 padding: 0;
+                                 margin: 0;
+                                 top: 80%;
+                                 -webkit-transform: translate(0, -50%);
+                                 transform: translate(0, -50%);
+                                 padding-left: 220px;
+                                 padding-right:  220px;
+                                 border: 13px solid green!important;    
+                                 }
+                                #question span {
+                                 font-size: 60px;
+                                 font-weight: bold;
+                                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                 position: absolute;
+                                 padding: 0;
+                                 margin: 0;
+                                 top: 163px;
+                                 -webkit-transform: translate(0, -50%);
+                                 transform: translate(0, -50%);
+                                 padding-left: 56px;
+                                 padding-right:  65px;
+                                 border: 13px solid green!important;
+                                 left: 180px;                                     
+                                 }
                               </style>
                               <div id="chart"></div>
-                              <div id="question">
-                                 <h1></h1>
+                              <div id="question" >
+                                 <span id="numpic" class="h1"></span>
+                                 <h1 class="qview d-none"></h1>
+                                 <h3 class="border border-success qans d-none"></h3>  
                               </div>
                               <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
                               <script>
@@ -158,61 +188,122 @@
 
                                   var data = [
                                       {
-                                        label: "Dell LAPTOP",
+                                        label: "1",
                                         value: 1,
                                         question:
-                                          "What CSS property is used for specifying the area between the content and its border?"
+                                          "What CSS property is used for specifying the area between the content and its border?",
+                                          answer: 'padding'
                                       }, // padding
                                       {
-                                        label: "IMAC PRO",
+                                        label: "2",
                                         value: 2,
-                                        question: "What CSS property is used for changing the font?"
+                                        question: "What CSS property is used for changing the font?",
+                                          answer: 'font-family'
                                       }, //font-family
                                       {
-                                        label: "SUZUKI",
+                                        label: "3",
                                         value: 3,
-                                        question: "What CSS property is used for changing the color of text?"
+                                        question: "What CSS property is used for changing the color of text?",
+                                          answer: 'color'
                                       }, //color
                                       {
-                                        label: "HONDA",
+                                        label: "4",
                                         value: 4,
-                                        question: "What CSS property is used for changing the boldness of text?"
+                                        question: "What CSS property is used for changing the boldness of text?",
+                                          answer: 'font-weight'
                                       }, //font-weight
                                       {
-                                        label: "FERRARI",
+                                        label: "5",
                                         value: 5,
-                                        question: "What CSS property is used for changing the size of text?"
+                                        question: "What CSS property is used for changing the size of text?",
+                                          answer: 'font-size'
                                       }, //font-size
                                       {
-                                        label: "APARTMENT",
+                                        label: "6",
                                         value: 6,
                                         question:
-                                          "What CSS property is used for changing the background color of a box?"
+                                          "What CSS property is used for changing the background color of a box?",
+                                          answer: 'background-color'
                                       }, //background-color
                                       {
-                                        label: "IPAD PRO",
+                                        label: "7",
                                         value: 7,
                                         question:
-                                          "Which word is used for specifying an HTML tag that is inside another tag?"
+                                          "Which word is used for specifying an HTML tag that is inside another tag?",
+                                          answer: 'nesting'
                                       }, //nesting
                                       {
-                                        label: "LAND",
+                                        label: "8",
                                         value: 8,
                                         question:
-                                          "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?"
+                                          "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?",
+                                          answer: 'bottom'
                                       }, //bottom
                                       {
-                                        label: "MOTOROLLA",
+                                        label: "9",
                                         value: 9,
                                         question:
-                                          "What are the fonts that don't have serifs at the ends of letters called?"
+                                          "What are the fonts that don't have serifs at the ends of letters called?",
+                                          answer: 'sans-serif'
                                       }, //sans-serif
                                       {
-                                        label: "BMW",
+                                        label: "10",
                                         value: 10,
                                         question:
-                                          "With CSS selectors, what character prefix should one use to specify a class?"
-                                      }
+                                          "With CSS selectors, what character prefix should one use to specify a class?",
+                                          answer: 'padding'
+                                      }/*,
+                                      {
+                                            label: "11",
+                                            value: 11,
+                                            question: "What CSS property is used for setting the space between letters?"
+                                        },
+                                        {
+                                            label: "12",
+                                            value: 12,
+                                            question: "Which property is used to change the left margin of an element?"
+                                        },
+                                        {
+                                            label: "13",
+                                            value: 13,
+                                            question: "What does CSS stand for?"
+                                        },
+                                        {
+                                            label: "14",
+                                            value: 14,
+                                            question: "Which property is used to underline text?"
+                                        },
+                                        {
+                                            label: "15",
+                                            value: 15,
+                                            question: "What is the correct HTML element for the largest heading?"
+                                        },
+                                        {
+                                            label: "16",
+                                            value: 16,
+                                            question: "What is the correct HTML for making a text input field?"
+                                        },
+                                        {
+                                            label: "17",
+                                            value: 17,
+                                            question: "Which HTML attribute specifies an alternate text for an image?"
+                                        },
+                                        {
+                                            label: "18",
+                                            value: 18,
+                                            question: "What tag is used to define a hyperlink, or link, in HTML?"
+                                        },
+                                        {
+                                            label: "19",
+                                            value: 19,
+                                            question: "In CSS, which property is used to change the text color of an element?"
+                                        },
+                                        {
+                                            label: "20",
+                                            value: 20,
+                                            question: "Which property is used to change the size of an element's content?"
+                                        }
+                                      */
                                     ];
                                     var svg = d3
                                       .select("#chart")
@@ -310,15 +401,21 @@
                                           //populate question
                                           d3.select("#question h1").text(data[picked].question);
                                           oldrotation = rotation;
+                                          
+                                          //answer
+                                          d3.select("#question h3").text(data[picked].answer);
+                                          oldrotation = rotation;
 
                                           /* Get the result value from object "data" */
+                                          $('#numpic').empty().text(data[picked].value)
                                           console.log(data[picked].value);
 
                                           /* Comment the below line for restrict spin to sngle time */
                                           container.on("click", spin);
                                         });
                                     }
-                                    //make arrow
+                                    
+                                  //make arrow
                                     svg
                                       .append("g")
                                       .attr(
@@ -379,7 +476,7 @@
                   </div>
                </div>
                <!-- Sure Prize -->
-               <div class="col-12 mt-5 text-center d-none">
+               <div id="rsp" class="col-12 mt-5 text-center d-none">
                    <h1>Sure Prize Jumble Word</h1>
                </div>
             </div>
@@ -438,8 +535,74 @@
                  if(msg.program == 'dap' & msg.status == 'show'){
                      var rbanner = $('#rbanner');
                      var rdap = $('#rdap');
+                     var rqa = $('#rqa');
+                     
                      if (rdap.hasClass('d-none')){
                          rdap.removeClass('d-none');
+                         // HIDE
+                         rbanner.addClass('d-none')
+                         rqa.addClass('d-none');
+                     }
+                 }
+                 //QUESTION AND ANSWER
+                  if(msg.program == 'qa' ){
+                      if(msg.status == 'show'){
+                         var rbanner = $('#rbanner');
+                         var rdap = $('#rdap');
+                         var rqa = $('#rqa');
+
+                         if (rqa.hasClass('d-none')){
+                             rqa.removeClass('d-none');
+                             rdap.addClass('d-none');
+                             rbanner.addClass('d-none')
+                         }
+                     }else if(msg.status == 'hide'){
+                         var rbanner = $('#rbanner');
+                         var rdap = $('#rdap');
+                         var rqa = $('#rqa');
+
+                         if (rqa.hasClass('d-none') == false){
+                             rqa.addClass('d-none');
+                             rdap.addClass('d-none');
+                             rbanner.removeClass('d-none')
+                         }
+                     }else if(msg.status == 'spin'){
+                        var qholder = $('.qview');
+                        var qans = $('.qans');
+                         spin(100);
+                         
+                          if(qholder.hasClass('d-none') == false){
+                             qholder.addClass('d-none')
+                          }
+                          if(qans.hasClass('d-none') == false){
+                             qans.addClass('d-none')
+                          }
+                     }else if(msg.status == 'q1'){
+                         var qholder = $('.qview');
+                         if(qholder.hasClass('d-none')){
+                             qholder.removeClass('d-none')
+                         }
+                     }else if(msg.status == 'qa1'){
+                         var qans = $('.qans');
+                         if(qans.hasClass('d-none')){
+                             qans.removeClass('d-none')
+                         }
+                     }
+                      
+                  }
+                     
+                 //Sure PRICE jumble word
+                  if(msg.program == 'sp' & msg.status == 'show'){
+                     var rbanner = $('#rbanner');
+                     var rdap = $('#rdap');
+                     var rqa = $('#rqa');
+                     var rsp = $('#rsp');  
+                      
+                     if (rsp.hasClass('d-none')){
+                         rsp.removeClass('d-none');
+                         //HIDE
+                         rqa.addClass('d-none');
+                         rdap.addClass('d-none');
                          rbanner.addClass('d-none')
                      }
                  }
