@@ -34,17 +34,17 @@
                <div class="sd0 col-2 text-white d-none">
                   Team Name:
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Team Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                     <input id="ateam" type="text" class="form-control" placeholder="Team Name" >
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2">Set</button>
+                        <button class="btn btn-outline-success" type="button" id="atbtn">Set</button>
                      </div>
                   </div>
                   <div class="dropdown-divider"></div>
                   Team Score:
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Team Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                     <input type="text" class="form-control" placeholder="Team Score" id="atscore" >
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2">Set</button>
+                        <button class="btn btn-outline-success" type="button" id="atsbtn">Set</button>
                      </div>
                   </div>
                   <div class="btn-group btn-block" role="group" aria-label="Basic example">
@@ -202,9 +202,9 @@
                             <h1 class="text-white">Sure Prize Jumble Word</h1> 
                             <hr class="border border-warning">
                             <div class="btn-group btn-block">
-                                <button class="btn btn-info btn-lg">Banner</button>
-                                <button class="btn btn-primary btn-lg">Show</button>
-                                <button class="btn btn-secondary btn-lg">Hide</button>   
+                                <button onclick="sendCommand('banner', 'show')" class="btn btn-info btn-lg">Banner</button>
+                                <button onclick="sendCommand('sp', 'show')" class="btn btn-primary btn-lg">Show</button>
+                                <button onclick="sendCommand('sp', 'hide')" class="btn btn-secondary btn-lg">Hide</button>   
                             </div>
                             <hr class="border border-warning">
                             <div class="btn-group btn-block mt-2">                               
@@ -256,17 +256,17 @@
                 <div class="sd1 col-2 text-white d-none">
                   Team Name:
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Team Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                     <input type="text" class="form-control" placeholder="Team Name" id="bteam">
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2">Set</button>
+                        <button class="btn btn-outline-success" type="button" id="btbtn">Set</button>
                      </div>
                   </div>
                   <div class="dropdown-divider"></div>
                   Team Score:
                   <div class="input-group mb-3">
-                     <input type="text" class="form-control" placeholder="Team Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                     <input type="text" class="form-control" placeholder="Team Name" id="btscore">
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="button-addon2">Set</button>
+                        <button class="btn btn-outline-success" type="button" id="btsbtn">Set</button>
                      </div>
                   </div>
                   <div class="btn-group btn-block" role="group" aria-label="Basic example">
@@ -301,6 +301,12 @@
                const cmd = {program: program, status: status};
                socket.send(JSON.stringify(cmd));
            }
+           //util
+           function sendUtil(program, action, value){
+               const cmval = {program: program, action: action, value: value}
+               socket.send(JSON.stringify(cmval))
+           }
+           
            //BANNER SHOW HIDE
            $('#bannershow').on('click', function(){
                //alert('send');
@@ -315,6 +321,31 @@
                //alert('send');
                 sendCommand('dap', 'show'); 
            });
+           //Util
+           //Set team name 
+           //A team
+           $('#atbtn').on('click', function(){
+               var tname = $('#ateam').val();
+               sendUtil('dap', 'atname', tname);               
+           });
+           //B team
+           $('#btbtn').on('click', function(){
+               var tname = $('#bteam').val();
+               sendUtil('dap', 'btname', tname);               
+           });
+           //Set Team Score
+           //A team
+           $('#atsbtn').on('click', function(){
+              var tscore = $('#atscore').val();
+               sendUtil('dap', 'tscore', tscore)
+           });
+           //B team
+            $('#btsbtn').on('click', function(){
+              var tscore = $('#btscore').val();
+               sendUtil('dap', 'btscore', tscore)
+           });
+           
+           
            //QUESTION AND ANSWER
             $('#qa').on('click', function(){
                //alert('send');
