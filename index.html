@@ -72,8 +72,9 @@
                </div>
                <!-- DAPAT ALAM MO  -->
                <div class="pd1 col-8 border border-warning rounded p-2 d-none">
-                  <button id="dap" class="btn btn-lg btn-success">Show</button>
-                  <button onclick="sendUtil('dap', 'banner' , 'show')" class="btn btn-lg btn-info" >dap banner</button>
+                  <button onclick="sendCommand('dap', 'show')" class="btn btn-lg btn-success">Show</button>
+                  <button onclick="sendUtil('dap', 'banner' , 'show')" class="btn btn-lg btn-info" >dap banner show</button>
+                  <button onclick="sendUtil('dap', 'banner' , 'hide')" class="btn btn-lg btn-info" >dap banner Hide</button>
                   <button onclick="sendCommand('banner', 'show')" class="btn btn-secondary btn-lg float-right">banner</button>
                   <div class="ct1">
                      <div >
@@ -87,9 +88,9 @@
                                  </div>
                                  <div class="col-auto">
                                     <div class="card text-white bg-warning m-2" style="max-width: 18rem;">
-                                       <div class="card-header text-center">Team A</div>
+                                       <div class="card-header text-center">The Beyonders</div>
                                        <div class="card-body">
-                                          <button class="btn btn-lg btn-success">GET</button>
+                                          <button onclick="ScoreA()" class="btn btn-lg btn-success">GET</button>
                                        </div>
                                     </div>
                                  </div>
@@ -101,7 +102,7 @@
                                     <div class="card text-white bg-info ml-5 mr-5 mb-2" style="width: 200px, max-width: 18rem;">
                                        <div class="card-header text-center">Round Score</div>
                                        <div class="card-body">
-                                          <h4 class="card-title text-center">5</h4>
+                                          <h4 id="cscore" class="card-title text-center">0</h4>
                                        </div>
                                        <div class="card-footer">
                                           <div class="input-group mb-2">
@@ -111,20 +112,21 @@
                                                 <option value="2">Two</option>
                                                 <option value="3">Three</option>
                                                 <option value="4">Four</option>
-                                                <option value="3">Five</option>
+                                                <option value="5">Five</option>
+                                                <option value="6">Six</option>
                                              </select>
                                              <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary btn-primary text-white" id="roundset" type="button">Round </button>
+                                                <button onclick="setRound()" class="btn btn-outline-secondary btn-primary text-white" id="roundset" type="button">Round </button>
                                              </div>
                                           </div>
                                           <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                                             <button class="btn btn-success btn-outline-warning mr-1">Corrent</button> 
-                                             <button class="btn btn-danger btn-outline-warning mr-1">Wrong</button>                                            
+                                             <button onclick="btncorrect()" class="btn btn-success btn-outline-warning mr-1">Corrent</button> 
+                                             <button onclick="WrongSound()" class="btn btn-danger btn-outline-warning mr-1">Wrong</button>                                            
                                              <button class="btn btn-warning btn-outline-success ml-1">Clear</button> 
                                           </div>
                                           <div class="btn-group btn-block">
-                                             <button class="btn btn-danger btn-outline-success">X2</button>
-                                             <button class="btn btn-danger btn-outline-success">X3</button>                                              
+                                             <button onclick="timesTwo()" class="btn btn-danger btn-outline-success">X2</button>
+                                             <button onclick="timesTree()" class="btn btn-danger btn-outline-success">X3</button>                                              
                                           </div>
                                        </div>
                                     </div>
@@ -135,9 +137,9 @@
                               <div class="row">
                                  <div class="">
                                     <div class="card text-white bg-warning m-2" style="max-width: 18rem;">
-                                       <div class="card-header text-center">Team A</div>
+                                       <div class="card-header text-center">Matcha</div>
                                        <div class="card-body">
-                                          <button class="btn btn-lg btn-success">GET</button>
+                                          <button onclick="ScoreB()" class="btn btn-lg btn-success">GET</button>
                                        </div>
                                     </div>
                                  </div>
@@ -152,11 +154,237 @@
                         <!--  Question -->                       
                      </div>
                      <div class="accordion" id="accordionExample">
+                         <div class="card bg-dark">
+                           <div class="card-header" id="headingThree">
+                              <h2 class="mb-0">
+                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                 1. CANR: 17 Gulay sa Bahay Kubo
+                                 </button>
+                              </h2>
+                           </div>
+                           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                               <div class="card-body">
+                                   <div class="btn-group btn-block">
+                                   <button onclick="sendUtil('dap', 'question', '17 Gulay sa Bahay Kubo')" class="btn btn-success">SHOW</button>
+                                   <button class="btn btn-secondary">HIDE</button>      
+                                  </div>
+                                 <!-- ANSER -->
+                                 <div class=" mt-3 anser wrapper">
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Singkamas</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Singkamas')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Talong</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Talong')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Sigarilyas</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Sigarilyas')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Mani</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Mani')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Sitaw</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Sitaw')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Bataw</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Bataw')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Patani</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Patani')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Kudol</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Kudol')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Patola</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Patola')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Upo</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Upo')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Kalabasa</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Kalabasa')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Labanos</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Labanos')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Mustasa</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Mustasa')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Sibuyas</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Sibuyas')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Bawang</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Bawamg')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Luya</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Singkamas')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                     <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Linga</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Linga')" type="button" class="btn btn-primary">Show</button> 
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                    
+                                    
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                         <div class="card bg-dark">
                            <div class="card-header" id="headingOne">
                               <h2 class="mb-0">
                                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                 1. CDE: 9 SUCs in Bicol Region 
+                                 2. CDE: 9 SUCs in Bicol Region 
                                  </button>
                                </h2>                               
                            </div>
@@ -176,8 +404,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button onclick="sendUtil('dap', 'answer' , 'BSCAST')" type="button" class="btn btn-primary">Show</button>                             
-                                             
+                                             <button onclick="ShowAns( 'BSCAST')" type="button" class="btn btn-primary">Show</button> 
                                           </div>
                                        </div>
                                     </div>
@@ -189,7 +416,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'BU')" type="button" class="btn btn-primary">Show</button>                             
                                              
                                           </div>
                                        </div>
@@ -202,7 +429,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'CBSUA')" type="button" class="btn btn-primary">Show</button>                             
                                            
                                           </div>
                                        </div>
@@ -215,7 +442,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'CNSC')" type="button" class="btn btn-primary">Show</button>                             
                                             
                                           </div>
                                        </div>
@@ -228,7 +455,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'CSPC')" type="button" class="btn btn-primary">Show</button>                             
                                             
                                           </div>
                                        </div>
@@ -241,7 +468,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns('CSU')" type="button" class="btn btn-primary">Show</button>                             
                                            
                                           </div>
                                        </div>
@@ -254,7 +481,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'DEBESMSCAT')" type="button" class="btn btn-primary">Show</button>                             
                                             
                                           </div>
                                        </div>
@@ -267,7 +494,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'PSU')" type="button" class="btn btn-primary">Show</button>                             
                                              
                                           </div>
                                        </div>
@@ -280,7 +507,7 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
+                                             <button onclick="ShowAns( 'SSU')" type="button" class="btn btn-primary">Show</button>                             
                                              
                                           </div>
                                        </div>
@@ -296,16 +523,16 @@
                            <div class="card-header" id="headingTwo">
                               <h2 class="mb-0">
                                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                 2. CAS: 11 Systems of the Body
+                                 3. CAS: 11 Systems of the Body
                                  </button>
                               </h2>
                            </div>
                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                <div class="card-body">
                                     <div class="btn-group btn-block">
-                                   <button class="btn btn-success">SHOW</button>
-                                   <button class="btn btn-secondary">HIDE</button>      
-                                  </div>
+                                       <button onclick="sendUtil('dap', 'question', '11 Systems of the Body')" class="btn btn-success">SHOW</button>
+                                       <button class="btn btn-secondary">HIDE</button>      
+                                      </div>
                                  <!-- ANSER -->
                                  <div class=" mt-3 anser wrapper">
                                      <!-- A 1 -->
@@ -315,8 +542,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Cardio vascular system')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -328,8 +555,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Digestive System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -341,8 +568,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Endocrine System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -353,9 +580,9 @@
                                           <h5 class="card-title">4.	Integumentary system</h5>
                                        </div>
                                        <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                         <div class="btn-group" role="group" aria-label="Basic example">
+                                             <button onclick="ShowAns( 'Integumentary System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -367,8 +594,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Lymphatic System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -380,8 +607,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Muscular System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -393,8 +620,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Nervous System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -406,8 +633,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Reproductive System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -419,8 +646,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns('Respiratory System')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -432,8 +659,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Skeletal system')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -445,91 +672,8 @@
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                    
-                                    
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="card bg-dark">
-                           <div class="card-header" id="headingThree">
-                              <h2 class="mb-0">
-                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
-                                 3. Collapsible Group Item #3
-                                 </button>
-                              </h2>
-                           </div>
-                           <div id="collapsefour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                               <div class="card-body">
-                                 <!-- ANSER -->
-                                 <div class=" mt-3 anser wrapper">
-                                     <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns('Urinary system')" type="button" class="btn btn-primary">Show</button>                             
+                                             
                                           </div>
                                        </div>
                                     </div>
@@ -541,26 +685,29 @@
                            </div>
                         </div>
                          <div class="card bg-dark">
-                           <div class="card-header" id="headingThree">
+                           <div class="card-header" id="headingFour">
                               <h2 class="mb-0">
-                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 4. CANR: 17 Gulay sa Bahay Kubo
+                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                 4. CEFS - ENGINEERING TRigonometric Functions (Math)
                                  </button>
                               </h2>
                            </div>
-                           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                                <div class="card-body">
+                                   <div class="btn-group btn-block">
+                                       <button onclick="sendUtil('dap', 'question', '6 Trigonometric Functions')" class="btn btn-success">SHOW</button>
+                                       <button class="btn btn-secondary">HIDE</button>      
+                                      </div>
                                  <!-- ANSER -->
                                  <div class=" mt-3 anser wrapper">
                                      <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Sine (sin θ):</h5>
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns('Sine (sin θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
@@ -568,12 +715,11 @@
                                       <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Cosine (cos θ)</h5>
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns('Cosine (cos θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
@@ -581,12 +727,11 @@
                                       <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Tangent (tan θ)</h5>
                                        </div>
                                        <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                             <button onclick="ShowAns('Tangent (tan θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
@@ -594,12 +739,11 @@
                                       <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Cosecant (csc θ)</h5>
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns('Cosecant (csc θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
@@ -607,168 +751,23 @@
                                       <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Secant (sec θ):</h5>
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Secant (sec θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
                                     <div class="card text-center text-white bg-success">                                      
                                        <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
+                                          <h5 class="card-title">Cotangent (cot θ)</h5>
                                        </div>
                                        <div class="card-footer text-muted">
                                           <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                       <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
-                                     <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
+                                             <button onclick="ShowAns( 'Cotangent (cot θ)')" type="button" class="btn btn-primary">Show</button>  
                                           </div>
                                        </div>
                                     </div>
@@ -780,167 +779,432 @@
                            </div>
                         </div>
                          <div class="card bg-dark">
-                           <div class="card-header" id="headingThree">
+                           <div class="card-header" id="headingFive">
                               <h2 class="mb-0">
-                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 Collapsible Group Item #3
+                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                 5. CVM : 20 Types of Farm Animals 
                                  </button>
                               </h2>
                            </div>
-                           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                           <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
                                <div class="card-body">
+                                   <div class="btn-group btn-block">
+                                       <button onclick="sendUtil('dap', 'question', 'Types of Farm Animals ')" class="btn btn-success">SHOW</button>
+                                       <button class="btn btn-secondary">HIDE</button>      
+                                      </div>
                                  <!-- ANSER -->
                                  <div class=" mt-3 anser wrapper">
                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Chickens</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Chickens')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
                                       <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Ducks</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Ducks')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
                                       <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Geese</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Geese')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
                                       <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Emus</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Emus')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
                                       <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Quails</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Quils')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                    
-                                    
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Turkeys</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Turkeys')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Ostriches</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Ostriches')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Rabbits</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Rabbits')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Guinea pigs</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Guinea pigs')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Cats</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Cats')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Dogs</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Dogs')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Cattle</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Cattle')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Goats</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Goats')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Pigs</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Pigs')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Horse</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Horses')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Camels</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Camels')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Honeybees</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Honeybees')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Lac Insects</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Lac Insects')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Fish</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Fish')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                      <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Shrimp</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Shrimp')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
                                  </div>
                               </div>
                            </div>
                         </div>
-                         <div class="card bg-dark">
-                           <div class="card-header" id="headingThree">
+                          <div class="card bg-dark">
+                           <div class="card-header" id="headingSix">
                               <h2 class="mb-0">
-                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                 Collapsible Group Item #3
+                                 <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                 6. CEM: 10 Agribussiness industries in Ph 
                                  </button>
                               </h2>
                            </div>
-                           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                           <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
                                <div class="card-body">
+                                   <div class="btn-group btn-block">
+                                       <button onclick="sendUtil('dap', 'question', '10 Agribussiness industries in Ph ')" class="btn btn-success">SHOW</button>
+                                       <button class="btn btn-secondary">HIDE</button>      
+                                      </div>
                                  <!-- ANSER -->
                                  <div class=" mt-3 anser wrapper">
                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Aquaponics Farming</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns('Aquaponics Farming')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Urban Gardening</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Urban Gardening')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Organic Farming</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Organic Farming')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Mushroom Cultivation</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Mushroom Cultivation')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                      <!-- A 1 -->
-                                    <div class="card text-center text-white bg-success">                                      
-                                       <div class="card-body">
-                                          <h5 class="card-title">Special title treatment</h5>
-                                       </div>
-                                       <div class="card-footer text-muted">
-                                          <div class="btn-group" role="group" aria-label="Basic example">
-                                             <button type="button" class="btn btn-primary">Show</button>                             
-                                             <button type="button" class="btn btn-warning">Hide</button>
-                                          </div>
-                                       </div>
-                                    </div>
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Beekeeping</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Beekeeping')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
                                      <!-- A 1 -->
-                                    
-                                    
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Vermiculture</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Vermiculture')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Hydroponics</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Hydroponics')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Poultry Farming</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Poultry Farming')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Goat Rearing</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Goat Rearing')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                   <!-- A 1 -->
+                                        <div class="card text-center text-white bg-success">                                      
+                                           <div class="card-body">
+                                              <h5 class="card-title">Snail Farming</h5>
+                                           </div>
+                                           <div class="card-footer text-muted">
+                                              <div class="btn-group" role="group" aria-label="Basic example">
+                                                 <button onclick="ShowAns( 'Snail Farming')" type="button" class="btn btn-primary">Show</button>                             
+
+                                              </div>
+                                           </div>
+                                        </div>
+                                     <!-- A 1 -->
+                                   
                                  </div>
                               </div>
                            </div>
@@ -1074,7 +1338,16 @@
          socket.onopen = () => {
            console.log('Connected to the server');
          };
-         
+         //COrrect Sound
+           function btncorrect(){
+                const audio = new Audio("/assets/sound/correct.mp3");
+                audio.play();
+           }
+          function WrongSound(){
+                sendCommand('sound', 'wrong');
+                const audio = new Audio("/assets/sound/wrong.mp3");
+                audio.play();
+          }
          
          // Function to get keys and values from the JSON object
          function getKeysAndValues(jsonObj) {
@@ -1138,6 +1411,8 @@
             const cmval = {program: program, action: action, value: value}
             socket.send(JSON.stringify(cmval))
          }
+          
+          
          //show Question
          $('#dapquest').on('change',  function(){
             var selq = $('#dapquest').val();
@@ -1156,11 +1431,47 @@
              sendCommand('banner', 'hide'); 
          });
          //DAPAT ALAM MO   
-         
-         $('#dap').on('click', function(){
-            //alert('send');
-             sendCommand('dap', 'show'); 
-         });
+         //Correct Answer Send 
+          function ShowAns(ans){
+              var cscore = $('#cscore');
+              var cval = Number(cscore.html())
+              cscore.html(cval + 1);
+              btncorrect()
+              sendUtil('dap', 'answer' , ans)
+          }
+          
+          function timesTwo(){
+              btncorrect()
+              var cscore = $('#cscore');
+              var cval = Number(cscore.html())
+              var ans = cval * 2;
+              cscore.empty().html(ans);
+              sendUtil('dap', 'score' , ans)
+              
+          }
+          function timesTree(){
+              btncorrect()
+              var cscore = $('#cscore');
+              var cval = Number(cscore.html())
+              var ans = cval * 3;
+              cscore.empty().html(ans);           
+              sendUtil('dap', 'score' , ans)              
+          }
+          function ScoreA(){
+               btncorrect()
+               var cscore = $('#cscore');
+              var atscore = $('#atscore');
+              atscore.empty().val(cscore.text());
+              cscore.empty().html(0)
+          }
+           function ScoreB(){
+               btncorrect()
+               var cscore = $('#cscore');
+              var btscore = $('#btscore');
+              atscore.empty().val(cscore.text());
+              cscore.empty().html(0)
+          }
+       
          //Util
          //Set team name 
          //A team
@@ -1184,11 +1495,14 @@
            var tscore = $('#btscore').val();
             sendUtil('dap', 'btscore', tscore)
          });
-         //SET ROUND 
-         $('#roundset').on('click', function(){
-            var round = $('#roundnum').val();
-            sendUtil('dap', 'round', round);
-         })
+         //SET ROUND         
+          
+          function setRound(){
+               var cscore = $('#cscore');
+               var round = $('#roundnum').val();
+               sendUtil('dap', 'round', round);
+              cscore.empty().html('0')
+          }
          
          
          
@@ -1198,6 +1512,9 @@
             //alert('send');
              sendCommand('dap', 'show'); 
          });
+          
+          
+          
          
          
       </script>
