@@ -27,6 +27,7 @@
                      <button id="p2" type="button" class="btn  btn-secondary p2">Q&A</button>
                      <button id="p3" type="button" class="btn  btn-warning p3">SurePrize</button>
                   </div>
+                  
                </div>
             </div>
             <div class="row mt-4 d-flex justify-content-center ">
@@ -57,6 +58,11 @@
                         <div class="col-lg-5 col-md-5">                                
                            <button id="bannershow" class="btn btn-primary btn-lg btn-block">Show</button>
                            <button id="bannerhide" class="btn btn-secondary btn-lg btn-block">Hide</button>   
+                        </div>
+                          <div class="btn-group btn-block mt-5">                              
+                            <button onclick="sendCommand('confitie', 'show')" class="btn btn-warning btn-lg">rcon</button>
+                            <button onclick="sendCommand('cont2', 'show')"  class="btn btn-warning btn-lg">ccon</button>
+                            <button onclick="sendCommand('cont3', 'show')"  class="btn btn-warning btn-lg">scon</button>
                         </div>
                         <div class="d-none">
                            <h1>Send a Message</h1>
@@ -99,9 +105,13 @@
                               <div class="row">
                                  <div class="col-12">
                                     <div class="card text-white bg-info ml-5 mr-5 mb-2" style="width: 200px, max-width: 18rem;">
-                                       <div class="card-header text-center">Round Score</div>
-                                       <div class="card-body">
+                                       <div class="card-header text-center">
+                                           Round Score
+                                            <button onclick="clearScore()" class="btn btn-danger float-right">Clear Score</button>
+                                        </div>
+                                       <div class="card-body text-center">
                                           <h4 id="cscore" class="card-title text-center">0</h4>
+                                          
                                        </div>
                                        <div class="card-footer">
                                           <div class="input-group mb-2">
@@ -1544,6 +1554,14 @@
                var round = $('#roundnum').val();
                sendUtil('dap', 'round', round);
               cscore.empty().html('0')
+              
+          }
+          
+          //claer Score
+          function clearScore(){
+              var cscore = $('#cscore');
+              cscore.empty().html('0')
+              sendUtil('dap', 'clear', 'score')
           }
          
          

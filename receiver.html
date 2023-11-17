@@ -147,6 +147,7 @@
                          <div id="qabanner" class="col-12 text-center d-none">
                              <img src="/assets/qa/banner.gif" alt="banner2" style="height: 30cm" >
                          </div>  
+                          <!--- WHEEL 1 --->
                         <div id="wheel" class="col-12 text-center mt-4 d-none">
                             <h1 style="font-size: 100px; font-weight: 900px">Question & Answer</h1>
                              <!-- https://codepen.io/sumeshkp18/pen/VGBPYg -->
@@ -224,17 +225,19 @@
                                      
                                   }
                               </style>
-                              <div id="chart"></div>
+                              <div id="chart"></div>                              
                               <div id="question" >
                                  <span id="numpic" class="h1">0</span>
-                                 <h1 class="qview d-none"></h1>
-                                  
+                                 <h1 class="qview d-none"></h1>                                  
                                  <h3 class="border border-success qans d-none"></h3>  
                               </div>
                               <img class="d-none" id="qho" alt="question">
                               <img class="d-none" id="qans" alt="answer">
-                              <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-                              <script>
+                              
+                        </div>  
+                          
+                          <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                          <script>
                                  var padding = { top: 20, right: 40, bottom: 0, left: 0 },
                                   w = 700 - padding.left - padding.right,
                                   h = 700 - padding.top - padding.bottom,
@@ -307,7 +310,7 @@
                                           answer: '/assets/qa/a10.png'
                                       }
                                     ];
-                                  var data0 = [
+                                  var data2 = [
                                       {
                                         label: "1",
                                         value: 1,
@@ -381,6 +384,8 @@
                                       .data([data])
                                       .attr("width", w + padding.left + padding.right)
                                       .attr("height", h + padding.top + padding.bottom);
+                                   
+                                     
                                     var container = svg
                                       .append("g")
                                       .attr("class", "chartholder")
@@ -388,7 +393,26 @@
                                         "transform",
                                         "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")"
                                       );
+                              // 
+                                  var svg2 = d3
+                                        .select("#chart2")
+                                        .append("svg")
+                                        .data([data2])
+                                        .attr("width", w + padding.left + padding.right)
+                                        .attr("height", h + padding.top + padding.bottom);
+
+                                    var container2 = svg2
+                                        .append("g")
+                                        .attr("class", "chartholder")
+                                        .attr(
+                                            "transform",
+                                            "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")"
+                                        );
+                              
+                                 
+                              
                                     var vis = container.append("g");
+                                   
 
                                     var pie = d3.layout
                                       .pie()
@@ -396,8 +420,10 @@
                                       .value(function (d) {
                                         return 1;
                                       });
+                                 
                                     // declare an arc generator function
                                     var arc = d3.svg.arc().outerRadius(r);
+                                 
                                     // select paths, use arc generator to draw
                                     var arcs = vis
                                       .selectAll("g.slice")
@@ -405,6 +431,7 @@
                                       .enter()
                                       .append("g")
                                       .attr("class", "slice");
+                                  
 
                                     arcs
                                       .append("path")
@@ -414,6 +441,8 @@
                                       .attr("d", function (d) {
                                         return arc(d);
                                       });
+                              
+                                   
                                     // add the text
                                     arcs
                                       .append("text")
@@ -433,7 +462,10 @@
                                       .text(function (d, i) {
                                         return data[i].label;
                                       });
+                                    
+                              
                                     container.on("click", spin);
+                                   
                                     function spin(d) {                                         
 
                                       container.on("click", null);
@@ -488,7 +520,7 @@
                                           container.on("click", spin);
                                         });
                                     }
-                                    
+                               
                                   //make arrow
                                     svg
                                       .append("g")
@@ -545,13 +577,334 @@
                                     }
 
                               </script>  
+                          <!-- WHEEL 2 -->
+                          <div id="wheel2" class="col-12 text-center mt-4 ">
+                            <h1 style="font-size: 100px; font-weight: 900px">Question & Answer</h1>
+                            <!-- Add your unique styles or adjust as needed -->
+                            <style>
+                                    #chart2 {
+                                        position: absolute;
+                                        width: 500px;
+                                        height: 500px;
+                                        top: 3;
+                                        left: 900px; /* Adjust the left position as needed */
+                                    }
+
+                                    #question2 {
+                                        position: absolute;
+                                        width: 600px;
+                                        height: 700px;
+                                        top: 0;
+                                        left: 1120px; /* Adjust the left position as needed */
+                                    }
+
+                                    #question2 h1 {
+                                        font-size: 50px;
+                                        font-weight: bold;
+                                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                        position: absolute;
+                                        padding: 0;
+                                        margin: 0;
+                                        top: 50%;
+                                        -webkit-transform: translate(0, -50%);
+                                        transform: translate(0, -50%);
+                                    }
+
+                                    #question2 h3 {
+                                        font-size: 50px;
+                                        font-weight: bold;
+                                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                        position: absolute;
+                                        padding: 0;
+                                        margin: 0;
+                                        top: 80%;
+                                        -webkit-transform: translate(0, -50%);
+                                        transform: translate(0, -50%);
+                                        padding-left: 220px;
+                                        padding-right:  220px;
+                                        border: 13px solid green!important;
+                                    }
+
+                                    #question2 span {
+                                        font-size: 60px;
+                                        font-weight: bold;
+                                        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                        position: absolute;
+                                        padding: 0;
+                                        margin: 0;
+                                        top: 163px;
+                                        -webkit-transform: translate(0, -50%);
+                                        transform: translate(0, -50%);
+                                        padding-left: 56px;
+                                        padding-right:  65px;
+                                        border: 13px solid green!important;
+                                        left: 1062px; /* Adjust the left position as needed */
+                                    }
+
+                                    #qho2 {
+                                        position: absolute;
+                                        width: 757px;
+                                        left: 1474px; /* Adjust the left position as needed */
+                                        top: 227px;
+                                    }
+
+                                    #qans2 {
+                                        position: absolute;
+                                        width: 756px;
+                                        top: 226px;
+                                        left: 1464px; /* Adjust the left position as needed */
+                                    }
+                                </style>
+
+                            <div id="chart2"></div>
+                            <div id="question2">
+                                <span id="numpic2" class="h1">0</span>
+                                <h1 class="qview d-none"></h1>
+                                <h3 class="border border-success qans d-none"></h3>
+                            </div>
+                            <img class="d-none" id="qho2" alt="question">
+                            <img class="d-none" id="qans2" alt="answer">
                         </div>
-                          
+                        <script>
+                            var padding2 = { top: 20, right: 40, bottom: 0, left: 0 },
+                                w2 = 700 - padding2.left - padding2.right,
+                                h2 = 700 - padding2.top - padding2.bottom,
+                                r2 = Math.min(w2, h2) / 2,
+                                rotation2 = 0,
+                                oldrotation2 = 0,
+                                picked2 = 100000,
+                                oldpick2 = [],
+                                color2 = d3.scale.category20();
+
+                            var data2 = [
+                                      {
+                                        label: "1",
+                                        value: 1,
+                                        question:"/assets/qa/q1.png",
+                                          answer: '/assets/qa/a1.png'
+                                      }, // padding
+                                      {
+                                        label: "2",
+                                        value: 2,
+                                         question:"/assets/qa/q2.png",
+                                          answer: '/assets/qa/a2.png'
+                                      }, //font-family
+                                      {
+                                        label: "3",
+                                        value: 3,
+                                         question:"/assets/qa/q3.png",
+                                          answer: '/assets/qa/a3.png'
+                                      }, //color
+                                      {
+                                        label: "4",
+                                        value: 4,
+                                         question:"/assets/qa/q4.png",
+                                          answer: '/assets/qa/a4.png'
+                                      }, //font-weight
+                                      {
+                                        label: "5",
+                                        value: 5,
+                                        question:"/assets/qa/q5.png",
+                                          answer: '/assets/qa/a5.png'
+                                      }, //font-size
+                                      {
+                                        label: "6",
+                                        value: 6,
+                                        question:"/assets/qa/q6.png",
+                                          answer: '/assets/qa/a6.png'
+                                      }, //background-color
+                                      {
+                                        label: "7",
+                                        value: 7,
+                                        question:"/assets/qa/q7.png",
+                                          answer: '/assets/qa/a7.png'
+                                      }, //nesting
+                                      {
+                                        label: "8",
+                                        value: 8,
+                                        question:"/assets/qa/q8.png",
+                                          answer: '/assets/qa/a8.png'
+                                      }, //bottom
+                                      {
+                                        label: "9",
+                                        value: 9,
+                                        question:"/assets/qa/q9.png",
+                                          answer: '/assets/qa/a9.png'
+                                      }, //sans-serif
+                                      {
+                                        label: "10",
+                                        value: 10,
+                                         question:"/assets/qa/q10.png",
+                                          answer: '/assets/qa/a10.png'
+                                      }
+                                    ];
+
+                            var svg2 = d3
+                                .select("#chart2")
+                                .append("svg")
+                                .data([data2])
+                                .attr("width", w2 + padding2.left + padding2.right)
+                                .attr("height", h2 + padding2.top + padding2.bottom);
+
+                            var container2 = svg2
+                                .append("g")
+                                .attr("class", "chartholder")
+                                .attr("transform", "translate(" + (w2 / 2 + padding2.left) + "," + (h2 / 2 + padding2.top) + ")");
+
+                            var vis2 = container2.append("g");
+
+                            var pie2 = d3.layout
+                                .pie()
+                                .sort(null)
+                                .value(function (d) {
+                                    return 1;
+                                });
+
+                            var arc2 = d3.svg.arc().outerRadius(r2);
+
+                            var arcs2 = vis2
+                                .selectAll("g.slice")
+                                .data(pie2)
+                                .enter()
+                                .append("g")
+                                .attr("class", "slice");
+
+                            arcs2
+                                .append("path")
+                                .attr("fill", function (d, i) {
+                                    return color2(i);
+                                })
+                                .attr("d", function (d) {
+                                    return arc2(d);
+                                });
+
+                            arcs2
+                                .append("text")
+                                .attr("transform", function (d) {
+                                    d.innerRadius = 0;
+                                    d.outerRadius = r2;
+                                    d.angle = (d.startAngle + d.endAngle) / 2;
+                                    return (
+                                        "rotate(" +
+                                        ((d.angle * 180) / Math.PI - 90) +
+                                        ")translate(" +
+                                        (d.outerRadius - 10) +
+                                        ")"
+                                    );
+                                })
+                                .attr("text-anchor", "end")
+                                .text(function (d, i) {
+                                    return data2[i].label;
+                                });
+
+                            container2.on("click", spin2);
+
+                         function spin2(d) {
+                                container2.on("click", null);
+
+                                // All slices have been seen, all done
+                                if (oldpick2.length == data2.length) {
+                                    console.log("done");
+                                    container2.on("click", null);
+                                    return;
+                                }
+
+                                var ps2 = 360 / data2.length,
+                                    pieslice2 = Math.round(1440 / data2.length),
+                                    rng2 = Math.floor(Math.random() * 1440 + 360);
+
+                                rotation2 = Math.round(rng2 / ps2) * ps2;
+
+                                picked2 = Math.round(data2.length - (rotation2 % 360) / ps2);
+                                picked2 = picked2 >= data2.length ? picked2 % data2.length : picked2;
+
+                                if (oldpick2.indexOf(picked2) !== -1) {
+                                    d3.select(this).call(spin2);
+                                    return;
+                                } else {
+                                    oldpick2.push(picked2);
+                                }
+
+                                rotation2 += 90 - Math.round(ps2 / 2);
+                                vis2
+                                    .transition()
+                                    .duration(3000)
+                                    .attrTween("transform", rotTween2)
+                                    .each("end", function () {
+                                        // Mark question as seen
+                                        d3.select(".slice:nth-child(" + (picked2 + 1) + ") path").attr("fill", "black");
+
+                                        // Populate question
+                                        d3.select("#qho2").attr("src", data2[picked2].question);
+                                        oldrotation2 = rotation2;
+
+                                        // Populate answer
+                                        d3.select('#qans2').attr("src", data2[picked2].answer);
+                                        oldrotation2 = rotation2;
+
+                                        // Get the result value from object "data2"
+                                        $('#numpic2').empty().text(data2[picked2].value);
+                                        console.log(data2[picked2].value);
+
+                                        // Comment the below line for restricting spin to a single time
+                                        container2.on("click", spin2);
+                                    });
+                            }
+
+                            svg2
+                                .append("g")
+                                .attr("transform", "translate(" + (w2 + padding2.left + padding2.right) + "," + (h2 / 2 + padding2.top) + ")")
+                                .append("path")
+                                .attr("d", "M-" + r2 * 0.15 + ",0L0," + r2 * 0.05 + "L0,-" + r2 * 0.05 + "Z")
+                                .style({ fill: "black" });
+
+                            container2
+                                .append("circle")
+                                .attr("cx", 0)
+                                .attr("cy", 0)
+                                .attr("r", 60)
+                                .style({ fill: "white", cursor: "pointer" });
+
+                            container2
+                                .append("text")
+                                .attr("x", 0)
+                                .attr("y", 15)
+                                .attr("text-anchor", "middle")
+                                .text("SPIN")
+                                .style({ "font-weight": "bold", "font-size": "30px" });
+
+                            function rotTween2(to) {
+                                var i = d3.interpolate(oldrotation2 % 360, rotation2);
+                                return function (t) {
+                                    return "rotate(" + i(t) + ")";
+                                };
+                            }
+
+                            function getRandomNumbers2() {
+                                var array = new Uint16Array(1000);
+                                var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
+
+                                if (
+                                    window.hasOwnProperty("crypto") &&
+                                    typeof window.crypto.getRandomValues === "function"
+                                ) {
+                                    window.crypto.getRandomValues(array);
+                                } else {
+                                    for (var i = 0; i < 1000; i++) {
+                                        array[i] = Math.floor(Math.random() * 100000) + 1;
+                                    }
+                                }
+
+                                return array;
+                            }
+                        </script>
+
+
                       </div>
                   </div>
                </div>
                <!-- Sure Prize -->
-               <div id="rsp" class="col-12 mt-5 text-center ">
+               <div id="rsp" class="col-12 mt-5 text-center d-none ">
                    <div class="container-fluid">
                        <div class="row">
                            <div class="col-12">
@@ -978,6 +1331,11 @@
                               var cscore = $('#cscore');
                               cscore.empty().html(msg.value);
                         }
+                     //Clear Score
+                        if(msg.action == 'clear' & msg.value == 'score'){
+                             var cscore = $('#cscore');
+                              cscore.empty().html(0);
+                        }
                      //ANSWERR
                      if(msg.action == 'answer'){
                         
@@ -986,6 +1344,7 @@
                          roundShowHide('', 'hide')
                          teamShowHide('', 'hide')
                          bshowhide('', 'hide')
+                         
                      }
                      
                     //QUESTION 
@@ -996,6 +1355,7 @@
                          roundShowHide('', 'hide')
                          teamShowHide('', 'hide')
                          bshowhide('', 'hide')
+                         
                      }                     
                      
                       //ROUND 
@@ -1015,6 +1375,8 @@
                          //hide
                          teamShowHide('', 'hide')
                          roundShowHide('', 'hide')
+                         questionShowhide('', 'hide')
+                          ShowAnswer('', 'clear')
                      }      
                      //Team
                      if(msg.action == 'team'){
