@@ -44,15 +44,11 @@
                   <div class="input-group mb-3">
                      <input type="text" class="form-control" placeholder="Team Score" id="atscore" >
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="atsbtn">Set</button>
+                        <button onclick="setScore('A')" class="btn btn-outline-success" type="button" id="atsbtn">Set</button>
                      </div>
                   </div>
                   <button onclick="sendUtil('dap', 'team', 'a')"  class="btn btn-primary btn-block">Team Present</button>
-                  <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                     <button type="button" class="btn  btn-lg btn-primary">X2</button>
-                     <button type="button" class="btn btn-lg btn-secondary">X3</button>
-                     <button type="button" class="btn btn-lg btn-warning">Reset</button>
-                  </div>
+                  
                </div>
                <!-- START -->
                <div class="pd0 col-8 border border-warning rounded p-2">
@@ -76,6 +72,9 @@
                   <button onclick="sendUtil('dap', 'banner' , 'show')" class="btn btn-lg btn-info" >dap banner show</button>
                   <button onclick="sendUtil('dap', 'banner' , 'hide')" class="btn btn-lg btn-info" >dap banner Hide</button>
                   <button onclick="sendCommand('banner', 'show')" class="btn btn-secondary btn-lg float-right">banner</button>
+                   <button onclick="sendCommand('confitie', 'show')" class="btn btn-warning btn-lg">RandomConfiti</button>
+                   <button onclick="sendCommand('cont2', 'show')"  class="btn btn-warning btn-lg">Centerconfiti 2 </button>
+                     <button onclick="sendCommand('cont3', 'show')"  class="btn btn-warning btn-lg">sideCinfi </button>
                   <div class="ct1">
                      <div >
                         <!-- Score  -->
@@ -122,7 +121,8 @@
                                           <div class="btn-group btn-block" role="group" aria-label="Basic example">
                                              <button onclick="btncorrect()" class="btn btn-success btn-outline-warning mr-1">Corrent</button> 
                                              <button onclick="WrongSound()" class="btn btn-danger btn-outline-warning mr-1">Wrong</button>                                            
-                                             <button class="btn btn-warning btn-outline-success ml-1">Clear</button> 
+                                             <button onclick="Winner('show')" class="btn btn-warning btn-outline-success ml-1">ShowWinner</button> 
+                                              <button onclick="Winner('hide')" class="btn btn-warning btn-outline-success ml-1">HideWinner</button> 
                                           </div>
                                           <div class="btn-group btn-block">
                                              <button onclick="timesTwo()" class="btn btn-danger btn-outline-success">X2</button>
@@ -1219,23 +1219,33 @@
                      <div class="container-fluid">
                         <div class="row">
                            <div class="col-12">
+                                
                               <h1 class="text-white">Question And Answer</h1>
                            </div>
                         </div>
                         <div class="row">
+                               
                            <div class="col-6">
+                                <p class="text-white">Banner:</p>
+                               <div class="btn-group btn-block">
+                                <button onclick="sendUtil('qa', 'banner', 'show')" class="btn btn-primary">Show</button>
+                                <button onclick="sendUtil('qa', 'banner', 'hide')" class="btn btn-secondary">Hide</button>
+                                <button onclick="sendCommand('confitie', 'show')" class="btn btn-warning btn-lg">rcon</button>
+                                <button onclick="sendCommand('cont2', 'show')"  class="btn btn-warning btn-lg">ccon</button>
+                                <button onclick="sendCommand('cont3', 'show')"  class="btn btn-warning btn-lg">scon</button>
+                               </div>
                               <p class="text-white">Wheel Category:</p>
                               <div class="btn-group btn-block">
-                                 <button onclick="sendCommand('qa', 'show')" class="btn btn-primary">Show</button>
-                                 <button onclick="sendCommand('qa', 'spin')" class="btn btn-info">Spin</button>
-                                 <button onclick="sendCommand('qa', 'hide')" class="btn btn-secondary">Hide</button>
+                                 <button onclick="sendUtil('qa', 'wheel', 'show')" class="btn btn-primary">Show</button>
+                                 <button onclick="sendUtil('qa', 'wheel', 'spin')" class="btn btn-info">Spin</button>
+                                 <button onclick="sendUtil('qa', 'wheel', 'hide')" class="btn btn-secondary">Hide</button>
                               </div>
                            </div>
                            <div class="col-6">
                               <p class="text-white">Question:</p>
                               <div class="btn-group btn-block">
-                                 <button onclick="sendCommand('qa', 'q1')" class="btn btn-primary">Question #1</button>
-                                 <button onclick="sendCommand('qa', 'qa1')" class="btn btn-info">Answer</button>                                       
+                                 <button onclick="sendUtil('qa', 'wheel', 'question')" class="btn btn-primary">Question</button>
+                                 <button onclick="sendUtil('qa', 'wheel', 'answer')" class="btn btn-info">Answer</button>                                       
                               </div>
                            </div>
                         </div>
@@ -1254,46 +1264,62 @@
                               <button onclick="sendCommand('sp', 'show')" class="btn btn-primary btn-lg">Show</button>
                               <button onclick="sendCommand('sp', 'hide')" class="btn btn-secondary btn-lg">Hide</button>   
                            </div>
+                            <span style="color: white; font-size: 50px">ToolSet</span>
+                             <div class="btn-group btn-block">                               
+                                <button onclick="sendCommand('confitie', 'show')" class="btn btn-warning btn-lg">rcon</button>
+                                <button onclick="sendCommand('cont2', 'show')"  class="btn btn-warning btn-lg">ccon</button>
+                                <button onclick="sendCommand('cont3', 'show')"  class="btn btn-warning btn-lg">scon</button>
+                               </div>
                            <hr class="border border-warning">
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Agriculture')">Question : Agriculture</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Agriculture')">Answer</button> 
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'EBSCO')">Question : EBSCO</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'EBSCO')">Answer</button>
+                             <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Elevator')">Question : Elevator</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Elevator')">Answer</button>
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Mezzanine')">Question : Mezzanine</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Mezzanine')">Answer</button> 
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
+                           </div>                           
+                           <div class="btn-group btn-block mt-2">                               
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Dissertation')">Question : Dissertation</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Dissertation')">Answer</button> 
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Silence')">Question : Silence</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Silence')">Answer</button>
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Periodical')">Question :  Periodical</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Periodical')">Answer</button>
+                               <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Circulation')">Question :  Circulation</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Circulation')">Answer</button>
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                            <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Locker')">Question : Locker</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Locker')">Answer</button>  
+                              <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
-                           <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
-                           </div>
-                           <div class="btn-group btn-block mt-2">                               
-                              <button class="btn btn-primary btn-lg">Question</button>
-                              <button class="btn btn-secondary btn-lg">Answer</button>   
+                            <div class="btn-group btn-block mt-2">                               
+                              <button class="btn btn-primary btn-lg" onclick="sendUtil('sp', 'q1', 'Filipiniana')">Question : Filipiniana</button>
+                              <button class="btn btn-secondary btn-lg"  onclick="sendUtil('sp', 'a1', 'Filipiniana')">Answer</button>
+                               <button class="btn btn-danger btn-lg"  onclick="sendUtil('sp', 'clear', 'all')">Clear</button> 
                            </div>
                         </div>
                      </div>
@@ -1313,15 +1339,11 @@
                   <div class="input-group mb-3">
                      <input type="text" class="form-control" placeholder="Team Name" id="btscore">
                      <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="button" id="btsbtn">Set</button>
+                        <button onclick="setScore('B')" class="btn btn-outline-success" type="button" id="btsbtn">Set</button>
                      </div>
                   </div>
                   <button onclick="sendUtil('dap', 'team', 'b')"  class="btn btn-primary btn-block">Team Present</button>
-                  <div class="btn-group btn-block" role="group" aria-label="Basic example">
-                     <button type="button" class="btn  btn-lg btn-primary">P1</button>
-                     <button type="button" class="btn btn-lg btn-secondary">P2</button>
-                     <button type="button" class="btn btn-lg btn-warning">P3</button>
-                  </div>
+                  
                </div>
             </div>
          </div>
@@ -1432,6 +1454,9 @@
          });
          //DAPAT ALAM MO   
          //Correct Answer Send 
+          function Winner(status){
+              sendUtil('dap', 'Winner', status)
+          }
           function ShowAns(ans){
               var cscore = $('#cscore');
               var cval = Number(cscore.html())
@@ -1463,13 +1488,27 @@
               var atscore = $('#atscore');
               atscore.empty().val(cscore.text());
               cscore.empty().html(0)
+              
+              sendUtil('dap','gets','teamA')
           }
            function ScoreB(){
                btncorrect()
                var cscore = $('#cscore');
               var btscore = $('#btscore');
-              atscore.empty().val(cscore.text());
+              btscore.empty().val(cscore.text());
               cscore.empty().html(0)
+              sendUtil('dap','gets','teamB')
+          }
+          
+          function setScore(team){
+               var atscore = $('#atscore');
+               var btscore = $('#btscore');
+              if(team == 'A'){
+                  sendUtil('dap', 'mscoreA', atscore.val())
+              }
+              if(team == 'B'){
+                  sendUtil('dap', 'mscoreB', btscore.val())
+              }
           }
        
          //Util
@@ -1485,16 +1524,19 @@
             sendUtil('dap', 'btname', tname);               
          });
          //Set Team Score
+          /*
          //A team
          $('#atsbtn').on('click', function(){
            var tscore = $('#atscore').val();
-            sendUtil('dap', 'tscore', tscore)
+           // sendUtil('dap', 'tscore', tscore)
          });
          //B team
+          
          $('#btsbtn').on('click', function(){
            var tscore = $('#btscore').val();
-            sendUtil('dap', 'btscore', tscore)
+           // sendUtil('dap', 'btscore', tscore)
          });
+          */
          //SET ROUND         
           
           function setRound(){
