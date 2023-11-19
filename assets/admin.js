@@ -14,6 +14,7 @@ $(document).ready(function () {
          $('.pd3').addClass('d-none')
          $('.sd0').addClass('d-none');
          $('.sd1').addClass('d-none');
+           $('.pd4').addClass('d-none');
       }
    });
    //program number 1
@@ -28,6 +29,7 @@ $(document).ready(function () {
          $('.pd3').addClass('d-none');
          $('.sd0').removeClass('d-none');
          $('.sd1').removeClass('d-none');
+           $('.pd4').addClass('d-none');
 
       }
    });
@@ -43,6 +45,7 @@ $(document).ready(function () {
          $('.pd3').addClass('d-none')
          $('.sd0').addClass('d-none');
          $('.sd1').addClass('d-none');
+           $('.pd4').addClass('d-none');
       }
    });
    //program number 3
@@ -57,6 +60,23 @@ $(document).ready(function () {
          $('.pd1').addClass('d-none')
          $('.sd0').addClass('d-none');
          $('.sd1').addClass('d-none');
+         $('.pd4').addClass('d-none');
+      }
+   });
+    //
+    $('#p4').on('click', function () {
+      ///alert('click')
+      var chold = $('.pd4')
+      if (chold.hasClass('d-none')) {
+         //alert('has');
+         chold.removeClass('d-none');
+         $('.pd0').addClass('d-none');
+         $('.pd3').addClass('d-none');
+         $('.pd2').addClass('d-none');
+         $('.pd1').addClass('d-none')
+         $('.sd0').addClass('d-none');
+         $('.sd1').addClass('d-none');
+          
       }
    });
 });

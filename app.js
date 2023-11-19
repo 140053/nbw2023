@@ -18,6 +18,9 @@ app.get('/', (req, res) => {
 app.get('/receiver', (req, res) => {
   res.sendFile(__dirname + '/receiver.html');
 });
+app.get('/spin', (req, res) => {
+  res.sendFile(__dirname + '/spin.html');
+});
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
