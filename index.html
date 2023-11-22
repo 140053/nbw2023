@@ -1272,9 +1272,13 @@
                            <h1 class="text-white">Sure Prize Jumble Word</h1>
                            <hr class="border border-warning">
                            <div class="btn-group btn-block">
-                              <button onclick="sendCommand('banner', 'show')" class="btn btn-info btn-lg">Banner</button>
-                              <button onclick="sendCommand('sp', 'show')" class="btn btn-primary btn-lg">Show</button>
-                              <button onclick="sendCommand('sp', 'hide')" class="btn btn-secondary btn-lg">Hide</button>   
+                              <button onclick="sendUtil('sp', 'banner', 'show')" class="btn btn-info btn-lg">Banner Show</button>                             
+                              <button onclick="sendUtil('sp', 'banner', 'hide')" class="btn btn-secondary btn-lg">Banner Hide</button>   
+                           </div>
+                            <hr class="border border-danger"> 
+                            <div class="btn-group btn-block mt-3">                             
+                              <button onclick="sendCommand('sp', 'show')" class="btn btn-primary btn-lg">Board Show</button>
+                              <button onclick="sendCommand('sp', 'hide')" class="btn btn-secondary btn-lg">Board Hide</button>   
                            </div>
                             <span style="color: white; font-size: 50px">ToolSet</span>
                              <div class="btn-group btn-block">                               
@@ -1395,7 +1399,7 @@
        
        <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
       <script>
-         const socket = new WebSocket('ws://192.168.0.101:3000');
+         const socket = new WebSocket('ws://localhost:3000');
          
          socket.onopen = () => {
            console.log('Connected to the server');
