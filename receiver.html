@@ -890,13 +890,27 @@
                      var teamB = $('#teamB');
                      
                      if(msg.value == 'teamA'){
-                          var cs = cscore.text();
-                          teamA.empty().text(cs);
+                          var cs = Number(cscore.text());
+                          var cSc = Number(teamA.text());
+                         
+                          if(cSc > 0){
+                              teamA.empty().text(cs + cSc);
+                          }else{
+                              teamA.empty().text(cs)
+                          }                        
+                          
                           cscore.empty().text(0);
                      }
                      if(msg.value == 'teamB'){
-                          var cs = cscore.text();
-                          teamB.empty().text(cs);
+                          var cs = Number(cscore.text());
+                          var cSc = Number(teamB.text());
+                         
+                          if(cSc > 0){
+                              teamB.empty().text(cs + cSc);
+                          }else{
+                              teamB.empty().text(cs)
+                          }    
+                          //teamB.empty().text(cs);
                           cscore.empty().text(0);
                      }
                  }
