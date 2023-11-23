@@ -100,7 +100,8 @@
                               </div>
                                <!-- Round -->
                               <div id="dapdound" class=" d-none  border rounded-lg rounded-pill border-success mt-5 " style="background-color: crimson">
-                                 <h1 class="text-white p-3" style="font-size: 200px" >Round <span id="rnum">1</span></h1>
+                                 <h1 class="text-white p-3" style="font-size: 200px" >Round <span id="rnum">1</span> </h1>
+                                 <h3 id="points" class="text-white" style="font-size: 80px"></h3>
                                   <span id="category" style="font-size: 100px; color: aqua; font-weight: 700" ></span>
                               </div>
                                 <hr class="border border-success" style="border: 3px solid green!important;">
@@ -657,7 +658,7 @@
         
        </script>
       <script>
-         const socket = new WebSocket('ws://10.2.42.72:3000');
+         const socket = new WebSocket('ws://localhost:3000');
          
          socket.onopen = () => {
            console.log('Connected to the server');
@@ -759,6 +760,7 @@
                             var round = $('#dapdound');
                             var rnum = $('#rnum');
                             var cat = $('#category');
+                            var points = $('#points');
                      
                             if(manual == 'hide'){
                                  round.addClass('d-none')
@@ -771,19 +773,22 @@
                                                 cat.empty().html('Agriculture')
                                                 break;
                                         case '2':
-                                                cat.empty().html('Geography')
+                                                cat.empty().html('Education')
                                                 break;
                                         case '3':
                                                 cat.empty().html('Science')
                                                 break;
                                         case '4':
                                                 cat.empty().html('Mathematics')
+                                                points.empty().text('Double Points')
                                                 break;
                                         case '5':
-                                                cat.empty().html('Animalandia')
+                                                cat.empty().html('Agribussiness')
+                                                points.empty().text('Double Points')
                                                 break;
                                         case '6':
-                                                cat.empty().html('Agribussiness')
+                                                cat.empty().html('Animalandia')
+                                                points.empty().text('Triple Points')
                                                 break;
                                         default:
                                             console.log('nun')                                            
@@ -803,12 +808,15 @@
                                                 break;
                                         case '4':
                                                 cat.empty().html('Mathematics')
+                                                points.empty().text('Double Points')
                                                 break;
                                         case '5':
-                                                cat.empty().html('Animalandia')
+                                                cat.empty().html('Agribussiness')
+                                                points.empty().text('Double Points')
                                                 break;
                                         case '6':
-                                                cat.empty().html('Agribussiness')
+                                                cat.empty().html('Animalandia')
+                                               points.empty().text('Triple Points')
                                                 break;
                                         default:
                                             console.log('nun')                                            
