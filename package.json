@@ -12,7 +12,8 @@
   "author": "ken",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "tailwindcss": "^3.4.14"
   },
   "dependencies": {
     "bootstrap": "4.6.2",
