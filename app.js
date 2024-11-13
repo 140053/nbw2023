@@ -20,7 +20,7 @@ app.get('/receiver', (req, res) => {
   res.sendFile(__dirname + '/receiver.html');
 });
 app.get('/spin', (req, res) => {
-  res.sendFile(__dirname + '/spin.html');
+  res.sendFile(__dirname + '/src/spin.html');
 });
 
 wss.on('connection', (ws) => {

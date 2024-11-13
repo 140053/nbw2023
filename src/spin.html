@@ -1,747 +1,740 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <!-- Bootstrap CSS -->
-       
-        <link href="./output.css" rel="stylesheet" />
-        <title>National Book Week 2023</title>
-        <style>
-            text {
-                font-family: Helvetica, Arial, sans-serif;
-                font-size: 25px;
-                pointer-events: none;
-            }
-            #chart {
-                position: absolute;
-                width: 500px;
-                height: 500px;
-                top: 3;
-                left: 400px;
-            }
-            #question {
-                position: absolute;
-                width: 600px;
-                height: 700px;
-                top: 0;
-                left: 720px;
-            }
-            #question h1 {
-                font-size: 50px;
-                font-weight: bold;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                position: absolute;
-                padding: 0;
-                margin: 0;
-                top: 50%;
-                -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%);
-            }
-            #question h3 {
-                font-size: 50px;
-                font-weight: bold;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                position: absolute;
-                padding: 0;
-                margin: 0;
-                top: 80%;
-                -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%);
-                padding-left: 220px;
-                padding-right: 220px;
-                border: 13px solid green !important;
-            }
-            #question span {
-                font-size: 60px;
-                font-weight: bold;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                position: absolute;
-                padding: 0;
-                margin: 0;
-                top: 163px;
-                -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%);
-                padding-left: 56px;
-                padding-right: 65px;
-                border: 13px solid green !important;
-                left: 642px;
-            }
-            #qho {
-                position: absolute;
-                width: 757px;
-                left: 1114px;
-                top: 227px;
-            }
-            #qans {
-                position: absolute;
-                width: 756px;
-                top: 226px;
-                left: 1104px;
-            }
-        </style>
-    </head>
-    <body
-        class="bdy"
-        style="
-            background-color: lightgray;
-            background-image: url(/assets/back.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        ">
-        
-        <div class="flex justify-between">
-        <img  alt="h1" src="../assets/h2.png" class="w-16 h-19"  />
-       
-        <img  src="../assets/tem.png" alt="thema"  />
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+
+    <link href="/assets/output.css" rel="stylesheet" />
+    <title>National Book Week 2023</title>
+  </head>
+  <body class="bdy"  style="background-color: lightgray; background-image: url(/assets/back.png); background-repeat: no-repeat; background-size: cover">
+    <div class="flex justify-between mt-10 border ml-5 mr-5">
+      <div class="border">
+        <img alt="h1" src="/assets/h2.png" class="w-28" />
+      </div>
+      <div class="container grid-cols-1 ">
+        <div class="flex justify-center">
+          <h1 class="text-6xl font-bold  font-serif text-green-600">Roleta ng Swerte</h1>
         </div>
-        
-        <div class="content">
-            <div class="container-fluid">
-                <div id="banner" class="row d-flex justify-content-center">
-                    <!-- Question and Answer -->
-                    <div class="col-12">
-                        <div class="container-fluid">
-                            <div class="row d-flex justify-content-center">
-                                <!--- WHEEL 1 --->
-                                <div id="wheel" class="col-12 text-center mt-4">
-                                    <h1 style="font-size: 100px; font-weight: 900px">Question & Answer</h1>
-                                    <!-- https://codepen.io/sumeshkp18/pen/VGBPYg -->
-
-                                    <div id="chart"></div>
-                                    <div id="question">
-                                        <span id="numpic" class="h1">0</span>
-                                        <h1 class="qview d-none"></h1>
-                                        <h3 class="border border-success qans d-none"></h3>
-                                    </div>
-                                    <img class="d-none" id="qho" alt="question" />
-                                    <img class="d-none" id="qans" alt="answer" />
-                                </div>
-
-                                <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-                                <script>
-                                    var padding = { top: 20, right: 40, bottom: 0, left: 0 },
-                                        w = 700 - padding.left - padding.right,
-                                        h = 700 - padding.top - padding.bottom,
-                                        r = Math.min(w, h) / 2,
-                                        rotation = 0,
-                                        oldrotation = 0,
-                                        picked = 100000,
-                                        oldpick = [],
-                                        color = d3.scale.category20();
-
-                                    var data = [
-                                        {
-                                            label: "1",
-                                            value: 1,
-                                            question: "/assets/qa/q11.png",
-                                            answer: "/assets/qa/a11.png"
-                                        }, // padding
-                                        {
-                                            label: "2",
-                                            value: 2,
-                                            question: "/assets/qa/q12.png",
-                                            answer: "/assets/qa/a12.png"
-                                        }, //font-family
-                                        {
-                                            label: "3",
-                                            value: 3,
-                                            question: "/assets/qa/q13.png",
-                                            answer: "/assets/qa/a13.png"
-                                        }, //color
-                                        {
-                                            label: "4",
-                                            value: 4,
-                                            question: "/assets/qa/q14.png",
-                                            answer: "/assets/qa/a14.png"
-                                        }, //font-weight
-                                        {
-                                            label: "5",
-                                            value: 5,
-                                            question: "/assets/qa/q15.png",
-                                            answer: "/assets/qa/a15.png"
-                                        }, //font-size
-                                        {
-                                            label: "6",
-                                            value: 6,
-                                            question: "/assets/qa/q16.png",
-                                            answer: "/assets/qa/a16.png"
-                                        }, //background-color
-                                        {
-                                            label: "7",
-                                            value: 7,
-                                            question: "/assets/qa/q17.png",
-                                            answer: "/assets/qa/a17.png"
-                                        }, //nesting
-                                        {
-                                            label: "8",
-                                            value: 8,
-                                            question: "/assets/qa/q18.png",
-                                            answer: "/assets/qa/a18.png"
-                                        }, //bottom
-                                        {
-                                            label: "9",
-                                            value: 9,
-                                            question: "/assets/qa/q19.png",
-                                            answer: "/assets/qa/a19.png"
-                                        }, //sans-serif
-                                        {
-                                            label: "10",
-                                            value: 10,
-                                            question: "/assets/qa/q20.png",
-                                            answer: "/assets/qa/a20.png"
-                                        }
-                                    ];
-                                    var data2 = [
-                                        {
-                                            label: "1",
-                                            value: 1,
-                                            question:
-                                                "What CSS property is used for specifying the area between the content and its border?",
-                                            answer: "padding"
-                                        }, // padding
-                                        {
-                                            label: "2",
-                                            value: 2,
-                                            question: "What CSS property is used for changing the font?",
-                                            answer: "font-family"
-                                        }, //font-family
-                                        {
-                                            label: "3",
-                                            value: 3,
-                                            question: "What CSS property is used for changing the color of text?",
-                                            answer: "color"
-                                        }, //color
-                                        {
-                                            label: "4",
-                                            value: 4,
-                                            question: "What CSS property is used for changing the boldness of text?",
-                                            answer: "font-weight"
-                                        }, //font-weight
-                                        {
-                                            label: "5",
-                                            value: 5,
-                                            question: "What CSS property is used for changing the size of text?",
-                                            answer: "font-size"
-                                        }, //font-size
-                                        {
-                                            label: "6",
-                                            value: 6,
-                                            question:
-                                                "What CSS property is used for changing the background color of a box?",
-                                            answer: "background-color"
-                                        }, //background-color
-                                        {
-                                            label: "7",
-                                            value: 7,
-                                            question:
-                                                "Which word is used for specifying an HTML tag that is inside another tag?",
-                                            answer: "nesting"
-                                        }, //nesting
-                                        {
-                                            label: "8",
-                                            value: 8,
-                                            question:
-                                                "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?",
-                                            answer: "bottom"
-                                        }, //bottom
-                                        {
-                                            label: "9",
-                                            value: 9,
-                                            question:
-                                                "What are the fonts that don't have serifs at the ends of letters called?",
-                                            answer: "sans-serif"
-                                        }, //sans-serif
-                                        {
-                                            label: "10",
-                                            value: 10,
-                                            question:
-                                                "With CSS selectors, what character prefix should one use to specify a class?",
-                                            answer: "padding"
-                                        }
-                                    ];
-                                    var svg = d3
-                                        .select("#chart")
-                                        .append("svg")
-                                        .data([data])
-                                        .attr("width", w + padding.left + padding.right)
-                                        .attr("height", h + padding.top + padding.bottom);
-
-                                    var container = svg
-                                        .append("g")
-                                        .attr("class", "chartholder")
-                                        .attr(
-                                            "transform",
-                                            "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")"
-                                        );
-                                    //
-                                    var svg2 = d3
-                                        .select("#chart2")
-                                        .append("svg")
-                                        .data([data2])
-                                        .attr("width", w + padding.left + padding.right)
-                                        .attr("height", h + padding.top + padding.bottom);
-
-                                    var container2 = svg2
-                                        .append("g")
-                                        .attr("class", "chartholder")
-                                        .attr(
-                                            "transform",
-                                            "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")"
-                                        );
-
-                                    var vis = container.append("g");
-
-                                    var pie = d3.layout
-                                        .pie()
-                                        .sort(null)
-                                        .value(function (d) {
-                                            return 1;
-                                        });
-
-                                    // declare an arc generator function
-                                    var arc = d3.svg.arc().outerRadius(r);
-
-                                    // select paths, use arc generator to draw
-                                    var arcs = vis
-                                        .selectAll("g.slice")
-                                        .data(pie)
-                                        .enter()
-                                        .append("g")
-                                        .attr("class", "slice");
-
-                                    arcs.append("path")
-                                        .attr("fill", function (d, i) {
-                                            return color(i);
-                                        })
-                                        .attr("d", function (d) {
-                                            return arc(d);
-                                        });
-
-                                    // add the text
-                                    arcs.append("text")
-                                        .attr("transform", function (d) {
-                                            d.innerRadius = 0;
-                                            d.outerRadius = r;
-                                            d.angle = (d.startAngle + d.endAngle) / 2;
-                                            return (
-                                                "rotate(" +
-                                                ((d.angle * 180) / Math.PI - 90) +
-                                                ")translate(" +
-                                                (d.outerRadius - 10) +
-                                                ")"
-                                            );
-                                        })
-                                        .attr("text-anchor", "end")
-                                        .text(function (d, i) {
-                                            return data[i].label;
-                                        });
-
-                                    container.on("click", spin);
-
-                                    function spin(d) {
-                                        container.on("click", null);
-                                        //all slices have been seen, all done
-                                        console.log("OldPick: " + oldpick.length, "Data length: " + data.length);
-                                        if (oldpick.length == data.length) {
-                                            console.log("done");
-                                            container.on("click", null);
-                                            return;
-                                        }
-                                        var ps = 360 / data.length,
-                                            pieslice = Math.round(1440 / data.length),
-                                            rng = Math.floor(Math.random() * 1440 + 360);
-
-                                        rotation = Math.round(rng / ps) * ps;
-
-                                        picked = Math.round(data.length - (rotation % 360) / ps);
-                                        picked = picked >= data.length ? picked % data.length : picked;
-                                        if (oldpick.indexOf(picked) !== -1) {
-                                            d3.select(this).call(spin);
-                                            return;
-                                        } else {
-                                            oldpick.push(picked);
-                                        }
-                                        rotation += 90 - Math.round(ps / 2);
-                                        vis.transition()
-                                            .duration(3000)
-                                            .attrTween("transform", rotTween)
-                                            .each("end", function () {
-                                                //mark question as seen
-                                                d3.select(".slice:nth-child(" + (picked + 1) + ") path").attr(
-                                                    "fill",
-                                                    "#111"
-                                                );
-                                                //populate question
-                                                //d3.select("#question h1").text(data[picked].question);
-                                                d3.select("#qho").attr("src", data[picked].question);
-                                                oldrotation = rotation;
-
-                                                //answer
-                                                //d3.select("#question h3").text(data[picked].answer);
-                                                d3.select("#qans").attr("src", data[picked].answer);
-                                                //.attr("src", null);
-                                                oldrotation = rotation;
-
-                                                /* Get the result value from object "data" */
-                                                $("#numpic").empty().text(data[picked].value);
-                                                console.log(data[picked].value);
-
-                                                /* Comment the below line for restrict spin to sngle time */
-                                                container.on("click", spin);
-                                            });
-                                    }
-
-                                    //make arrow
-                                    svg.append("g")
-                                        .attr(
-                                            "transform",
-                                            "translate(" +
-                                                (w + padding.left + padding.right) +
-                                                "," +
-                                                (h / 2 + padding.top) +
-                                                ")"
-                                        )
-                                        .append("path")
-                                        .attr("d", "M-" + r * 0.15 + ",0L0," + r * 0.05 + "L0,-" + r * 0.05 + "Z")
-                                        .style({ fill: "black" });
-                                    //draw spin circle
-                                    container
-                                        .append("circle")
-                                        .attr("cx", 0)
-                                        .attr("cy", 0)
-                                        .attr("r", 60)
-                                        .style({ fill: "white", cursor: "pointer" });
-                                    //spin text
-                                    container
-                                        .append("text")
-                                        .attr("x", 0)
-                                        .attr("y", 15)
-                                        .attr("text-anchor", "middle")
-                                        .text("SPIN")
-                                        .style({ "font-weight": "bold", "font-size": "30px" });
-
-                                    function rotTween(to) {
-                                        var i = d3.interpolate(oldrotation % 360, rotation);
-                                        return function (t) {
-                                            return "rotate(" + i(t) + ")";
-                                        };
-                                    }
-
-                                    function getRandomNumbers() {
-                                        var array = new Uint16Array(1000);
-                                        var scale = d3.scale.linear().range([360, 1440]).domain([0, 100000]);
-                                        if (
-                                            window.hasOwnProperty("crypto") &&
-                                            typeof window.crypto.getRandomValues === "function"
-                                        ) {
-                                            window.crypto.getRandomValues(array);
-                                            console.log("works");
-                                        } else {
-                                            //no support for crypto, get crappy random numbers
-                                            for (var i = 0; i < 1000; i++) {
-                                                array[i] = Math.floor(Math.random() * 100000) + 1;
-                                            }
-                                        }
-                                        return array;
-                                    }
-                                </script>
-                            </div>
-                        </div>
-                    </div>
+        <div class="flex justify-center border">
+            <div class="contain-content border" id="chart">                
+            </div>
+            <div class="grid justify-items-center border w-[600px] h-[600px]" >
+                <div class="border-8 border-double border-green-900 w-20 h-20 flex justify-center items-center"> 
+                    <span id="numpic" class="h1 text-6xl">0</span>
+                </div>
+                <div  class="border-5">
+                    <img class="object-scale-down" id="qho" alt="question" />                
                 </div>
             </div>
+
+            
+
         </div>
+      </div>
 
-        <!-- FOOTER  -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-            crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
-        <script>
-            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+      <div class="border">
+        <img src="../assets/tem2024.png" alt="thema" class="w-44" />
+      </div>
+    </div>
 
-            function randomInRange(min, max) {
-                return Math.random() * (max - min) + min;
-            }
+    
+    <div class=" border flex justify-around">
+        <!-- Button to open modal -->
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
+            onclick="toggleModal(true)">
+            Open Modal
+        </button>
+    
+        <!-- Modal backdrop -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-gray-800 bg-opacity-50 hidden" onclick="toggleModal(false)"></div>
+    
+        <!-- Modal content -->
+        <div id="modal" class="fixed inset-0 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg shadow-lg   p-6 relative" onclick="event.stopPropagation()">
+                <!-- Close button -->
+                <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
+                    onclick="toggleModal(false)">
+                    ✕
+                </button>
+                <h2 class="text-xl font-semibold mb-4 flex justify-center text-green-500">Answer</h2>
+                <p class="text-gray-700">
+                    <img class="" id="qans" alt="answer" />
+                </p>
+            </div>
+        </div>
+    
+    </div>
 
-            function triggerConfetti() {
-                const particleCount = 200; // You can adjust the number of particles
+    
 
-                // Generate confetti particles from the left side
-                confetti(
-                    Object.assign({}, defaults, {
-                        particleCount,
-                        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-                    })
-                );
+    <!-- FOOTER  -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+              <script
+                  src="https://d3js.org/d3.v3.min.js"
+                  charset="utf-8"
+                ></script>
+                <script>
+                  var padding = { top: 20, right: 40, bottom: 0, left: 0 },
+                    w = 600 - padding.left - padding.right,
+                    h = 600 - padding.top - padding.bottom,
+                    r = Math.min(w, h) / 2,
+                    rotation = 0,
+                    oldrotation = 0,
+                    picked = 100000,
+                    oldpick = [],
+                    color = d3.scale.category20();
 
-                // Generate confetti particles from the right side
-                confetti(
-                    Object.assign({}, defaults, {
-                        particleCount,
-                        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-                    })
-                );
-            }
-        </script>
-        <script>
-            function triggerCustomConfetti() {
-                const count = 200,
-                    defaults = {
-                        origin: { y: 0.7 }
-                    };
+                  var data = [
+                    {
+                      label: "1",
+                      value: 1,
+                      question: "/assets/qa/q11.png",
+                      answer: "/assets/qa/a11.png",
+                    }, // padding
+                    {
+                      label: "2",
+                      value: 2,
+                      question: "/assets/qa/q12.png",
+                      answer: "/assets/qa/a12.png",
+                    }, //font-family
+                    {
+                      label: "3",
+                      value: 3,
+                      question: "/assets/qa/q13.png",
+                      answer: "/assets/qa/a13.png",
+                    }, //color
+                    {
+                      label: "4",
+                      value: 4,
+                      question: "/assets/qa/q14.png",
+                      answer: "/assets/qa/a14.png",
+                    }, //font-weight
+                    {
+                      label: "5",
+                      value: 5,
+                      question: "/assets/qa/q15.png",
+                      answer: "/assets/qa/a15.png",
+                    }, //font-size
+                    {
+                      label: "6",
+                      value: 6,
+                      question: "/assets/qa/q16.png",
+                      answer: "/assets/qa/a16.png",
+                    }, //background-color
+                    {
+                      label: "7",
+                      value: 7,
+                      question: "/assets/qa/q17.png",
+                      answer: "/assets/qa/a17.png",
+                    }, //nesting
+                    {
+                      label: "8",
+                      value: 8,
+                      question: "/assets/qa/q18.png",
+                      answer: "/assets/qa/a18.png",
+                    }, //bottom
+                    {
+                      label: "9",
+                      value: 9,
+                      question: "/assets/qa/q19.png",
+                      answer: "/assets/qa/a19.png",
+                    }, //sans-serif
+                    {
+                      label: "10",
+                      value: 10,
+                      question: "/assets/qa/q20.png",
+                      answer: "/assets/qa/a20.png",
+                    },
+                  ];
+                  var data2 = [
+                    {
+                      label: "1",
+                      value: 1,
+                      question:
+                        "What CSS property is used for specifying the area between the content and its border?",
+                      answer: "padding",
+                    }, // padding
+                    {
+                      label: "2",
+                      value: 2,
+                      question:
+                        "What CSS property is used for changing the font?",
+                      answer: "font-family",
+                    }, //font-family
+                    {
+                      label: "3",
+                      value: 3,
+                      question:
+                        "What CSS property is used for changing the color of text?",
+                      answer: "color",
+                    }, //color
+                    {
+                      label: "4",
+                      value: 4,
+                      question:
+                        "What CSS property is used for changing the boldness of text?",
+                      answer: "font-weight",
+                    }, //font-weight
+                    {
+                      label: "5",
+                      value: 5,
+                      question:
+                        "What CSS property is used for changing the size of text?",
+                      answer: "font-size",
+                    }, //font-size
+                    {
+                      label: "6",
+                      value: 6,
+                      question:
+                        "What CSS property is used for changing the background color of a box?",
+                      answer: "background-color",
+                    }, //background-color
+                    {
+                      label: "7",
+                      value: 7,
+                      question:
+                        "Which word is used for specifying an HTML tag that is inside another tag?",
+                      answer: "nesting",
+                    }, //nesting
+                    {
+                      label: "8",
+                      value: 8,
+                      question:
+                        "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?",
+                      answer: "bottom",
+                    }, //bottom
+                    {
+                      label: "9",
+                      value: 9,
+                      question:
+                        "What are the fonts that don't have serifs at the ends of letters called?",
+                      answer: "sans-serif",
+                    }, //sans-serif
+                    {
+                      label: "10",
+                      value: 10,
+                      question:
+                        "With CSS selectors, what character prefix should one use to specify a class?",
+                      answer: "padding",
+                    },
+                  ];
+                  var svg = d3
+                    .select("#chart")
+                    .append("svg")
+                    .data([data])
+                    .attr("width", w + padding.left + padding.right)
+                    .attr("height", h + padding.top + padding.bottom);
 
-                function fire(particleRatio, opts) {
-                    confetti(
-                        Object.assign({}, defaults, opts, {
-                            particleCount: Math.floor(count * particleRatio)
-                        })
+                  var container = svg
+                    .append("g")
+                    .attr("class", "chartholder")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w / 2 + padding.left) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
                     );
-                }
+                  //
+                  var svg2 = d3
+                    .select("#chart2")
+                    .append("svg")
+                    .data([data2])
+                    .attr("width", w + padding.left + padding.right)
+                    .attr("height", h + padding.top + padding.bottom);
 
-                fire(0.25, {
-                    spread: 26,
-                    startVelocity: 55
-                });
+                  var container2 = svg2
+                    .append("g")
+                    .attr("class", "chartholder")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w / 2 + padding.left) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
+                    );
 
-                fire(0.2, {
-                    spread: 60
-                });
+                  var vis = container.append("g");
 
-                fire(0.35, {
-                    spread: 100,
-                    decay: 0.91,
-                    scalar: 0.8
-                });
-
-                fire(0.1, {
-                    spread: 120,
-                    startVelocity: 25,
-                    decay: 0.92,
-                    scalar: 1.2
-                });
-
-                fire(0.1, {
-                    spread: 120,
-                    startVelocity: 45
-                });
-            }
-
-            // Call the function to trigger the custom confetti
-        </script>
-        <script>
-            function confi3() {
-                const end = Date.now() + 15 * 1000;
-                const colors = ["#bb0000", "#ffffff"];
-
-                function frame() {
-                    confetti({
-                        particleCount: 2,
-                        angle: 60,
-                        spread: 55,
-                        origin: { x: 0 },
-                        colors: colors
+                  var pie = d3.layout
+                    .pie()
+                    .sort(null)
+                    .value(function (d) {
+                      return 1;
                     });
 
-                    confetti({
-                        particleCount: 2,
-                        angle: 120,
-                        spread: 55,
-                        origin: { x: 1 },
-                        colors: colors
+                  // declare an arc generator function
+                  var arc = d3.svg.arc().outerRadius(r);
+
+                  // select paths, use arc generator to draw
+                  var arcs = vis
+                    .selectAll("g.slice")
+                    .data(pie)
+                    .enter()
+                    .append("g")
+                    .attr("class", "slice");
+
+                  arcs
+                    .append("path")
+                    .attr("fill", function (d, i) {
+                      return color(i);
+                    })
+                    .attr("d", function (d) {
+                      return arc(d);
                     });
 
-                    if (Date.now() < end) {
-                        requestAnimationFrame(frame);
+                  // add the text
+                  arcs
+                    .append("text")
+                    .attr("transform", function (d) {
+                      d.innerRadius = 0;
+                      d.outerRadius = r;
+                      d.angle = (d.startAngle + d.endAngle) / 2;
+                      return (
+                        "rotate(" +
+                        ((d.angle * 180) / Math.PI - 90) +
+                        ")translate(" +
+                        (d.outerRadius - 10) +
+                        ")"
+                      );
+                    })
+                    .attr("text-anchor", "end")
+                    .text(function (d, i) {
+                      return data[i].label;
+                    });
+
+                  container.on("click", spin);
+
+                  function spin(d) {
+                    container.on("click", null);
+                    //all slices have been seen, all done
+                    console.log(
+                      "OldPick: " + oldpick.length,
+                      "Data length: " + data.length
+                    );
+                    if (oldpick.length == data.length) {
+                      console.log("done");
+                      container.on("click", null);
+                      return;
                     }
-                }
+                    var ps = 360 / data.length,
+                      pieslice = Math.round(1440 / data.length),
+                      rng = Math.floor(Math.random() * 1440 + 360);
 
-                frame();
-            }
+                    rotation = Math.round(rng / ps) * ps;
 
-            // Call the function to trigger the custom confetti
-        </script>
-        <script>
-            const socket = new WebSocket("ws://10.2.42.72:3000");
-
-            socket.onopen = () => {
-                console.log("Connected to the server");
-            };
-
-            socket.onmessage = (event) => {
-                const messageList = document.getElementById("messageList");
-                const messageItem = document.createElement("li");
-
-                if (typeof event.data === "string") {
-                    try {
-                        const message = JSON.parse(event.data);
-                        messageItem.textContent = "lol"; //`Received: ${message.message}`;
-                    } catch (error) {
-                        messageItem.textContent = "lol"; //`Received: ${event.data}`;
+                    picked = Math.round(data.length - (rotation % 360) / ps);
+                    picked =
+                      picked >= data.length ? picked % data.length : picked;
+                    if (oldpick.indexOf(picked) !== -1) {
+                      d3.select(this).call(spin);
+                      return;
+                    } else {
+                      oldpick.push(picked);
                     }
-                } else if (event.data instanceof Blob) {
-                    // Handle Blob data
-                    const reader = new FileReader();
-                    reader.onload = function () {
-                        var msg = JSON.parse(reader.result);
+                    rotation += 90 - Math.round(ps / 2);
+                    vis
+                      .transition()
+                      .duration(3000)
+                      .attrTween("transform", rotTween)
+                      .each("end", function () {
+                        //mark question as seen
+                        d3.select(
+                          ".slice:nth-child(" + (picked + 1) + ") path"
+                        ).attr("fill", "#111");
+                        //populate question
+                        //d3.select("#question h1").text(data[picked].question);
+                        d3.select("#qho").attr("src", data[picked].question);
+                        oldrotation = rotation;
 
-                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////
+                        //answer
+                        //d3.select("#question h3").text(data[picked].answer);
+                        d3.select("#qans").attr("src", data[picked].answer);
+                        //.attr("src", null);
+                        oldrotation = rotation;
 
-                        //QUESTION AND ANSWER
-                        function Bannetgl(msg, manual) {
-                            //banner Show
-                            //{"program":"qa","action":"banner","value":"show"}
-                            var rbanner = $("#qabanner");
-                            if (manual == "hide") {
-                                if (rbanner.hasClass("d-none") == false) {
-                                    rbanner.addClass("d-none");
-                                }
-                            } else {
-                                if (msg.value == "show") {
-                                    if (rbanner.hasClass("d-none")) {
-                                        rbanner.removeClass("d-none");
-                                    }
-                                }
-                                if (msg.value == "hide") {
-                                    if (rbanner.hasClass("d-none") == false) {
-                                        rbanner.addClass("d-none");
-                                    }
-                                }
-                            }
-                        }
+                        /* Get the result value from object "data" */
+                        $("#numpic").empty().text(data[picked].value);
+                        console.log(data[picked].value);
 
-                        function WheelSts(msg, manual) {
-                            var wheel = $("#wheel");
-                            if (manual == "hide") {
-                                if (wheel.hasClass("d-none") == false) {
-                                    wheel.addClass("d-none");
-                                }
-                            } else {
-                                Bannetgl("", "hide");
-                                if (msg.value == "show") {
-                                    if (wheel.hasClass("d-none")) {
-                                        wheel.removeClass("d-none");
-                                    }
-                                }
-                                if (msg.value == "hide") {
-                                    if (wheel.hasClass("d-none") == false) {
-                                        wheel.addClass("d-none");
-                                    }
-                                }
-                            }
-                        }
+                        /* Comment the below line for restrict spin to sngle time */
+                        container.on("click", spin);
+                      });
+                  }
 
-                        function SpinWheel(msg, manual) {
-                            var qholder = $(".qview");
-                            var qans = $(".qans");
-                            spin(100);
+                  //make arrow
+                  svg
+                    .append("g")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w + padding.left + padding.right) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
+                    )
+                    .append("path")
+                    .attr(
+                      "d",
+                      "M-" +
+                        r * 0.15 +
+                        ",0L0," +
+                        r * 0.05 +
+                        "L0,-" +
+                        r * 0.05 +
+                        "Z"
+                    )
+                    .style({ fill: "black" });
+                  //draw spin circle
+                  container
+                    .append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 0)
+                    .attr("r", 60)
+                    .style({ fill: "white", cursor: "pointer" });
+                  //spin text
+                  container
+                    .append("text")
+                    .attr("x", 0)
+                    .attr("y", 15)
+                    .attr("text-anchor", "middle")
+                    .text("SPIN")
+                    .style({ "font-weight": "bold", "font-size": "30px" });
 
-                            if (qholder.hasClass("d-none") == false) {
-                                qholder.addClass("d-none");
-                            }
-                            if (qans.hasClass("d-none") == false) {
-                                qans.addClass("d-none");
-                            }
-                        }
-
-                        function QuestionView(msg, manual) {
-                            var qholder = $("#qho");
-                            if (manual == "hide") {
-                                if (qholder.hasClass("d-none") == false) {
-                                    qholder.addClass("d-none");
-                                }
-                            } else {
-                                if (qholder.hasClass("d-none")) {
-                                    qholder.removeClass("d-none");
-                                }
-                            }
-                        }
-
-                        function AnswerView(msg, manual) {
-                            var qans = $("#qans");
-                            if (manual == "hide") {
-                                if (qans.hasClass("d-none") == false) {
-                                    qans.addClass("d-none");
-                                }
-                            } else {
-                                if (qans.hasClass("d-none")) {
-                                    qans.removeClass("d-none");
-                                }
-                            }
-                        }
-
-                        //INSTRUCTION
-                        if (msg.program == "qa") {
-                            //show hide banner
-                            if (msg.action == "banner") {
-                                Bannetgl(msg, "");
-                            }
-                            //show hide wheel spin
-                            //{"program":"qa","action":"wheel","value":"spin"}
-                            if (msg.action == "wheel") {
-                                if (msg.value == "show" || msg.value == "hide") {
-                                    WheelSts(msg, "");
-                                }
-                                //spin
-                                if (msg.value == "spin") {
-                                    SpinWheel("", "");
-                                    QuestionView("", "hide");
-                                    AnswerView("", "hide");
-                                }
-                                //question
-                                if (msg.value == "question") {
-                                    QuestionView("", "");
-                                }
-                                //answer
-                                if (msg.value == "answer") {
-                                    AnswerView("", "");
-                                }
-                            }
-                        }
-
-                        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-                        //Utilities
-                        //Sound
-                        if (msg.program == "sound") {
-                            if (msg.status == "Wrong") {
-                                //sendCommand('sound', 'wrong');
-                            }
-                        }
-                        //confitie
-                        if (msg.program == "confitie") {
-                            if (msg.status == "show") {
-                                triggerConfetti();
-                            }
-                        }
-                        if (msg.program == "cont2") {
-                            triggerCustomConfetti();
-                        }
-                        if (msg.program == "cont3") {
-                            confi3();
-                        }
-
-                        //*************************************HERE WORK *******************************//
-                        messageItem.textContent = reader.result; //`Received: ${reader.result}`;
-                        //messageList.appendChild(messageItem);
+                  function rotTween(to) {
+                    var i = d3.interpolate(oldrotation % 360, rotation);
+                    return function (t) {
+                      return "rotate(" + i(t) + ")";
                     };
-                    reader.readAsText(event.data);
-                } else {
-                    //messageItem.textContent = 'lol'//`Received: ${event.data}`;
+                  }
+
+                  function getRandomNumbers() {
+                    var array = new Uint16Array(1000);
+                    var scale = d3.scale
+                      .linear()
+                      .range([360, 1440])
+                      .domain([0, 100000]);
+                    if (
+                      window.hasOwnProperty("crypto") &&
+                      typeof window.crypto.getRandomValues === "function"
+                    ) {
+                      window.crypto.getRandomValues(array);
+                      console.log("works");
+                    } else {
+                      //no support for crypto, get crappy random numbers
+                      for (var i = 0; i < 1000; i++) {
+                        array[i] = Math.floor(Math.random() * 100000) + 1;
+                      }
+                    }
+                    return array;
+                  }
+                </script>
+    <script>
+        function toggleModal(show) {
+          document
+            .getElementById("modal")
+            .classList.toggle("hidden", !show);
+          document
+            .getElementById("modal-backdrop")
+            .classList.toggle("hidden", !show);
+        }
+      </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+    <script>
+      const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      function triggerConfetti() {
+        const particleCount = 200; // You can adjust the number of particles
+
+        // Generate confetti particles from the left side
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          })
+        );
+
+        // Generate confetti particles from the right side
+        confetti(
+          Object.assign({}, defaults, {
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          })
+        );
+      }
+    </script>
+    <script>
+      function triggerCustomConfetti() {
+        const count = 200,
+          defaults = {
+            origin: { y: 0.7 },
+          };
+
+        function fire(particleRatio, opts) {
+          confetti(
+            Object.assign({}, defaults, opts, {
+              particleCount: Math.floor(count * particleRatio),
+            })
+          );
+        }
+
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+
+        fire(0.2, {
+          spread: 60,
+        });
+
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+        });
+
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2,
+        });
+
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+      }
+
+      // Call the function to trigger the custom confetti
+    </script>
+    <script>
+      function confi3() {
+        const end = Date.now() + 15 * 1000;
+        const colors = ["#bb0000", "#ffffff"];
+
+        function frame() {
+          confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors,
+          });
+
+          confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors,
+          });
+
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          }
+        }
+
+        frame();
+      }
+
+      // Call the function to trigger the custom confetti
+    </script>
+    <script>
+      const socket = new WebSocket("ws://10.2.42.72:3000");
+
+      socket.onopen = () => {
+        console.log("Connected to the server");
+      };
+
+      socket.onmessage = (event) => {
+        const messageList = document.getElementById("messageList");
+        const messageItem = document.createElement("li");
+
+        if (typeof event.data === "string") {
+          try {
+            const message = JSON.parse(event.data);
+            messageItem.textContent = "lol"; //`Received: ${message.message}`;
+          } catch (error) {
+            messageItem.textContent = "lol"; //`Received: ${event.data}`;
+          }
+        } else if (event.data instanceof Blob) {
+          // Handle Blob data
+          const reader = new FileReader();
+          reader.onload = function () {
+            var msg = JSON.parse(reader.result);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////
+
+            //QUESTION AND ANSWER
+            function Bannetgl(msg, manual) {
+              //banner Show
+              //{"program":"qa","action":"banner","value":"show"}
+              var rbanner = $("#qabanner");
+              if (manual == "hide") {
+                if (rbanner.hasClass("d-none") == false) {
+                  rbanner.addClass("d-none");
                 }
-                //alert(messageItem);
-                //messageList.appendChild(messageItem);
-            };
-        </script>
-        <!-- FOOTER -->
-    </body>
+              } else {
+                if (msg.value == "show") {
+                  if (rbanner.hasClass("d-none")) {
+                    rbanner.removeClass("d-none");
+                  }
+                }
+                if (msg.value == "hide") {
+                  if (rbanner.hasClass("d-none") == false) {
+                    rbanner.addClass("d-none");
+                  }
+                }
+              }
+            }
+
+            function WheelSts(msg, manual) {
+              var wheel = $("#wheel");
+              if (manual == "hide") {
+                if (wheel.hasClass("d-none") == false) {
+                  wheel.addClass("d-none");
+                }
+              } else {
+                Bannetgl("", "hide");
+                if (msg.value == "show") {
+                  if (wheel.hasClass("d-none")) {
+                    wheel.removeClass("d-none");
+                  }
+                }
+                if (msg.value == "hide") {
+                  if (wheel.hasClass("d-none") == false) {
+                    wheel.addClass("d-none");
+                  }
+                }
+              }
+            }
+
+            function SpinWheel(msg, manual) {
+              var qholder = $(".qview");
+              var qans = $(".qans");
+              spin(100);
+
+              if (qholder.hasClass("d-none") == false) {
+                qholder.addClass("d-none");
+              }
+              if (qans.hasClass("d-none") == false) {
+                qans.addClass("d-none");
+              }
+            }
+
+            function QuestionView(msg, manual) {
+              var qholder = $("#qho");
+              if (manual == "hide") {
+                if (qholder.hasClass("d-none") == false) {
+                  qholder.addClass("d-none");
+                }
+              } else {
+                if (qholder.hasClass("d-none")) {
+                  qholder.removeClass("d-none");
+                }
+              }
+            }
+
+            function AnswerView(msg, manual) {
+              var qans = $("#qans");
+              if (manual == "hide") {
+                if (qans.hasClass("d-none") == false) {
+                  qans.addClass("d-none");
+                }
+              } else {
+                if (qans.hasClass("d-none")) {
+                  qans.removeClass("d-none");
+                }
+              }
+            }
+
+            //INSTRUCTION
+            if (msg.program == "qa") {
+              //show hide banner
+              if (msg.action == "banner") {
+                Bannetgl(msg, "");
+              }
+              //show hide wheel spin
+              //{"program":"qa","action":"wheel","value":"spin"}
+              if (msg.action == "wheel") {
+                if (msg.value == "show" || msg.value == "hide") {
+                  WheelSts(msg, "");
+                }
+                //spin
+                if (msg.value == "spin") {
+                  SpinWheel("", "");
+                  QuestionView("", "hide");
+                  AnswerView("", "hide");
+                }
+                //question
+                if (msg.value == "question") {
+                  QuestionView("", "");
+                }
+                //answer
+                if (msg.value == "answer") {
+                  AnswerView("", "");
+                }
+              }
+            }
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Utilities
+            //Sound
+            if (msg.program == "sound") {
+              if (msg.status == "Wrong") {
+                //sendCommand('sound', 'wrong');
+              }
+            }
+            //confitie
+            if (msg.program == "confitie") {
+              if (msg.status == "show") {
+                triggerConfetti();
+              }
+            }
+            if (msg.program == "cont2") {
+              triggerCustomConfetti();
+            }
+            if (msg.program == "cont3") {
+              confi3();
+            }
+
+            //*************************************HERE WORK *******************************//
+            messageItem.textContent = reader.result; //`Received: ${reader.result}`;
+            //messageList.appendChild(messageItem);
+          };
+          reader.readAsText(event.data);
+        } else {
+          //messageItem.textContent = 'lol'//`Received: ${event.data}`;
+        }
+        //alert(messageItem);
+        //messageList.appendChild(messageItem);
+      };
+    </script>
+    <!-- FOOTER -->
+  </body>
 </html>

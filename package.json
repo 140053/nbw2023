@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "tail": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "spin": "npx tailwindcss -i ./src/input.css -o ./src/spin.css --watch",
+    "main": "npx tailwindcss -i ./src/input.css -o ./src/main.css --watch"
   },
   "keywords": [
     "nbw2023"
