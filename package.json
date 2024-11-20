@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "spin": "npx tailwindcss -i ./src/input.css -o ./src/spin.css --watch",
-    "main": "npx tailwindcss -i ./src/input.css -o ./src/main.css --watch"
+    "spin": "npx tailwindcss -i ./src/css/input.css -o ./src/css/spin.css --watch",
+    "main": "npx tailwindcss -i ./src/css/input.css -o ./src/css/main.css --watch",
+    "dash": "npx tailwindcss -i ./src/css/input.css -o ./src/css/dash.css --watch"
   },
   "keywords": [
     "nbw2023"
@@ -18,7 +19,7 @@
     "tailwindcss": "^3.4.14"
   },
   "dependencies": {
-    "bootstrap": "4.6.2",
+    "bootstrap": "^5.3.3",
     "d3": "^7.8.5",
     "express": "^4.18.2",
     "jquery": "3.5.1",
