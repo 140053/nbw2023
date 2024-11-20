@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Panel</title>
     <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="../node_modules/pagedone/src/css/pagedone.css">
+    
 </head>
-<body class="bg-gray-600 bg-[url('/assets/background.png')]  bg-fixed bg-cover  bg-opacity-0" >   
+<body class=" bg-gray-400  bg-fixed bg-cover  " >   
     <div class="containder ">
         <div class=" flex justify-between mt-10 border ml-5 mr-5">
-            <div class="border">
+            <div class="border border-red-900">
                 <img src="/assets/h1.png" alt="h1" class="w-28" >
                 <div class="container flex justify-center">
                     <hr class="">
                     <div class="flex flex-col justify-center mt-5">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Default</button>
-                        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button>
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Show Banner</button>
+                        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Hide</button>
                         <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
                         <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
                         <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
@@ -30,22 +32,173 @@
                 <!-- Main Panel  -->
                 <div class="container">
                     <div class="flex font-bold justify-center">
-                        <h2 class="text-4xl">Main Panel</h2>
-                    </div>                    
-                    <div class="flex flex-row justify-center mt-5 border">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Banner</button>
-                        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button>
-                        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
-                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
-                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
-                        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
-                        <button type="button" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Yellow</button>
-                        <button type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
+                        <h2 class="text-4xl">Main Panel</h2>                        
+                    </div> 
+                    <div class="relative flex py-1 items-center">
+                        <div class="flex-grow border-t border-blue-900"></div>
+                        <span class="flex-shrink mx-1 text-blue-900">Banner</span>
+                       <div class="flex-grow border-t border-blue-900"></div>
+                     </div>                   
+                     <div class="flex  w-full ">
+                        <button class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Show All  </button>
+                        <button class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Show Main </button>
+                        <button class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Hide </button>
                     </div>
+                    <div class="relative flex py-1 items-center">
+                        <div class="flex-grow border-t border-blue-900"></div>
+                        <span class="flex-shrink mx-1 text-blue-900">Tabs</span>
+                        <div class="flex-grow border-t border-blue-900"></div>
+                    </div>
+                     <div class="container">
+                        <div class="tabs">
+                            <div class="flex ml-3 mr-3">
+                                <ul class="flex justify-between flex-wrap transition-all duration-300 overflow-hidden">
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl active tablink"
+                                            data-tab="tabs-with-card-1" role="tab"> Main tab </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink"
+                                            data-tab="tabs-with-card-2" role="tab"> Gimme 5 </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink"
+                                            data-tab="tabs-with-card-3" role="tab"> Roleta ng swerte </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink"
+                                            data-tab="tabs-with-card-4" role="tab"> Q & A </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink"
+                                            data-tab="tabs-with-card-5" role="tab"> Rainbow Rumble</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="relative flex items-center">
+                                <div class="flex-grow border-t border-blue-900"></div>
+                                <span class="flex-shrink mx-1 text-blue-900">Tab Controll</span>
+                                <div class="flex-grow border-t border-blue-900"></div>
+                            </div>
+                            <div class=" ml-3 mr-3">
+                                <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1" class="tabcontent">
+                                    <p class="text-gray-500 "> Main <em class="font-semibold text-gray-800 ">first</em> item's tab body. </p>
+                                    <div class="container border p-5">
+                                        <div class='  flex justify-center gap-8'>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-indigo-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-red-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-red-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-yellow-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-yellow-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-purple-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-purple-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-orange-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-600 hover:bg-orange-700'>Button</button>
+                                            <button type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Button</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabs-with-card-2" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
+                                    <p class="text-gray-500 "> This is the <em class="font-semibold text-gray-800 ">second</em> item's tab body.
+                                    </p>
+                                </div>
+                                <div id="tabs-with-card-3" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
+                                    <p class="text-gray-500 ">  <em class="font-semibold text-gray-800 "> Roleta the Swerte Controll </em> 
+                                    </p>
+                                    <div class="container ">
+                                        <div class="columns-2">
+                                            <div class="border flex flex-col justify-items-center w-full gap-3  py-2 px-2">
+                                                <p class="text-4xl">Wheel</p>  
+                                                                                              
+                                                <button type='button' class='  py-3 px-7  text-base max-h-max bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center  shadow-xs transition-all duration-500 hover:bg-indigo-700'>Show</button>
+                                                <button type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Spin</button>
+                                                <button type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Hide</button>
+                                        
+                                            </div>
+                                            <div class="border flex flex-col w-full gap-3 py-2 px-2 ">
+                                                <p class="text-4xl">Question & Answer</p>                                                 
+                                                <button type='button' class='  py-3 px-7  text-base max-h-max bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center  shadow-xs transition-all duration-500 hover:bg-indigo-700'>Show Question </button>
+                                                <button type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Show Answer</button>
+                                                <button type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Reset</button>
+                                        
+                                            </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="tabs-with-card-4" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-4">
+                                    <p class="text-gray-500 "><em class="font-semibold text-gray-800 ">Rainbow Rumble Controll</em> 
+                                    </p>
+                                    <div class="container ">
+                                        
+                                    </div>
+                                </div>
+                                <div id="tabs-with-card-5" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-4">
+                                    <p class="text-gray-500 "><em class="font-semibold text-gray-800 ">Rainbow Rumble Controll</em> 
+                                    </p>
+                                    <div class="container">
+                                        <div class='accordion-group' data-accordion="default-accordion">
+                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-one-with-icon'>
+                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-one-with-icon'>
+                                                <h5> How can I reset my password? </h5>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600 origin-center' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                </button>
+                                                <div id='basic-collapse-one-with-icon' class='accordion-content w-full  overflow-hidden pr-4' aria-labelledby='basic-heading-one'>
+                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
+                                                </div>
+                                            </div>
+
+
+                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl  accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-two-with-icon'>
+                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-two-with-icon'>
+                                                <h5> How do I update my billing information? </h5>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                </button>
+                                                <div id='basic-collapse-two-with-icon' class='accordion-content w-full  overflow-hidden   pr-4' aria-labelledby='basic-heading-two'>
+                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
+                                                </div>
+                                            </div>
+
+
+                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-three-with-icon'>
+                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-three-with-icon'>
+                                                <h5> How can I contact customer support? </h5>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                </svg>
+                                                </button>
+                                                <div id='basic-collapse-three-with-icon' class='accordion-content w-full  overflow-hidden   pr-4 ' aria-labelledby='basic-heading-three'>
+                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
                 </div>
             </div>
-            <div class="border">
-                <img src="/assets/tem2024.png" alt="h2" class="w-44">                
+            <div class=" border border-red-900">
+                <img src="/assets/tem2024.png" alt="h2" class="w-44 py-14">                
                 <div class="container flex justify-center">
                     <hr class="">
                     <div class="flex flex-col justify-center mt-5">
@@ -62,5 +215,8 @@
             </div>
         </div>
     </div>
+
+    <!-- script -->
+<script src="../node_modules/pagedone/src/js/pagedone.js"></script>
 </body>
 </html>
