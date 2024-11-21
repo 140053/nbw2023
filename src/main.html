@@ -8,33 +8,652 @@
 </head>
 <body class="bg-[url('/assets/background.png')]  bg-fixed bg-cover " >
     <button id="hideall" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"  >hideall</button>
-    <button id="bshowall" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >showall</button>
+    <button id="bshowbanner" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >showbanner</button>
 
-    <div id="banner1" class=" border flex justify-center mt-20">
+    <button id="showProg1" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Prog1</button>
+    <button id="showProg2" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Prog2</button>
+    <button id="showProg3" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Prog3</button>
+    <button id="showProg4" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Prog4</button>
+
+    <div id="banner1" class=" border flex justify-center mt-20 hidden">
         <img class="contain-fill  border-8 border-yellow-600  w-[120rem]" src="/assets/banner24.gif" alt="banner">
     </div>
-    <div class="containder ">
-        <div class=" flex justify-between mt-10 border ml-5 mr-5">
+    <div id="prog0" class="containder ">
+        <div class=" flex justify-between mt-10  ml-5 mr-5">
             <div class="border">
                 <img src="/assets/h1.png" alt="h1" class="w-28" >
             </div>
-            <div id="prog1" class="border border-black container">
-                <h1>Gimme 5</h1>
+            <div id="prog1" class="border border-black container hidden">                
+                <div class="container mx-auto mt-3">
+                    <div class="flex w-full items-center rounded-full h-14">
+                        <div class="flex-1 border-b border-gray-950"></div>
+                        <button class="flex items-center justify-center rounded-full border border-gray-950">
+                        <div class="group px-6 py-4 flex items-center justify-center">
+                          <span class="  text-5xl font-extrabold text-green-950 leading-7">Gimme 5 </span>
+                        </div>
+                        <div class="border-x-2 border-gray-300 outline-none text-lg py-1 px-1">
+                          <span class="text-black text-lg font-semibold leading-7">:  </span>
+                        </div>
+                        <div class="group px-6 py-4 flex items-center justify-center">
+                          <span class=" text-5xl font-extrabold text-green-950 leading-7">Pinoy Henyo</span>
+                        </div>
+                        </button>
+                        <div class="flex-1 border-b border-gray-950"></div>
+                    </div>
+                </div>
+                <div class="container mt-5 ">
+                    <h2 class="text-5xl text-center font-bold">Category </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-5 px-2 py-2 mt-3 justify-items-center">
+                        
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                            <div class="flex justify-center overflow-hidden">
+                                <img src="../assets/main/library.webp" alt="Card image"  />
+                            </div>
+                            <div class="p-4 flex justify-center text-center">
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Library</h4>     
+                            </div>
+                        </div>
+
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                            <div class=" overflow-hidden flex justify-center mt-2">
+                                <img src="../assets/main/cbsua.png" alt="Card image" />
+                            </div>
+                            <div class="p-4 flex justify-center text-center">
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">CBSUA</h4>     
+                            </div>
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                            <div class=" overflow-hidden flex justify-center">
+                                <img src="../assets/main/science.png" alt="Card image" class="mt-2" style="width: 55%;" />
+                            </div>
+                            <div class="p-4 flex justify-center text-center">
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Science</h4>     
+                            </div>
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                            <div class="flex justify-center overflow-hidden">
+                                <img src="../assets/main/agriculture.png" alt="Card image" class="object-contain" />
+                            </div>
+                            <div class="p-4 flex justify-center text-center">
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Agriculture</h4>     
+                            </div>
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                            <div class="block overflow-hidden">
+                                <img src="../assets/main/astronomy.png" alt="Card image" />
+                            </div>
+                            <div class="p-4 flex justify-center text-center">
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Astronomy</h4>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div id="prog2" class="border border-black container ">
+            <div id="prog2" class="border border-black container hidden ">
                 <h1>Roleta</h1>
+                <div class="container grid-cols-1 ">
+                    <div class="flex justify-center">
+                      <h1 class="text-6xl font-bold  font-serif text-green-600">Roleta ng Swerte</h1>
+                    </div>
+                    <div class="flex justify-center border">
+                        <div class="contain-content border" id="chart">                
+                        </div>
+                        <div class="grid justify-items-center border w-[600px] h-[600px]" >
+                            <div class="border-8 border-double border-green-900 w-20 h-20 flex justify-center items-center"> 
+                                <span id="numpic" class="h1 text-6xl">0</span>
+                            </div>
+                            <div  class="border-5">
+                                <img class="object-scale-down" id="qho" alt="question" />                
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div id="prog3" class="border border-black container ">
+            <div id="prog3" class="border border-black container hidden">
                 <h1>Q and A</h1>
             </div>
-            <div id="prog4" class="border border-black container ">
-                <h1>Rumble</h1>
+            <div id="prog4" class="border  container ">
+                <div class="flex w-full items-center rounded-full h-14">
+                    <div class="flex-1 border-b border-gray-950"></div>
+                    <button class="flex items-center justify-center rounded-full border border-gray-950">
+                    <div class="group px-6 py-4 flex items-center justify-center">
+                      <span class="  text-5xl font-extrabold text-green-950 leading-7">Rainbow</span>
+                    </div>
+                    <div class="border-x-2 border-gray-300 outline-none text-lg py-1 px-1">
+                      <span class="text-black text-lg font-semibold leading-7">:  </span>
+                    </div>
+                    <div class="group px-6 py-4 flex items-center justify-center">
+                      <span class=" text-5xl font-extrabold text-green-950 leading-7">Rumble</span>
+                    </div>
+                    </button>
+                    <div class="flex-1 border-b border-gray-950"></div>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="flex w-full items-center mb-4">
+                        <div class="flex-1 border-b border-gray-900"></div>
+                        <button class="px-6 py-3 flex items-center bg-sky-600 rounded-full shadow-sm border border-red-950">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+                            <g id="Add">
+                            <path id="icon" d="M11.5 5.5V16.5M17 11H6" stroke="black" stroke-width="1.6" stroke-linecap="round" />
+                            </g>
+                            </svg>
+                            <span class="text-black text-3xl font-bold leading-relaxed px-2">Guess this Word</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+                            <g id="Add">
+                            <path id="icon" d="M11.5 5.5V16.5M17 11H6" stroke="black" stroke-width="1.6" stroke-linecap="round" />
+                            </g>
+                            </svg>
+                        </button>
+                        <div class="flex-1 border-b border-red-900"></div>
+                    </div>
+                    <div class="flex flex-row justify-center gap-3">
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">A</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">G</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">R</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">I</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">C</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">U</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">L</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">T</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">U</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">R</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">E</h1>                            
+                            </div>                            
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div class="flex w-full items-center mb-4 mt-4">
+                    <div class="flex-1 border-b border-gray-900"></div>
+                    <button class="px-6 py-3 flex items-center bg-green-800 rounded-full shadow-sm border border-red-950">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+                        <g id="Add">
+                        <path id="icon" d="M11.5 5.5V16.5M17 11H6" stroke="black" stroke-width="1.6" stroke-linecap="round" />
+                        </g>
+                        </svg>
+                        <span class="text-yellow-500 text-3xl font-bold leading-relaxed px-2">Answer</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
+                        <g id="Add">
+                        <path id="icon" d="M11.5 5.5V16.5M17 11H6" stroke="black" stroke-width="1.6" stroke-linecap="round" />
+                        </g>
+                        </svg>
+                    </button>
+                    <div class="flex-1 border-b border-red-900"></div>
+                </div>
+                <div class="container mt-5">
+                   
+                    <div class="flex flex-row justify-center gap-3">
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">A</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">G</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">R</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">I</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">C</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">U</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">L</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">T</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">U</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">R</h1>                            
+                            </div>                            
+                        </div>
+                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
+                            <div class=" mb-6 flex justify-center ">
+                                <h1 class="font-extrabold text-6xl">E</h1>                            
+                            </div>                            
+                        </div>
+                    </div>
+
+                </div>
             </div>
             <div class="border">
                 <img src="/assets/tem2024.png" alt="h2" class="w-44">
             </div>
         </div>
     </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"  ></script>
+        <script>
+                  var padding = { top: 20, right: 40, bottom: 0, left: 0 },
+                    w = 600 - padding.left - padding.right,
+                    h = 600 - padding.top - padding.bottom,
+                    r = Math.min(w, h) / 2,
+                    rotation = 0,
+                    oldrotation = 0,
+                    picked = 100000,
+                    oldpick = [],
+                    color = d3.scale.category20();
+
+                  var data = [
+                    {
+                      label: "1",
+                      value: 1,
+                      question: "/assets/qa/q11.png",
+                      answer: "/assets/qa/a11.png",
+                    }, // padding
+                    {
+                      label: "2",
+                      value: 2,
+                      question: "/assets/qa/q12.png",
+                      answer: "/assets/qa/a12.png",
+                    }, //font-family
+                    {
+                      label: "3",
+                      value: 3,
+                      question: "/assets/qa/q13.png",
+                      answer: "/assets/qa/a13.png",
+                    }, //color
+                    {
+                      label: "4",
+                      value: 4,
+                      question: "/assets/qa/q14.png",
+                      answer: "/assets/qa/a14.png",
+                    }, //font-weight
+                    {
+                      label: "5",
+                      value: 5,
+                      question: "/assets/qa/q15.png",
+                      answer: "/assets/qa/a15.png",
+                    }, //font-size
+                    {
+                      label: "6",
+                      value: 6,
+                      question: "/assets/qa/q16.png",
+                      answer: "/assets/qa/a16.png",
+                    }, //background-color
+                    {
+                      label: "7",
+                      value: 7,
+                      question: "/assets/qa/q17.png",
+                      answer: "/assets/qa/a17.png",
+                    }, //nesting
+                    {
+                      label: "8",
+                      value: 8,
+                      question: "/assets/qa/q18.png",
+                      answer: "/assets/qa/a18.png",
+                    }, //bottom
+                    {
+                      label: "9",
+                      value: 9,
+                      question: "/assets/qa/q19.png",
+                      answer: "/assets/qa/a19.png",
+                    }, //sans-serif
+                    {
+                      label: "10",
+                      value: 10,
+                      question: "/assets/qa/q20.png",
+                      answer: "/assets/qa/a20.png",
+                    },
+                  ];
+                  var data2 = [
+                    {
+                      label: "1",
+                      value: 1,
+                      question:
+                        "What CSS property is used for specifying the area between the content and its border?",
+                      answer: "padding",
+                    }, // padding
+                    {
+                      label: "2",
+                      value: 2,
+                      question:
+                        "What CSS property is used for changing the font?",
+                      answer: "font-family",
+                    }, //font-family
+                    {
+                      label: "3",
+                      value: 3,
+                      question:
+                        "What CSS property is used for changing the color of text?",
+                      answer: "color",
+                    }, //color
+                    {
+                      label: "4",
+                      value: 4,
+                      question:
+                        "What CSS property is used for changing the boldness of text?",
+                      answer: "font-weight",
+                    }, //font-weight
+                    {
+                      label: "5",
+                      value: 5,
+                      question:
+                        "What CSS property is used for changing the size of text?",
+                      answer: "font-size",
+                    }, //font-size
+                    {
+                      label: "6",
+                      value: 6,
+                      question:
+                        "What CSS property is used for changing the background color of a box?",
+                      answer: "background-color",
+                    }, //background-color
+                    {
+                      label: "7",
+                      value: 7,
+                      question:
+                        "Which word is used for specifying an HTML tag that is inside another tag?",
+                      answer: "nesting",
+                    }, //nesting
+                    {
+                      label: "8",
+                      value: 8,
+                      question:
+                        "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?",
+                      answer: "bottom",
+                    }, //bottom
+                    {
+                      label: "9",
+                      value: 9,
+                      question:
+                        "What are the fonts that don't have serifs at the ends of letters called?",
+                      answer: "sans-serif",
+                    }, //sans-serif
+                    {
+                      label: "10",
+                      value: 10,
+                      question:
+                        "With CSS selectors, what character prefix should one use to specify a class?",
+                      answer: "padding",
+                    },
+                  ];
+                  var svg = d3
+                    .select("#chart")
+                    .append("svg")
+                    .data([data2])
+                    .attr("width", w + padding.left + padding.right)
+                    .attr("height", h + padding.top + padding.bottom);
+
+                  var container = svg
+                    .append("g")
+                    .attr("class", "chartholder")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w / 2 + padding.left) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
+                    );
+                  //
+                  var svg2 = d3
+                    .select("#chart2")
+                    .append("svg")
+                    .data([data2])
+                    .attr("width", w + padding.left + padding.right)
+                    .attr("height", h + padding.top + padding.bottom);
+
+                  var container2 = svg2
+                    .append("g")
+                    .attr("class", "chartholder")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w / 2 + padding.left) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
+                    );
+
+                  var vis = container.append("g");
+
+                  var pie = d3.layout
+                    .pie()
+                    .sort(null)
+                    .value(function (d) {
+                      return 1;
+                    });
+
+                  // declare an arc generator function
+                  var arc = d3.svg.arc().outerRadius(r);
+
+                  // select paths, use arc generator to draw
+                  var arcs = vis
+                    .selectAll("g.slice")
+                    .data(pie)
+                    .enter()
+                    .append("g")
+                    .attr("class", "slice");
+
+                  arcs
+                    .append("path")
+                    .attr("fill", function (d, i) {
+                      return color(i);
+                    })
+                    .attr("d", function (d) {
+                      return arc(d);
+                    });
+
+                  // add the text
+                  arcs
+                    .append("text")
+                    .attr("transform", function (d) {
+                      d.innerRadius = 0;
+                      d.outerRadius = r;
+                      d.angle = (d.startAngle + d.endAngle) / 2;
+                      return (
+                        "rotate(" +
+                        ((d.angle * 180) / Math.PI - 90) +
+                        ")translate(" +
+                        (d.outerRadius - 10) +
+                        ")"
+                      );
+                    })
+                    .attr("text-anchor", "end")
+                    .text(function (d, i) {
+                      return data[i].label;
+                    });
+
+                  container.on("click", spin);
+
+                  function spin(d) {
+                    container.on("click", null);
+                    //all slices have been seen, all done
+                    console.log(
+                      "OldPick: " + oldpick.length,
+                      "Data length: " + data.length
+                    );
+                    if (oldpick.length == data.length) {
+                      console.log("done");
+                      container.on("click", null);
+                      return;
+                    }
+                    var ps = 360 / data.length,
+                      pieslice = Math.round(1440 / data.length),
+                      rng = Math.floor(Math.random() * 1440 + 360);
+
+                    rotation = Math.round(rng / ps) * ps;
+
+                    picked = Math.round(data.length - (rotation % 360) / ps);
+                    picked =
+                      picked >= data.length ? picked % data.length : picked;
+                    if (oldpick.indexOf(picked) !== -1) {
+                      d3.select(this).call(spin);
+                      return;
+                    } else {
+                      oldpick.push(picked);
+                    }
+                    rotation += 90 - Math.round(ps / 2);
+                    vis
+                      .transition()
+                      .duration(3000)
+                      .attrTween("transform", rotTween)
+                      .each("end", function () {
+                        //mark question as seen
+                        d3.select(
+                          ".slice:nth-child(" + (picked + 1) + ") path"
+                        ).attr("fill", "#111");
+                        //populate question
+                        //d3.select("#question h1").text(data[picked].question);
+                        d3.select("#qho").attr("src", data[picked].question);
+                        oldrotation = rotation;
+
+                        //answer
+                        //d3.select("#question h3").text(data[picked].answer);
+                        d3.select("#qans").attr("src", data[picked].answer);
+                        //.attr("src", null);
+                        oldrotation = rotation;
+
+                        /* Get the result value from object "data" */
+                        $("#numpic").empty().text(data[picked].value);
+                        console.log(data[picked].value);
+
+                        /* Comment the below line for restrict spin to sngle time */
+                        container.on("click", spin);
+                      });
+                  }
+
+                  //make arrow
+                  svg
+                    .append("g")
+                    .attr(
+                      "transform",
+                      "translate(" +
+                        (w + padding.left + padding.right) +
+                        "," +
+                        (h / 2 + padding.top) +
+                        ")"
+                    )
+                    .append("path")
+                    .attr(
+                      "d",
+                      "M-" +
+                        r * 0.15 +
+                        ",0L0," +
+                        r * 0.05 +
+                        "L0,-" +
+                        r * 0.05 +
+                        "Z"
+                    )
+                    .style({ fill: "black" });
+                  //draw spin circle
+                  container
+                    .append("circle")
+                    .attr("cx", 0)
+                    .attr("cy", 0)
+                    .attr("r", 60)
+                    .style({ fill: "white", cursor: "pointer" });
+                  //spin text
+                  container
+                    .append("text")
+                    .attr("x", 0)
+                    .attr("y", 15)
+                    .attr("text-anchor", "middle")
+                    .text("SPIN")
+                    .style({ "font-weight": "bold", "font-size": "30px" });
+
+                  function rotTween(to) {
+                    var i = d3.interpolate(oldrotation % 360, rotation);
+                    return function (t) {
+                      return "rotate(" + i(t) + ")";
+                    };
+                  }
+
+                  function getRandomNumbers() {
+                    var array = new Uint16Array(1000);
+                    var scale = d3.scale
+                      .linear()
+                      .range([360, 1440])
+                      .domain([0, 100000]);
+                    if (
+                      window.hasOwnProperty("crypto") &&
+                      typeof window.crypto.getRandomValues === "function"
+                    ) {
+                      window.crypto.getRandomValues(array);
+                      console.log("works");
+                    } else {
+                      //no support for crypto, get crappy random numbers
+                      for (var i = 0; i < 1000; i++) {
+                        array[i] = Math.floor(Math.random() * 100000) + 1;
+                      }
+                    }
+                    return array;
+                  }
+                </script>
     
     <script src="js/main.js"></script>
     

@@ -1,4 +1,10 @@
 function toggleHidden(action, elementIds) {
+    const prog = document.getElementById('prog0')
+    if(elementIds == 'banner1'){        
+        prog.classList.add('hidden')
+    }else{
+        prog.classList.remove('hidden')
+    }
     elementIds.forEach(id => {
         const element = document.getElementById(id);
         if (element) {
@@ -22,29 +28,31 @@ function showAll() {
     toggleHidden('show', ['banner1', 'prog1', 'prog2', 'prog3', 'prog4']);
 }
 
+function showProgram(programId) {
+    // Hide all programs first
+    toggleHidden('hide', ['banner1','prog1', 'prog2', 'prog3', 'prog4']);
+    // Then show the specific program
+    toggleHidden('show', [programId]);
+}
 
-
-
-
-
-//Selector button
-//banner
-const showAllbtn = document.getElementById("bshowall");
+// Selector buttons
+// Banner
+const showAllbtn = document.getElementById("bshowbanner");
 const showmainbtn = document.getElementById("showmain");
 const hidemaintbn = document.getElementById('hidemain');
 const hidealltbn = document.getElementById('hideall');
 
-//program
+// Program buttons
+const prog1btn = document.getElementById('showProg1');
+const prog2btn = document.getElementById('showProg2');
+const prog3btn = document.getElementById('showProg3');
+const prog4btn = document.getElementById('showProg4');
 
-const prog1 = document.getElementById('prog1')
-const prog2 = document.getElementById('prog2')
-const prog3 = document.getElementById('prog3')
-const prog4 = document.getElementById('prog4')
-
-
-
-
-
+// Event Listeners
 hidealltbn.addEventListener('click', hideAll);
+showAllbtn.addEventListener('click',() => showProgram('banner1'));
 
-showAllbtn.addEventListener('click', showAll)
+prog1btn.addEventListener('click', () => showProgram('prog1'));
+prog2btn.addEventListener('click', () => showProgram('prog2'));
+prog3btn.addEventListener('click', () => showProgram('prog3'));
+prog4btn.addEventListener('click', () => showProgram('prog4'));
