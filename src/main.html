@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Panel</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-[url('/assets/background.png')]  bg-fixed bg-cover " >
-    <div class=" border flex justify-center mt-20 hidden">
+    <button id="hideall" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"  >hideall</button>
+    <button id="bshowall" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >showall</button>
+
+    <div id="banner1" class=" border flex justify-center mt-20">
         <img class="contain-fill  border-8 border-yellow-600  w-[120rem]" src="/assets/banner24.gif" alt="banner">
     </div>
     <div class="containder ">
@@ -15,13 +18,27 @@
             <div class="border">
                 <img src="/assets/h1.png" alt="h1" class="w-28" >
             </div>
-            <div class="border border-black container">
-                Main
+            <div id="prog1" class="border border-black container">
+                <h1>Gimme 5</h1>
+            </div>
+            <div id="prog2" class="border border-black container ">
+                <h1>Roleta</h1>
+            </div>
+            <div id="prog3" class="border border-black container ">
+                <h1>Q and A</h1>
+            </div>
+            <div id="prog4" class="border border-black container ">
+                <h1>Rumble</h1>
             </div>
             <div class="border">
                 <img src="/assets/tem2024.png" alt="h2" class="w-44">
             </div>
         </div>
     </div>
+    
+    <script src="js/main.js"></script>
+    
 </body>
+
+
 </html>
