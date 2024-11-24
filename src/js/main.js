@@ -35,6 +35,20 @@ function showProgram(programId) {
     toggleHidden('show', [programId]);
 }
 
+function hidesidebar(action){
+    const bannerl = document.getElementById("banl")
+    const bannerr = document.getElementById("banr")
+
+    if(action == "show"){
+        bannerl.classList.remove("hidden")
+        bannerr.classList.remove("hidden")
+    }
+    if(action == "hide"){
+        bannerl.classList.add("hidden")
+        bannerr.classList.add("hidden")
+    }
+}
+
 // Selector buttons
 // Banner
 const showAllbtn = document.getElementById("bshowbanner");
