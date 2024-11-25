@@ -21,12 +21,12 @@
     <div id="banner1" class=" border flex justify-center mt-20 hidden">
         <img class="contain-fill  border-8 border-yellow-600  w-[120rem]" src="/assets/banner24.gif" alt="banner">
     </div>
-    <div id="prog0" class="containder  hidden">
+    <div id="prog0" class="containder  ">
         <div class=" flex justify-between mt-10  ml-5 mr-5">
             <div id="banl" class="border hidden">
                 <img src="/assets/h1.png" alt="h1" class="w-28" >
             </div>
-            <div id="prog1" class="border container  w-full "> 
+            <div id="prog1" class="border container  w-full hidden "> 
               <!-- Banner -->
               <div class="w-full ">
                 <div class="flex justify-center">
@@ -267,17 +267,32 @@
              
 
             </div>
-            <div id="prog2" class="border border-black w-full hidden ">
+            <div id="prog2" class="border border-black w-full  ">
               <div class=" ">
                 <div class="flex justify-center">
                   <img src="../assets/main/roleta.gif" alt="banner" class="object-fill" srcset="">  
                 </div>
               </div>
 
-                <div class="container grid-cols-1 ">
-                    <div class="flex justify-center">
-                      <h1 class="text-6xl font-bold  font-serif text-green-600">Roleta ng Swerte</h1>
-                    </div>
+                <div class="w-full ">
+                    <!-- Header --> 
+                    <div class="container w-full mx-auto mt-3">
+                      <div class="flex w-full items-center rounded-full h-14">
+                          <div class="flex-1 border-b border-gray-950"></div>
+                          <button class="flex items-center justify-center rounded-full border border-gray-950">
+                          <div class="group px-6 py-4 flex items-center justify-center">
+                            <span class="  text-5xl font-extrabold text-green-950 leading-7">Roleta </span>
+                          </div>
+                          <div class="border-x-2 border-gray-300 outline-none text-lg py-1 px-1">
+                            <span class="text-black text-5xl font-extrabold leading-7">ng  </span>
+                          </div>
+                          <div class="group px-6 py-4 flex items-center justify-center">
+                            <span class=" text-5xl font-extrabold text-green-950 leading-7">Swerte</span>
+                          </div>
+                          </button>
+                          <div class="flex-1 border-b border-gray-950"></div>
+                      </div>
+                  </div>
                     <div class="flex justify-center border">
                         <div class="contain-content border" id="chart">                
                         </div>
@@ -285,9 +300,17 @@
                             <div class="border-8 border-double border-green-900 w-20 h-20 flex justify-center items-center"> 
                                 <span id="numpic" class="h1 text-6xl">0</span>
                             </div>
-                            <div  class="border-5">
-                                <img class="object-scale-down" id="qho" alt="question" />                
+                            <div  class="">
+                                <h3 class="text-3xl font-bold" id="roletaQ"></h3>   
                             </div>
+                            <div class="mt-3">
+                              <h2 class="text-3xl font-bold" id="roleteAns"></h2>       
+                            </div>
+                            <audio controls>
+                              <source src="../assets/main/sound/kumpas.mp3" type="audio/mpeg">
+                              Your browser does not support the audio element.
+                          </audio>
+                          
                         </div>
                     </div>
                 </div>
@@ -308,7 +331,7 @@
                 </div>
               </div>
             </div>
-            <div id="prog4" class="border  w-full hidden">
+            <div id="prog4" class="border w-full hidden">
 
               <div class="">
                 <div class="flex justify-center">
@@ -332,7 +355,7 @@
                     <div class="flex-1 border-b border-gray-950"></div>
                 </div>
 
-                <div class="container mt-5">
+                <div class="w-full mt-5">
                     <div class="flex w-full items-center mb-4">
                         <div class="flex-1 border-b border-gray-900"></div>
                         <button class="px-6 py-3 flex items-center bg-sky-600 rounded-full shadow-sm border border-red-950">
@@ -350,68 +373,14 @@
                         </button>
                         <div class="flex-1 border-b border-red-900"></div>
                     </div>
-                    <div class="flex flex-row justify-center gap-3">
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">A</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">G</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">R</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">I</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">C</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">U</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">L</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">T</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">U</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">R</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">E</h1>                            
-                            </div>                            
-                        </div>
+                    <div id="rumbleWord" class="flex flex-row justify-center gap-3">
+                        
                     </div>
 
                 </div>
-
-                
-                <div class="flex w-full items-center mb-4 mt-4">
+                <!-- Question-->
+                <div id="rumbleShowAnswer" class="w-full mt-5 hidden">
+                  <div class="flex w-full items-center mb-4 mt-4">
                     <div class="flex-1 border-b border-gray-900"></div>
                     <button class="px-6 py-3 flex items-center bg-green-800 rounded-full shadow-sm border border-red-950">
                         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
@@ -427,68 +396,61 @@
                         </svg>
                     </button>
                     <div class="flex-1 border-b border-red-900"></div>
-                </div>
-                <div class="container mt-5">
-                   
-                    <div class="flex flex-row justify-center gap-3">
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">A</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">G</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">R</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">I</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">C</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">U</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">L</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">T</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">U</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">R</h1>                            
-                            </div>                            
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12  xl:p-7   lg:col-span-3 md:col-span-6 ">
-                            <div class=" mb-6 flex justify-center ">
-                                <h1 class="font-extrabold text-6xl">E</h1>                            
-                            </div>                            
-                        </div>
+                  </div>
+                  <!-- Answer-->
+                  <div class=" mt-5 ">                   
+                    <div id="rumbleOrginal" class="flex flex-row justify-center gap-3 ">
+                        
                     </div>
+                  </div>
 
                 </div>
+
+                <!-- Control-->
+                <div class="control mt-4">
+                  <div class="flex flex-row justify-center" >
+                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
+                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
+                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
+                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
+
+                  </div>
+
+                  <div class="w-full relative">
+                    <div role="alert" tabindex="-1"
+                      class="absolute bottom-0 left-0 z-50 flex flex-wrap gap-4 justify-between w-full py-4 px-11  bg-gray-50 ">
+                      <div class="flex items-center ">
+                        <input type="text" id="wordtorumble" >
+                        
+                        <button id="rumbleAword"
+                          class="py-2.5 px-5 text-xs bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700 mr-8">
+                          rumble
+                        </button>
+                        </div>
+                        <div class="flex items-center">
+                          <button id="rumbleAnswer"
+                            class="py-2.5 px-5 text-xs bg-indigo-600 text-white rounded-full cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-700 mr-8">
+                            Answer
+                          </button>
+                        <button data-dismiss="alert" type="button"
+                          class="flex-shrink-0 inline-flex justify-center items-center text-gray-300  rounded-lg text-sm p-1 ">
+                          <svg class="text-gray-300 hover:text-gray-600 transition-all duration-75" width="26" height="26"
+                            viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.58325 18.4167L18.4166 7.58333M18.4166 18.4167L7.58325 7.58333" stroke="currentColor"
+                              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <span class="sr-only">Close banner</span>
+                        </button>
+                      </div>
+                    </div>
+                   
+                  </div>
+
+                </div>
+
+                
+               
+                
             </div>
             <div id="banr" class="border hidden">
                 <img src="/assets/tem2024.png" alt="h2" class="w-44">
@@ -502,364 +464,146 @@
 
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="https://d3js.org/d3.v3.min.js"  charset="utf-8"  ></script>
-        <script>
-                  var padding = { top: 20, right: 40, bottom: 0, left: 0 },
-                    w = 600 - padding.left - padding.right,
-                    h = 600 - padding.top - padding.bottom,
-                    r = Math.min(w, h) / 2,
-                    rotation = 0,
-                    oldrotation = 0,
-                    picked = 100000,
-                    oldpick = [],
-                    color = d3.scale.category20();
+    <script>
+      const padding = { top: 20, right: 40, bottom: 0, left: 0 };
+      const width = 600 - padding.left - padding.right;
+      const height = 600 - padding.top - padding.bottom;
+      const radius = Math.min(width, height) / 2;
+    
+      let rotation = 0;
+      let oldRotation = 0;
+      let picked = null;
+      const oldPicks = [];
+    
+      const color = d3.scale.category20();
+    
+      const data = [
+        { label: "1", value: 1, question: "What CSS property is used for specifying the area between the content and its border?", answer: "padding", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "2", value: 2, question: "What CSS property is used for changing the font?", answer: "font-family", aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "3", value: 3, question: "What CSS property is used for changing the color of text?", answer: "color", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "4", value: 4, question: "What CSS property is used for changing the boldness of text?", answer: "font-weight", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "5", value: 5, question: "What CSS property is used for changing the size of text?", answer: "font-size" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "6", value: 6, question: "What CSS property is used for changing the background color of a box?", answer: "background-color", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "7", value: 7, question: "Which word is used for specifying an HTML tag that is inside another tag?", answer: "nesting" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "8", value: 8, question: "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?", answer: "bottom" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "9", value: 9, question: "What are the fonts that don't have serifs at the ends of letters called?", answer: "sans-serif" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "10", value: 10, question: "With CSS selectors, what character prefix should one use to specify a class?", answer: "padding" , aud: "../assets/main/sound/kumpas.mp3"},
+      ];
+    
+      const svg = d3
+        .select("#chart")
+        .append("svg")
+        .attr("width", width + padding.left + padding.right)
+        .attr("height", height + padding.top + padding.bottom);
+    
+      const container = svg
+        .append("g")
+        .attr("class", "chartholder")
+        .attr("transform", `translate(${width / 2 + padding.left},${height / 2 + padding.top})`);
+    
+      const vis = container.append("g");
+    
+      const pie = d3.layout
+        .pie()
+        .sort(null)
+        .value(() => 1);
+    
+      const arc = d3.svg.arc().outerRadius(radius);
+    
+      const arcs = vis
+        .selectAll("g.slice")
+        .data(pie(data))
+        .enter()
+        .append("g")
+        .attr("class", "slice");
+    
+      arcs
+        .append("path")
+        .attr("fill", (d, i) => color(i))
+        .attr("d", arc);
+    
+      arcs
+        .append("text")
+        .attr("transform", (d) => {
+          d.innerRadius = 0;
+          d.outerRadius = radius;
+          d.angle = (d.startAngle + d.endAngle) / 2;
+          return `rotate(${(d.angle * 180) / Math.PI - 90})translate(${d.outerRadius - 10})`;
+        })
+        .attr("text-anchor", "end")
+        .text((d, i) => data[i].label);
+    
+      container.on("click", spin);
+    
+      function spin() {
+        if (oldPicks.length === data.length) {
+          console.log("All slices seen.");
+          container.on("click", null);
+          return;
+        }
+    
+        const sliceAngle = 360 / data.length;
+        const randomAngle = Math.floor(Math.random() * 1440 + 360);
+    
+        rotation = Math.round(randomAngle / sliceAngle) * sliceAngle;
+    
+        picked = Math.round(data.length - (rotation % 360) / sliceAngle);
+        picked = picked >= data.length ? picked % data.length : picked;
+    
+        if (oldPicks.includes(picked)) {
+          spin();
+          return;
+        } else {
+          oldPicks.push(picked);
+        }
+    
+        rotation += 90 - Math.round(sliceAngle / 2);
+    
+        vis
+          .transition()
+          .duration(3000)
+          .attrTween("transform", () => {
+            const interpolate = d3.interpolate(oldRotation % 360, rotation);
+            return (t) => `rotate(${interpolate(t)})`;
+          })
+          .each("end", () => {
+            d3.select(`.slice:nth-child(${picked + 1}) path`).attr("fill", "#111");
+            d3.select("#roletaQ").text(data[picked].question);
+            d3.select("#roleteAns").text(data[picked].answer);
+    
+            oldRotation = rotation;
 
-                  var data = [
-                    {
-                      label: "1",
-                      value: 1,
-                      question: "/assets/qa/q11.png",
-                      answer: "/assets/qa/a11.png",
-                    }, // padding
-                    {
-                      label: "2",
-                      value: 2,
-                      question: "/assets/qa/q12.png",
-                      answer: "/assets/qa/a12.png",
-                    }, //font-family
-                    {
-                      label: "3",
-                      value: 3,
-                      question: "/assets/qa/q13.png",
-                      answer: "/assets/qa/a13.png",
-                    }, //color
-                    {
-                      label: "4",
-                      value: 4,
-                      question: "/assets/qa/q14.png",
-                      answer: "/assets/qa/a14.png",
-                    }, //font-weight
-                    {
-                      label: "5",
-                      value: 5,
-                      question: "/assets/qa/q15.png",
-                      answer: "/assets/qa/a15.png",
-                    }, //font-size
-                    {
-                      label: "6",
-                      value: 6,
-                      question: "/assets/qa/q16.png",
-                      answer: "/assets/qa/a16.png",
-                    }, //background-color
-                    {
-                      label: "7",
-                      value: 7,
-                      question: "/assets/qa/q17.png",
-                      answer: "/assets/qa/a17.png",
-                    }, //nesting
-                    {
-                      label: "8",
-                      value: 8,
-                      question: "/assets/qa/q18.png",
-                      answer: "/assets/qa/a18.png",
-                    }, //bottom
-                    {
-                      label: "9",
-                      value: 9,
-                      question: "/assets/qa/q19.png",
-                      answer: "/assets/qa/a19.png",
-                    }, //sans-serif
-                    {
-                      label: "10",
-                      value: 10,
-                      question: "/assets/qa/q20.png",
-                      answer: "/assets/qa/a20.png",
-                    },
-                  ];
-                  var data2 = [
-                    {
-                      label: "1",
-                      value: 1,
-                      question:
-                        "What CSS property is used for specifying the area between the content and its border?",
-                      answer: "padding",
-                    }, // padding
-                    {
-                      label: "2",
-                      value: 2,
-                      question:
-                        "What CSS property is used for changing the font?",
-                      answer: "font-family",
-                    }, //font-family
-                    {
-                      label: "3",
-                      value: 3,
-                      question:
-                        "What CSS property is used for changing the color of text?",
-                      answer: "color",
-                    }, //color
-                    {
-                      label: "4",
-                      value: 4,
-                      question:
-                        "What CSS property is used for changing the boldness of text?",
-                      answer: "font-weight",
-                    }, //font-weight
-                    {
-                      label: "5",
-                      value: 5,
-                      question:
-                        "What CSS property is used for changing the size of text?",
-                      answer: "font-size",
-                    }, //font-size
-                    {
-                      label: "6",
-                      value: 6,
-                      question:
-                        "What CSS property is used for changing the background color of a box?",
-                      answer: "background-color",
-                    }, //background-color
-                    {
-                      label: "7",
-                      value: 7,
-                      question:
-                        "Which word is used for specifying an HTML tag that is inside another tag?",
-                      answer: "nesting",
-                    }, //nesting
-                    {
-                      label: "8",
-                      value: 8,
-                      question:
-                        "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?",
-                      answer: "bottom",
-                    }, //bottom
-                    {
-                      label: "9",
-                      value: 9,
-                      question:
-                        "What are the fonts that don't have serifs at the ends of letters called?",
-                      answer: "sans-serif",
-                    }, //sans-serif
-                    {
-                      label: "10",
-                      value: 10,
-                      question:
-                        "With CSS selectors, what character prefix should one use to specify a class?",
-                      answer: "padding",
-                    },
-                  ];
-                  var svg = d3
-                    .select("#chart")
-                    .append("svg")
-                    .data([data2])
-                    .attr("width", w + padding.left + padding.right)
-                    .attr("height", h + padding.top + padding.bottom);
+            /* Get the result value from object "data" */
+            $('#numpic').empty().text(data[picked].value)
+            console.log(data[picked].value);
 
-                  var container = svg
-                    .append("g")
-                    .attr("class", "chartholder")
-                    .attr(
-                      "transform",
-                      "translate(" +
-                        (w / 2 + padding.left) +
-                        "," +
-                        (h / 2 + padding.top) +
-                        ")"
-                    );
-                  //
-                  var svg2 = d3
-                    .select("#chart2")
-                    .append("svg")
-                    .data([data2])
-                    .attr("width", w + padding.left + padding.right)
-                    .attr("height", h + padding.top + padding.bottom);
-
-                  var container2 = svg2
-                    .append("g")
-                    .attr("class", "chartholder")
-                    .attr(
-                      "transform",
-                      "translate(" +
-                        (w / 2 + padding.left) +
-                        "," +
-                        (h / 2 + padding.top) +
-                        ")"
-                    );
-
-                  var vis = container.append("g");
-
-                  var pie = d3.layout
-                    .pie()
-                    .sort(null)
-                    .value(function (d) {
-                      return 1;
-                    });
-
-                  // declare an arc generator function
-                  var arc = d3.svg.arc().outerRadius(r);
-
-                  // select paths, use arc generator to draw
-                  var arcs = vis
-                    .selectAll("g.slice")
-                    .data(pie)
-                    .enter()
-                    .append("g")
-                    .attr("class", "slice");
-
-                  arcs
-                    .append("path")
-                    .attr("fill", function (d, i) {
-                      return color(i);
-                    })
-                    .attr("d", function (d) {
-                      return arc(d);
-                    });
-
-                  // add the text
-                  arcs
-                    .append("text")
-                    .attr("transform", function (d) {
-                      d.innerRadius = 0;
-                      d.outerRadius = r;
-                      d.angle = (d.startAngle + d.endAngle) / 2;
-                      return (
-                        "rotate(" +
-                        ((d.angle * 180) / Math.PI - 90) +
-                        ")translate(" +
-                        (d.outerRadius - 10) +
-                        ")"
-                      );
-                    })
-                    .attr("text-anchor", "end")
-                    .text(function (d, i) {
-                      return data[i].label;
-                    });
-
-                  container.on("click", spin);
-
-                  function spin(d) {
-                    container.on("click", null);
-                    //all slices have been seen, all done
-                    console.log(
-                      "OldPick: " + oldpick.length,
-                      "Data length: " + data.length
-                    );
-                    if (oldpick.length == data.length) {
-                      console.log("done");
-                      container.on("click", null);
-                      return;
-                    }
-                    var ps = 360 / data.length,
-                      pieslice = Math.round(1440 / data.length),
-                      rng = Math.floor(Math.random() * 1440 + 360);
-
-                    rotation = Math.round(rng / ps) * ps;
-
-                    picked = Math.round(data.length - (rotation % 360) / ps);
-                    picked =
-                      picked >= data.length ? picked % data.length : picked;
-                    if (oldpick.indexOf(picked) !== -1) {
-                      d3.select(this).call(spin);
-                      return;
-                    } else {
-                      oldpick.push(picked);
-                    }
-                    rotation += 90 - Math.round(ps / 2);
-                    vis
-                      .transition()
-                      .duration(3000)
-                      .attrTween("transform", rotTween)
-                      .each("end", function () {
-                        //mark question as seen
-                        d3.select(
-                          ".slice:nth-child(" + (picked + 1) + ") path"
-                        ).attr("fill", "#111");
-                        //populate question
-                        //d3.select("#question h1").text(data[picked].question);
-                        d3.select("#qho").attr("src", data[picked].question);
-                        oldrotation = rotation;
-
-                        //answer
-                        //d3.select("#question h3").text(data[picked].answer);
-                        d3.select("#qans").attr("src", data[picked].answer);
-                        //.attr("src", null);
-                        oldrotation = rotation;
-
-                        /* Get the result value from object "data" */
-                        $("#numpic").empty().text(data[picked].value);
-                        console.log(data[picked].value);
-
-                        /* Comment the below line for restrict spin to sngle time */
-                        container.on("click", spin);
-                      });
-                  }
-
-                  //make arrow
-                  svg
-                    .append("g")
-                    .attr(
-                      "transform",
-                      "translate(" +
-                        (w + padding.left + padding.right) +
-                        "," +
-                        (h / 2 + padding.top) +
-                        ")"
-                    )
-                    .append("path")
-                    .attr(
-                      "d",
-                      "M-" +
-                        r * 0.15 +
-                        ",0L0," +
-                        r * 0.05 +
-                        "L0,-" +
-                        r * 0.05 +
-                        "Z"
-                    )
-                    .style({ fill: "black" });
-                  //draw spin circle
-                  container
-                    .append("circle")
-                    .attr("cx", 0)
-                    .attr("cy", 0)
-                    .attr("r", 60)
-                    .style({ fill: "white", cursor: "pointer" });
-                  //spin text
-                  container
-                    .append("text")
-                    .attr("x", 0)
-                    .attr("y", 15)
-                    .attr("text-anchor", "middle")
-                    .text("SPIN")
-                    .style({ "font-weight": "bold", "font-size": "30px" });
-
-                  function rotTween(to) {
-                    var i = d3.interpolate(oldrotation % 360, rotation);
-                    return function (t) {
-                      return "rotate(" + i(t) + ")";
-                    };
-                  }
-
-                  function getRandomNumbers() {
-                    var array = new Uint16Array(1000);
-                    var scale = d3.scale
-                      .linear()
-                      .range([360, 1440])
-                      .domain([0, 100000]);
-                    if (
-                      window.hasOwnProperty("crypto") &&
-                      typeof window.crypto.getRandomValues === "function"
-                    ) {
-                      window.crypto.getRandomValues(array);
-                      console.log("works");
-                    } else {
-                      //no support for crypto, get crappy random numbers
-                      for (var i = 0; i < 1000; i++) {
-                        array[i] = Math.floor(Math.random() * 100000) + 1;
-                      }
-                    }
-                    return array;
-                  }
-                </script>
+            container.on("click", spin);
+          });
+      }
+    
+      svg
+        .append("g")
+        .attr("transform", `translate(${width + padding.left},${height / 2 + padding.top})`)
+        .append("path")
+        .attr("d", `M-${radius * 0.15},0L0,${radius * 0.05}L0,-${radius * 0.05}Z`)
+        .style({ fill: "black" });
+    
+      container
+        .append("circle")
+        .attr("cx", 0)
+        .attr("cy", 0)
+        .attr("r", 60)
+        .style({ fill: "white", cursor: "pointer" });
+    
+      container
+        .append("text")
+        .attr("x", 0)
+        .attr("y", 15)
+        .attr("text-anchor", "middle")
+        .text("SPIN")
+        .style({ "font-weight": "bold", "font-size": "30px" });
+    </script>
+    
     
     <script src="js/main.js"></script>
     

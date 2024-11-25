@@ -82,6 +82,60 @@ function resetTimer() {
  //end of timer
 
 
+
+ // Program 4
+// Rumble word
+function shuffleWord(word) {
+    var array = word.split('');
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array.join('');
+}
+
+function setWord(word, idholder) {
+    const rumbWord = document.getElementById(idholder);
+    rumbWord.innerHTML = ""; // Clear existing content
+    for (let index = 0; index < word.length; index++) {
+        const temp = `<div class="relative max-w-xs border border-solid border-black rounded-2xl p-4 transition-all duration-500 col-span-12 xl:p-7 lg:col-span-3 md:col-span-6">
+                        <div class="mb-6 flex justify-center">
+                            <h1 class="font-extrabold text-6xl">${word[index].toUpperCase()}</h1>
+                        </div>
+                    </div>`;
+        rumbWord.innerHTML += temp; // Append instead of overwriting
+    }
+}
+
+function mainShuffle(){ 
+    const wordtorumble = document.getElementById('wordtorumble')
+    var word = wordtorumble.value
+
+    var w = shuffleWord(word)
+    setWord(w, 'rumbleWord') //set question
+
+    setWord(word, 'rumbleOrginal') //set Answer
+}
+
+function rumbleAction(action){
+    var rumbleShowAnswer = document.getElementById('rumbleShowAnswer')
+   
+    if(action == 'show'){
+        rumbleShowAnswer.classList.remove('hidden')
+    }
+
+    if(action == 'hide'){
+        rumbleShowAnswer.classList.add('hidden')
+    }
+}
+
+
+
+
+
+
 // Selector buttons
 // Banner
 const showAllbtn = document.getElementById("bshowbanner");
@@ -99,7 +153,30 @@ const prog4btn = document.getElementById('showProg4');
 const sidepanel = document.getElementById('showSide')
 
 
+
+
+
+
+
+
+
+//program 4 
+const rumbleAword = document.getElementById('rumbleAword')
+const rumbleAnswer = document.getElementById('rumbleAnswer')
+
+
+
 // Event Listeners
+
+//program 4
+
+rumbleAword.addEventListener('click', ()=> mainShuffle())
+rumbleAnswer.addEventListener('click', () => rumbleAction('show'))
+
+
+
+
+//test
 hidealltbn.addEventListener('click', hideAll);
 showAllbtn.addEventListener('click',() => showProgram('banner1'));
 sidepanel.addEventListener('click', () => hidesidebar('show'));
