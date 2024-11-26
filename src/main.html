@@ -17,6 +17,8 @@
     <button id="showSide" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Side</button>
     <button id="timerStart" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Start timer</button>
     <button id="timerReset" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Reset Timer</button>
+    <button id="SpinWheel" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Spin</button>
+    <button id="SpinHideQ" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Spin Hide Question</button>
 
     <div id="banner1" class=" border flex justify-center mt-20 hidden">
         <img class="contain-fill  border-8 border-yellow-600  w-[120rem]" src="/assets/banner24.gif" alt="banner">
@@ -283,7 +285,7 @@
                           <div class="group px-6 py-4 flex items-center justify-center">
                             <span class="  text-5xl font-extrabold text-green-950 leading-7">Roleta </span>
                           </div>
-                          <div class="border-x-2 border-gray-300 outline-none text-lg py-1 px-1">
+                          <div class=" border-gray-300 outline-none text-lg py-1 px-1">
                             <span class="text-black text-5xl font-extrabold leading-7">ng  </span>
                           </div>
                           <div class="group px-6 py-4 flex items-center justify-center">
@@ -293,23 +295,19 @@
                           <div class="flex-1 border-b border-gray-950"></div>
                       </div>
                   </div>
-                    <div class="flex justify-center border">
-                        <div class="contain-content border" id="chart">                
+                    <div class="flex justify-center ">
+                        <div  class="contain-content  " id="chart">                
                         </div>
-                        <div class="grid justify-items-center border w-[600px] h-[600px]" >
+                        <div id="question" class="grid justify-items-center  w-[600px] h-[600px] hidden " >
                             <div class="border-8 border-double border-green-900 w-20 h-20 flex justify-center items-center"> 
                                 <span id="numpic" class="h1 text-6xl">0</span>
                             </div>
-                            <div  class="">
-                                <h3 class="text-3xl font-bold" id="roletaQ"></h3>   
+                            <div  class="mt-1">
+                                <h3 class="text-3xl font-bold text-center" id="roletaQ"></h3>   
                             </div>
-                            <div class="mt-3">
-                              <h2 class="text-3xl font-bold" id="roleteAns"></h2>       
-                            </div>
-                            <audio controls>
-                              <source src="../assets/main/sound/kumpas.mp3" type="audio/mpeg">
-                              Your browser does not support the audio element.
-                          </audio>
+                            <div class="  ">
+                              <h2 class="text-3xl font-bold r" id="roleteAns"></h2>       
+                            </div>                            
                           
                         </div>
                     </div>
@@ -469,6 +467,10 @@
       const width = 600 - padding.left - padding.right;
       const height = 600 - padding.top - padding.bottom;
       const radius = Math.min(width, height) / 2;
+      const SpinBtn = document.getElementById('SpinWheel')
+      const quest = document.getElementById('question')
+      const chartdiv = document.getElementById('chart')
+      const spinword = document.getElementById('spinword')
     
       let rotation = 0;
       let oldRotation = 0;
@@ -567,6 +569,12 @@
             return (t) => `rotate(${interpolate(t)})`;
           })
           .each("end", () => {
+            //spinword.empty()
+            //spinword.textContent = data[picked].value;
+            //alert( data[picked].value)
+            chart.classList.add("animate-fadeInBottomRight")
+            quest.classList.remove("hidden")
+            //quest.classList.add("animate-fadeinleft")
             d3.select(`.slice:nth-child(${picked + 1}) path`).attr("fill", "#111");
             d3.select("#roletaQ").text(data[picked].question);
             d3.select("#roleteAns").text(data[picked].answer);
@@ -575,7 +583,7 @@
 
             /* Get the result value from object "data" */
             $('#numpic').empty().text(data[picked].value)
-            console.log(data[picked].value);
+            //container.text(data[picked].value)
 
             container.on("click", spin);
           });
@@ -601,7 +609,14 @@
         .attr("y", 15)
         .attr("text-anchor", "middle")
         .text("SPIN")
+        .attr('id', 'spinword')
         .style({ "font-weight": "bold", "font-size": "30px" });
+        //.setAttribute('id', 'spinword');
+
+
+
+      
+      SpinBtn.addEventListener('click' , () =>  spin() )
     </script>
     
     
