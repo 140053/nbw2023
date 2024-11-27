@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Panel</title>
+    <title>Dashboard Panel</title>
     <link rel="stylesheet" href="css/dash.css">
     <link rel="stylesheet" href="../node_modules/pagedone/src/css/pagedone.css">
     
@@ -16,21 +16,15 @@
                 <div class="container flex justify-center">
                     <hr class="">
                     <div class="flex flex-col justify-center mt-5">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Show Banner</button>
-                        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Hide</button>
-                        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
-                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
-                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
-                        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
-                        <button type="button" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Yellow</button>
-                        <button type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
+                        <button onclick="btncorrect()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Correct</button>
+                       
                     </div>
                 </div>
                     
             </div>
-            <div class="border border-black container ">
+            <div class="border border-black w-full ">
                 <!-- Main Panel  -->
-                <div class="container">
+                <div class="w-full">
                     <div class="flex font-bold justify-center">
                         <h2 class="text-4xl">Main Panel</h2>                        
                     </div> 
@@ -50,18 +44,19 @@
                         <span class="flex-shrink mx-1 text-blue-900">Tabs</span>
                         <div class="flex-grow border-t border-blue-900"></div>
                     </div>
-                     <div class="container">
+                     <div class="w-full">
                         <div class="tabs">
                             <div class="flex ml-3 mr-3">
                                 <ul class="flex justify-between flex-wrap transition-all duration-300 overflow-hidden">
-                                    <li>
+                                    <li class="hidden">
                                         <a href="javascript:void(0)"
                                             class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl active tablink"
                                             data-tab="tabs-with-card-1" role="tab"> Main tab </a>
                                     </li>
-                                    <li>
+                                    <li >
                                         <a href="javascript:void(0)"
-                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink"
+                                            class="inline-block py-3 px-6 text-gray-500 hover:text-gray-800 font-medium  tab-active:bg-indigo-600 tab-active:text-white tab-active:rounded-t-2xl tablink active"
+                                            onclick="alert('l')"
                                             data-tab="tabs-with-card-2" role="tab"> Gimme 5 </a>
                                     </li>
                                     <li>
@@ -87,7 +82,7 @@
                                 <div class="flex-grow border-t border-blue-900"></div>
                             </div>
                             <div class=" ml-3 mr-3">
-                                <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1" class="tabcontent">
+                                <div id="tabs-with-card-1" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-1" >
                                     <p class="text-gray-500 "> Main <em class="font-semibold text-gray-800 ">first</em> item's tab body. </p>
                                     <div class="container border p-5">
                                         <div class='  flex justify-center gap-8'>
@@ -101,44 +96,478 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div id="tabs-with-card-2" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
-                                    <p class="text-gray-500 ">  <em class="font-semibold text-gray-800 ">Gimme 5: Pinoy Henyo</em> 
-                                    </p>
-                                    <div class="columns-3">
-                                        <div class="container">
-                                            <div class="col-span-1 ">
+                                <div id="tabs-with-card-2" class=" tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
+                                    <p class="text-gray-500 ">  <em class="font-semibold text-gray-800 ">Gimme 5: Pinoy Henyo</em></p>
+                                    <button onclick="activateProg('prog1')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Activate</button>
+                                    <div id="prog1-control" class="hidden">
+                                        <div class="w-full border-5 border-black">
+                                            <p class="text-2xl">Banner</p>
+                                            <div class="flex  w-full ">
+                                                <button id="prog-one-show-banner" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Banner </button>
+                                                <button id="prog-one-hide-banner" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Banner </button>                                            
+                                            </div>
+                                           
+                                        </div>
+                                        <p class="text-2xl">Teams</p>
+                                        <div class="w-full flex flex-row gap-5 mt-5">
+                                            <div class="container border-4">
                                                 <div class="relative flex items-center">
                                                     <div class="flex-grow border-t border-blue-900"></div>
-                                                    <span class="flex-shrink mx-1 text-blue-900">Team 1</span>
+                                                    <span class="flex-shrink mx-1 text-blue-900 text-2xl">Team 1</span>
                                                     <div class="flex-grow border-t border-blue-900"></div>
+                                                </div>
+                                                <div class="flex flex-row">
+                                                    <button onclick="sendUtil('prog1', 'teamOne', 'show')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Present</button>
+                                                    <button onclick="sendUtil('prog1', 'teamOne', 'play')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Play</button>
+                                                    <button onclick="sendUtil('prog1', 'teamOne', 'hide')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                </div>
+                                            </div>
+                                            <div class="container border-4">
+                                                <div class="relative flex items-center">
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                    <span class="flex-shrink mx-1 text-blue-900 text-2xl">Team 2</span>
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                </div>
+                                                <div class="flex flex-row">
+                                                    <button onclick="sendUtil('prog1', 'teamTwo', 'show')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Present</button>
+                                                    <button onclick="sendUtil('prog1', 'teamTwo', 'play')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Play</button>
+                                                    <button onclick="sendUtil('prog1', 'teamTwo', 'hide')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                </div>
+                                            </div>
+                                            <div class="container border-4">
+                                                <div class="relative flex items-center">
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                    <span class="flex-shrink mx-1 text-blue-900 text-2xl">Team 3</span>
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                </div>
+                                                <div class="flex flex-row">
+                                                    <button onclick="sendUtil('prog1', 'teamThree', 'show')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Present</button>
+                                                    <button onclick="sendUtil('prog1', 'teamThree', 'play')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Play</button>
+                                                    <button onclick="sendUtil('prog1', 'teamThree', 'hide')" id="prog-one-team-one-hide" type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Round-->
+                                        <div class="border mt-2">
+                                            <p class="text-2xl">Round 1</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="sendUtil('prog1', 'round1', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Round </button>
+                                                <button onclick="sendUtil('prog1', 'round1', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Round </button>                                            
+                                            </div>
+    
+                                        </div>
+                                        <!-- Category-->
+                                        <div class="border mt-2">
+                                            <p class="text-2xl">Category 1</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="ShowHideCat('category1', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Category </button>
+                                                <button onclick="ShowHideCat('category1', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Category </button>                                            
+                                            </div>
+                                            
+                                            <div id="category1-list" class=" hidden">
+                                                <p>category list</p>
+                                                <div class="mt-2 flex w-full">
+                                                    <button onclick="sendUtil('prog1', 'cat1', 'one')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Library </button>
+                                                    <button onclick="sendUtil('prog1', 'cat1', 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">CBSUA </button>
+                                                    <button onclick="sendUtil('prog1', 'cat1', 'three')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Places </button>
+                                                    <button onclick="sendUtil('prog1', 'cat1', 'four')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Natural Phenomenon </button>
+                                                    <button onclick="sendUtil('prog1', 'cat1', 'five')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Astronomy </button>
+                                                    
                                                 </div>
                                                 
                                             </div>
-                                             <div class="col-span-1 ">
-                                                <div class="relative flex items-center">
-                                                    <div class="flex-grow border-t border-blue-900"></div>
-                                                    <span class="flex-shrink mx-1 text-blue-900">Team 2</span>
-                                                    <div class="flex-grow border-t border-blue-900"></div>
-                                                </div>
-                                                
+    
+                                        </div>
+                                        <!-- Timer-->
+                                         <div class="border mt-2">
+                                            <p class="text-2xl">Timer Round 1</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="sendUtil('prog1', 'timer', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-blue-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Timer </button>
+                                                <button onclick="sendUtil('prog1', 'timer', 'start')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Timer Start </button>
+                                                <button onclick="sendUtil('prog1', 'timer', 'reset')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-red-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Timer Reset</button>
+                                                <button onclick="sendUtil('prog1', 'timer', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Timer </button>                                            
                                             </div>
-                                             <div class="col-span-1 ">
-                                                <div class="relative flex items-center">
-                                                    <div class="flex-grow border-t border-blue-900"></div>
-                                                    <span class="flex-shrink mx-1 text-blue-900">Team 3</span>
-                                                    <div class="flex-grow border-t border-blue-900"></div>
+    
+                                        </div>
+                                        <!-- Question-->
+                                        <div class="w-full mt-3 border">
+                                            <p class="text-2xl">Round 1 Question</p>
+                                            <div class="w-full grid grid-cols-5 gap-5 mt-5">
+                                                <div id="qq1" class=" container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 1 Library</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ('qq1', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ('qq1', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qq1-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qq1-qt" class="text-center">5 Learning Rooms in Learning Commons</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Lecture Room</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Faculty Room</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">GS Room</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Discussion Room</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">AVR Room</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Client Lounge</button>                                                           
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Board Games</button>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
+                                                <div id="qq2" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 2 CBSUA</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ('qq2', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ('qq2', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qq2-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qq2-qt" class="text-center">5 Colleges in Pili Campus</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CANR</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CVM</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CDE</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CEM</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CEFS</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">CAS</button>                                                           
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="qq3" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 3 Places</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ('qq3', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ('qq3', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qq3-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qq3-qt" class="text-center">5 Continents</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Asia</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Africa</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">North America</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">South America</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Antartica</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Europe</button>                                                           
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Autralia</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="qq4" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2" >
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Catgeory 4 Natural Phenomenon</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ('qq4', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ('qq4', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qq4-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qq4-qt" class="text-center">5 name of Typhon in 2024</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Aghon</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Butchoy</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Camina</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Dindo</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Enteng</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Ferdie</button>                                                           
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Gener</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Helen</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Igmi</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Julian</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Kristine</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Leon</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Marce</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Nika</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Ofel</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Pepito</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="qq5" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 5 Astronomy</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ('qq5', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ('qq5', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qq5-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qq5-qt" class="text-center">5 Planets in the Solar System</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Mercury</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Venus</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Earth</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Mars</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Jupiter</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Saturn</button>                                                           
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Uranos</button>
+                                                            <button  onclick="SelectAns(this.innerText, 'one')" type="button" class="text-white bg-black hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium border rounded-full text-lg px-10 py-5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Neptune</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                    
                                                 
                                             </div>
                                         </div>
-                                       
-                                       
+
+
+                                         <!-- Round-->
+                                         <div class="border mt-2">
+                                            <p class="text-2xl">Round 2</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="sendUtil('prog1', 'round2', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Round </button>
+                                                <button onclick="sendUtil('prog1', 'round2', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Round </button>                                            
+                                            </div>
+    
+                                        </div>
+
+                                         <!-- Category-->
+                                         <div class="border mt-2">
+                                            <p class="text-2xl">Category 2</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="ShowHideCat('category2', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Category </button>
+                                                <button onclick="ShowHideCat('category2', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Category </button>                                            
+                                            </div>
+                                            
+                                            <div id="category2-list" class=" hidden">
+                                                <p>category list</p>
+                                                <div class="mt-2 flex w-full">
+                                                    <button onclick="sendUtil('prog1', 'cat2', 'one')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Library </button>
+                                                    <button onclick="sendUtil('prog1', 'cat2', 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Fruits </button>
+                                                    <button onclick="sendUtil('prog1', 'cat2', 'three')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Places </button>
+                                                </div>
+                                                
+                                            </div>
+    
+                                        </div>
+
+                                        <!-- Timer-->
+                                        <div class="border mt-2">
+                                            <p class="text-2xl">Timer Round 2</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="sendUtil('prog1', 'timer2', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-blue-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Timer </button>
+                                                <button onclick="sendUtil('prog1', 'timer2', 'start')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Timer Start </button>
+                                                <button onclick="sendUtil('prog1', 'timer2', 'reset')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-red-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Timer Reset</button>
+                                                <button onclick="sendUtil('prog1', 'timer2', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Timer </button>                                            
+                                            </div>
+    
+                                        </div>
+
+                                        <!-- Question-->
+                                        <div class="w-full mt-3 border">
+                                            <p class="text-2xl">Round 2 Question</p>
+                                            <div class="w-full grid grid-cols-3 gap-5 mt-5">
+                                                <div id="qqq1" class=" container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 1 Library</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ2('qqq1', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ2('qqq1', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qqq1-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qqq1-qt" class="text-center">5 Printed Learning Materials</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Book</button>
+                                                                <button onclick="HulaAns('Book')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Encyclopedia</button>
+                                                                <button onclick="HulaAns('Encyclopedia')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Dictionary</button>
+                                                                <button onclick="HulaAns('Dictionary')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                           
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Thesis</button>
+                                                                <button onclick="HulaAns('Thesis')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Magazines </button>
+                                                                <button onclick="HulaAns('Magazines')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="qqq2" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 2 FRUITS</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ2('qqq2', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ2('qqq2', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qqq2-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qqq2-qt" class="text-center">5 Fruits</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Kiwi </button>
+                                                                <button onclick="HulaAns('Kiwi')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Durian </button>
+                                                                <button onclick="HulaAns('Durian')"class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Cacao </button>
+                                                                <button onclick="HulaAns('Cacao')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Pomelo </button>
+                                                                <button onclick="HulaAns('Pomelo')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Mangosteen </button>
+                                                                <button onclick="HulaAns('Mangosteen')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            
+                                                                                                                      
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div id="qqq3" class="container border-4">
+                                                    <div class="relative flex items-center mt-2 mb-2">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900 text-2xl">Category 3 Places</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
+                                                    <div class="flex flex-row">
+                                                        <button onclick="selectQ2('qqq3', 'activate')"  type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Select</button>
+                                                        <button onclick="selectQ2('qqq3', 'deactivate')"  type='button' class='py-2.5 px-6 text-sm rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 w-full'>Hide</button>
+                                                    </div>
+                                                    <div id="qqq3-q" class=" hidden">
+                                                        <p class="text-center">Question:</p>
+                                                        <p id="qqq3-qt" class="text-center">5 Continents</p>
+                                                        <div class="flex flex-col justify-center mt-5 gap-5">
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Hongkong </button>
+                                                                <button onclick="HulaAns('Hongkong')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Albay </button>
+                                                                <button onclick="HulaAns('Albay')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Boracay </button>
+                                                                <button onclick="HulaAns('Boracay')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Saudi Arabia </button>
+                                                                <button onclick="HulaAns('SaudiArabia')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            <div class="flex  w-full mt-2">
+                                                                <button onclick="SelectAns(this.innerText, 'two')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Siruma </button>
+                                                                <button onclick="HulaAns('Siruma')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hula </button>                                            
+                                                            </div>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                
+                                                    
+                                                
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <!-- Score Board-->
+                                        <div class="border mt-10">
+                                            <p class="text-2xl">Score Board</p>
+    
+                                            <div class="flex  w-full mt-2">
+                                                <button onclick="sendUtil('prog1', 'score', 'show')"  class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-green-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Round </button>
+                                                <button onclick="sendUtil('prog1', 'score', 'hide')" class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Round </button>                                            
+                                            </div>
+    
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+
                                     </div>
+                                    
+                                    
                                 </div>
                                 <div id="tabs-with-card-3" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
                                     <p class="text-gray-500 ">  <em class="font-semibold text-gray-800 "> Roleta the Swerte Controll </em> 
                                     </p>
-                                    <div class="container ">
+                                    <button onclick="activateProg('prog2')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Activate</button>
+                                    <div id="prog2-control" class="container hidden ">
+
+                                        <div class="w-full border-5 border-black">
+                                            <p class="text-2xl">Banner</p>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog2', 'banner', 'show')" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Banner </button>
+                                                <button onclick="sendUtil('prog2', 'banner', 'hide')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Banner </button>                                            
+                                            </div>
+                                           
+                                        </div>
                                         <div class="columns-2">
                                             <div class="border flex flex-col justify-items-center w-full gap-3  py-2 px-2">
                                                  
@@ -150,53 +579,219 @@
                                                 
                                              
                                                                                               
-                                                <button type='button' class='  py-3 px-7  text-base max-h-max bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center  shadow-xs transition-all duration-500 hover:bg-indigo-700'>Show</button>
-                                                <button type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Spin</button>
-                                                <button type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Hide</button>
+                                                <button onclick="sendUtil('prog2', 'wheel', 'show' )" type='button' class='  py-3 px-7  text-base max-h-max bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center  shadow-xs transition-all duration-500 hover:bg-indigo-700'>Show</button>
+                                                <button onclick="sendUtil('prog2', 'wheel', 'spin' )" type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Spin</button>
+                                                <button onclick="sendUtil('prog2', 'wheel', 'hide' )" type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Hide</button>
                                         
                                             </div>
                                             <div class="border flex flex-col w-full gap-3 py-2 px-2 ">
-                                                 <div class="col-span-1 ">
-                                                <div class="relative flex items-center">
-                                                    <div class="flex-grow border-t border-blue-900"></div>
-                                                    <span class="flex-shrink mx-1 text-blue-900">Team 1</span>
-                                                    <div class="flex-grow border-t border-blue-900"></div>
-                                                </div>
+                                                <div class="col-span-1 ">
+                                                    <div class="relative flex items-center">
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                        <span class="flex-shrink mx-1 text-blue-900">Control</span>
+                                                        <div class="flex-grow border-t border-blue-900"></div>
+                                                    </div>
                                                 
-                                            </div>                                            
-                                                <button type='button' class='  py-3 px-7  text-base max-h-max bg-indigo-500 text-white rounded-full cursor-pointer font-semibold text-center  shadow-xs transition-all duration-500 hover:bg-indigo-700'>Show Question </button>
-                                                <button type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Show Answer</button>
-                                                <button type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Reset</button>
+                                                </div>
+                                            <button onclick="sendUtil('prog2', 'Answer', 'hide')" type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>!!</button>
+                                                <button onclick="sendUtil('prog2', 'Answer', 'show')" type='button' class='  py-3 px-7  rounded-full bg-green-500 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-green-700'>Show Answer</button>
+                                                <button onclick="sendUtil('prog2', 'Answer', 'hide')" type='button' class='  py-3 px-7  rounded-full bg-gray-700 text-white cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900'>Reset</button>
                                         
                                             </div>
                                            
+                                           
+                                        </div>
+                                        <div class="border w-full">
+                                            <div class="col-span-1 ">
+                                                <div class="relative flex items-center">
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                    <span class="flex-shrink mx-1 text-blue-900">Player</span>
+                                                    <div class="flex-grow border-t border-blue-900"></div>
+                                                </div>
+                                                
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">1 Kumpas by Moira De la Torre</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm1')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm1')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm1')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm1')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">2 Ere by Juan Karlos</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm2')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm2')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm2')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm2')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">3 Heaven Knows by Orange & Lemon</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm3')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm3')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm3')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm3')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">4 Mahika Janine Berdin Adie</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm4')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm4')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm4')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm4')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">5 Palagi by Tj And KZ</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm5')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm5')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm5')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm5')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">6  Lihim Arthur Miguel</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm6')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm6')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm6')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm6')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">7 Dito ka lang by  Moira Dela Torre</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm7')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm7')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm7')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm7')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">8 Raining in Manila by Lola Amour</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm8')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm8')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm8')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm8')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">9 Selos by Shaira</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm9')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm9')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm9')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm9')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="flex flex-row p-5">
+                                                    <h1 class="w-full">10 Sarong bilog by Diamond Agricula</h1> 
+                                                    <div class="flex justify-center w-full">
+                                                        <button onclick="PlayMusic('play', 'm10')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Play</button>
+                                                        <button onclick="PlayMusic('pause', 'm10')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Pause </button>
+                                                        <button onclick="PlayMusic('resume', 'm10')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Resume </button>
+                                                        <button onclick="PlayMusic('stop', 'm10')" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all text-sm "> Stop </button>
+                                                    </div>
+
+                                                </div>
+
+                                            
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="tabs-with-card-4" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-4">
                                     <p class="text-gray-500 "><em class="font-semibold text-gray-800 ">Question and Answer</em> 
                                     </p>
-                                    <div class="container border  ">
+                                    <button onclick="activateProg('prog3')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Activate</button>
+                                    
+                                    <div id="prog3-control" class="container border  ">
+                                        <div class="w-full border-5 border-black mt-5 mb-5">
+                                            <p class="text-2xl">Banner</p>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'banner', 'show')" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Banner </button>
+                                                <button onclick="sendUtil('prog3', 'banner', 'hide')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Banner </button>                                            
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="w-full border-5 border-black mt-5 mb-5">
+                                            <p class="text-2xl">Question And Answer</p>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">CBSUA Charter Anniversary Celebrated what month? </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> October  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Complete name of the CBSUA President </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Alberto N. Naperi, DPA  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Ano ang buong pangalan ng ating University Librarian </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Rowena R. Manaog, MLS </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">University Vision </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> An Agricultural Research University of Global Standards  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">University Mission </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Leading innovation, Building Resilient and sustainable communities   </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">When did typhoon Kristine occur in the Bicol Region? </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> October 22, 2024  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">When was the CSSAC converted to CBSUA, including the month, date, and year? </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">By virtue of RA.9717 
+                                                    CSSAC converted to CBSUA on October 30, 2009
+                                                     </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Who is the Campus Administrator of Pili Campus? </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Allan B. Del Rosario, PhD  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Who was the first president to convert CSSAC into CBSUA?" </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Atty. Marito T. Bernales  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">How many books are students allowed to borrow? </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> 3 books  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                            <div class="flex  w-full ">
+                                                <button onclick="sendUtil('prog3', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">How many Personnel does the library have?  </button>
+                                                <button onclick="sendUtil('prog3', 'Anser', this.innerText)"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> 7 Personnel  </button>       
+                                                <button onclick="sendUtil('prog3', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                            </div>
+                                           
+                                        </div>
                                         
-                                        <ul class=" flex flex-col gap-2">
-                                            <li class="flex flex-row gap-5 items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg "> 
-                                                <div class="border p-2">
-                                                    <h2>CBSUA</h2>
-                                                    <h1><span class="font-thin">Question 1:</span> CBSUA Charter Anniversary Celebrated what month? </h1>
-                                                </div>
-                                                
-                                                <div class="border p-2 w-60">
-                                                    <h2>Answer:</h2>
-                                                    <h1>October </h1>
-                                                </div>
-                                                <div class=" border p-2 w-full">
-                                                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-gray-200 text-gray-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-gray-900 hover:text-white'>Button</button>
-                                                </div>
-                                            </li>
-                                            <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg "> Profile </li>
-                                            <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg "> Messages </li>
-                                            <li class="inline-flex items-center gap-x-2 py-3 px-4 text-sm font-semibold bg-white border border-gray-300 hover:text-indigo-600 transition-all duration-300 text-gray-900 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg "> Settings </li>
-                                        </ul>
 
 
                                         
@@ -205,55 +800,67 @@
                                 <div id="tabs-with-card-5" class="hidden tabcontent" role="tabpanel" aria-labelledby="tabs-with-card-item-4">
                                     <p class="text-gray-500 "><em class="font-semibold text-gray-800 ">Rainbow Rumble Controll</em> 
                                     </p>
-                                    <div class="container">
-                                        <div class='accordion-group' data-accordion="default-accordion">
-                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl transition duration-500 accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-one-with-icon'>
-                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-one-with-icon'>
-                                                <h5> How can I reset my password? </h5>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600 origin-center' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                </button>
-                                                <div id='basic-collapse-one-with-icon' class='accordion-content w-full  overflow-hidden pr-4' aria-labelledby='basic-heading-one'>
-                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
-                                                </div>
-                                            </div>
+                                    <button onclick="activateProg('prog4')" id="prog-one-team-one-present" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-full">Activate</button>
+                                    
 
-
-                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl  accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-two-with-icon'>
-                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-two-with-icon'>
-                                                <h5> How do I update my billing information? </h5>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                </button>
-                                                <div id='basic-collapse-two-with-icon' class='accordion-content w-full  overflow-hidden   pr-4' aria-labelledby='basic-heading-two'>
-                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
-                                                </div>
-                                            </div>
-
-
-                                            <div class='accordion border border-solid border-gray-300 p-4 rounded-xl accordion-active:bg-indigo-50 accordion-active:border-indigo-600 mb-8 lg:p-4' id='basic-heading-three-with-icon'>
-                                                <button class='accordion-toggle group  inline-flex items-center justify-between text-left text-base leading-8 text-gray-900 w-full transition duration-500 hover:text-indigo-600 accordion-active:text-indigo-600 ' aria-controls='basic-collapse-three-with-icon'>
-                                                <h5> How can I contact customer support? </h5>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 block accordion-active:text-indigo-600 accordion-active:hidden group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18M12 18V6' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                <svg class='w-6 h-6 text-gray-900 transition duration-500 hidden accordion-active:text-indigo-600 accordion-active:block group-hover:text-indigo-600' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path d='M6 12H18' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
-                                                </svg>
-                                                </button>
-                                                <div id='basic-collapse-three-with-icon' class='accordion-content w-full  overflow-hidden   pr-4 ' aria-labelledby='basic-heading-three'>
-                                                <p class='text-base text-gray-900 leading-6'>To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.</p>
-                                                </div>
-                                            </div>
+                                    <div class="w-full border-5 border-black mt-5 mb-5">
+                                        <p class="text-2xl">Banner</p>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'banner', 'show')" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">Show Banner </button>
+                                            <button onclick="sendUtil('prog4', 'banner', 'hide')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> hide Banner </button>                                            
                                         </div>
+                                       
+                                    </div>
+
+                                    <div id="prog4-control" class="container">
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">PERIODICAL</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">CLEANLINESS</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">WATCH</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                       
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">LEARNING</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">ROWENA</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">BOOK-CARD</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">ATTENDANCE</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">BULLETIN</button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+                                        <div class="flex  w-full ">
+                                            <button onclick="sendUtil('prog4', 'question', this.innerText)" class="py-4 px-3 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm ">TECHNICAL </button>
+                                            <button onclick="sendUtil('prog4', 'Anser', 'show')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-white text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> show Anser  </button>       
+                                            <button onclick="sendUtil('prog4', 'reset', 'reset')"  class="py-3 px-4 flex-1 inline-flex justify-center items-center gap-2 -ml-px first:rounded-l-lg first:ml-0 last:rounded-r-lg border font-medium bg-yellow-500 text-gray-900 align-middle hover:bg-gray-900 hover:text-white focus:z-10 focus:outline-none   transition-all text-sm "> Reset  </button>                                                                                 
+                                        </div>
+
+                                        
 
                                         
                                         
@@ -269,14 +876,9 @@
                 <div class="container flex justify-center">
                     <hr class="">
                     <div class="flex flex-col justify-center mt-5">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Default</button>
-                        <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button>
-                        <button type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Dark</button>
-                        <button type="button" class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Light</button>
-                        <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
-                        <button type="button" class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
-                        <button type="button" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900">Yellow</button>
-                        <button type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
+                        <button onclick="WrongSound()" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Wrong</button>
+                        
+                        <button onclick="WrongSound()" type="button" class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Wrong</button>
                     </div>
                 </div>
             </div>
@@ -285,6 +887,6 @@
 
     <!-- script -->
 <script src="../node_modules/pagedone/src/js/pagedone.js"></script>
-
+<script  src="js/dash.js"></script>
 </body>
 </html>

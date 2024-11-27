@@ -13,15 +13,13 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 // Serve HTML for the sender and receiver
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/src/dash.html');
 });
 
-app.get('/receiver', (req, res) => {
-  res.sendFile(__dirname + '/receiver.html');
+app.get('/main', (req, res) => {
+  res.sendFile(__dirname + '/src/main.html');
 });
-app.get('/spin', (req, res) => {
-  res.sendFile(__dirname + '/src/spin.html');
-});
+
 
 wss.on('connection', (ws) => {
   console.log('Client connected');

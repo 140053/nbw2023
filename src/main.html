@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body class="bg-[url('/assets/background.png')]  bg-fixed bg-cover " >
+  <div class="hidden">
     <button id="hideall" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"  >hideall</button>
     <button id="bshowbanner" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >showbanner</button>
 
@@ -19,7 +20,7 @@
     <button id="timerReset" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Reset Timer</button>
     <button id="SpinWheel" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Spin</button>
     <button id="SpinHideQ" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" >Spin Hide Question</button>
-
+</div>
     <div id="banner1" class=" border flex justify-center mt-20 hidden">
         <img class="contain-fill  border-8 border-yellow-600  w-[120rem]" src="/assets/banner24.gif" alt="banner">
     </div>
@@ -28,17 +29,18 @@
             <div id="banl" class="border hidden">
                 <img src="/assets/h1.png" alt="h1" class="w-28" >
             </div>
-            <div id="prog1" class="border container  w-full  "> 
+            <div id="prog1" class="border container  w-full  hidden"> 
               <!-- Banner -->
-              <div class="w-full ">
+              <div id="prog-one-banner" class="w-full hidden">
                 <div class="flex justify-center">
                   <img src="../assets/main/gimme5.gif" alt="banner" class="object-fill" >  
                 </div>
               </div>
 
               <div id="progMain" class="container  "> 
+                        
                 <!-- Header --> 
-                <div class="container w-full mx-auto mt-3">
+                <div id="prog-one-header" class="container w-full mx-auto mt-3">
                     <div class="flex w-full items-center rounded-full h-14">
                         <div class="flex-1 border-b border-gray-950"></div>
                         <button class="flex items-center justify-center rounded-full border border-gray-950">
@@ -56,8 +58,32 @@
                     </div>
                 </div>
                 
+                <div id="prog-one-team-one" class=" w-full hidden ">
+                  <div class="container  flex flex-col justify-center border-8 mt-5 rounded-3xl border-green-600 ">
+                    <h4 class="text-4xl font-extrabold text-green-800 mt-20 mb-3 ml-5">Team 1</h4>
+                    <h1 id="prog-one-team-one-name" class="text-9xl font-extrabold text-green-800 mt-15 mb-3 text-center">Team Payaman</h1>
+                    <h3 id="prog-one-team-one-member" class="text-5xl font-semibold text-center mb-16 font-serif  text-green-800">Juan, Pedro, Ramon </h3>
+                  </div>
+                </div>
+                
+                 <div id="prog-one-team-two" class=" w-full hidden">
+                  <div class="container  flex flex-col justify-center border-8 mt-5 rounded-3xl border-green-600 ">
+                    <h4 class="text-4xl font-extrabold text-green-800 mt-20 mb-3 ml-5">Team 2</h4>
+                    <h1 id="prog-one-team-two-name" class="text-9xl font-extrabold text-green-800 mt-15 mb-3 text-center">Team Kiray</h1>
+                    <h3 id="prog-one-team-two-member" class="text-5xl font-semibold text-center mb-16 font-serif  text-green-800">Juan, Pedro, Ramon </h3>
+                  </div>
+                </div>
+                
+                <div id="prog-one-team-three" class=" w-full hidden">
+                  <div class="container  flex flex-col justify-center border-8 mt-5 rounded-3xl border-green-600 ">
+                    <h4 class="text-4xl font-extrabold text-green-800 mt-20 mb-3 ml-5">Team 2</h4>
+                    <h1 id="prog-one-team-three-name" class="text-9xl font-extrabold text-green-800 mt-15 mb-3 text-center">Team Dagol</h1>
+                    <h3 id="prog-one-team-three-member" class="text-5xl font-semibold text-center mb-16 font-serif  text-green-800">Juan, Pedro, Ramon </h3>
+                  </div>
+                </div>
+                
                 <!-- Gimme 5 main Round 1 -->
-                <div class=" w-full ">
+                <div id="prog-one-round-one-banner" class=" w-full hidden ">
                   <div class="container  flex flex-col justify-center border-8 mt-5 rounded-3xl border-green-600 ">
                     <h1 class="text-9xl font-extrabold text-green-800 mt-20 mb-3 text-center">Round <span>1</span></h1>
                     <h3 class="text-5xl font-semibold text-center mb-16 font-serif  text-green-800">Elimination Round </h3>
@@ -65,11 +91,11 @@
                 </div>
                 
                <!-- Category -->
-                <div class=" container mt-5 w-full   ">
+                <div id="prog-one-round-one-category" class=" container mt-5 w-full hidden  ">
                     <h2 class="text-5xl text-center font-bold">Category </h2>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-5 px-2 py-2 mt-3 justify-items-center">
                         
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                        <div id="catOne-one"   class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
                             <div class="flex justify-center overflow-hidden">
                                 <img src="../assets/main/library.webp" alt="Card image"  />
                             </div>
@@ -78,7 +104,7 @@
                             </div>
                         </div>
 
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                        <div id="catOne-two" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
                             <div class=" overflow-hidden flex justify-center mt-2">
                                 <img src="../assets/main/cbsua.png" alt="Card image" />
                             </div>
@@ -86,23 +112,23 @@
                                 <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">CBSUA</h4>     
                             </div>
                         </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                        <div id="catOne-three" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
                             <div class=" overflow-hidden flex justify-center">
-                                <img src="../assets/main/science.png" alt="Card image" class="mt-2" style="width: 55%;" />
+                                <img src="../assets/main/places.png" alt="Card image" class="mt-2" style="width: 55%;" />
                             </div>
                             <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Science</h4>     
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Places</h4>     
                             </div>
                         </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                        <div id="catOne-four" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
                             <div class="flex justify-center overflow-hidden">
-                                <img src="../assets/main/agriculture.png" alt="Card image" class="object-contain" />
+                                <img src="../assets/main/pheno.webp" alt="Card image" class="object-contain" />
                             </div>
                             <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Agriculture</h4>     
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Natural Phenomenon</h4>     
                             </div>
                         </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                        <div id="catOne-five" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
                             <div class="block overflow-hidden">
                                 <img src="../assets/main/astronomy.png" alt="Card image" />
                             </div>
@@ -116,22 +142,35 @@
                 
 
                 <!--Timer -->
-                <div class="w-full mt-3 ">
+                <div id="prog-one-timmer" class="w-full mt-3 hidden">
                   <div class="flex items-start justify-center w-full gap-4 count-down-main">                   
                     <div class="timer w-60">
                       <div class=" bg-indigo-600 py-10 px-10 rounded-lg overflow-hidden ">
                         <h3
-                          id="timer"
+                          id="second"
                           class="countdown-element seconds font-Cormorant font-semibold text-8xl text-white text-center animate-countinsecond">00
                         </h3>
                         <p class="text-2xl font-Cormorant font-normal text-white mt-1 text-center w-full">seconds</p>
                       </div>
                       
+                      
                     </div>
+                    <div class="timer w-60">
+                      <div class=" bg-indigo-600 py-10 px-10 rounded-lg overflow-hidden ">
+                        <h3
+                          id="milisecond"
+                          class="countdown-element seconds font-Cormorant font-semibold text-8xl text-white text-center animate-countinsecond">00
+                        </h3>
+                        <p class="text-2xl font-Cormorant font-normal text-white mt-1 text-center w-full">miliseconds</p>
+                      </div>
+                      
+                      
+                    </div>
+                    
                   </div>                                        
                 </div>
-                <!-- Question -->
-                <div class="w-full mt-3">
+                <!-- Question 1 -->
+                <div id="prog-one-round-one-question" class="w-full mt-3 hidden">
                   <div class="w-full relative flex items-center justify-center h-auto">
                     <div
                       class="group bg-white shadow-lg shadow-gray-200 rounded-xl p-2.5 transition-all duration-500 w-1/2 hover:shadow-gray-300">
@@ -173,12 +212,12 @@
                             <span class="text-md font-medium text-gray-800">Regulay Points</span>
                           </div>
                         </div>
-                        <p class="text-base font-medium text-gray-500 mb-4 text-left">
+                        <p id="qholder" class="text-3xl font-extrabold text-gray-500 mb-4 text-left">
                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam deserunt iusto quos autem
                           dolorum possimus, laborum ad impedit, error, neque ducimus tenetur ea veniam perferendis
                           numquam illum.
                         </p>
-                        <div class="flex items-center justify-start w-full gap-4 mb-4">
+                        <div id="ansholder" class="flex items-center justify-start w-full gap-4 mb-4">
                           <button
                             class="rounded-lg py-2.5 px-6 text-center w-full text-white bg-indigo-600 font-semibold text-lg transition-all duration-500 hover:bg-indigo-700">
                             Answer<br /><span class="font-thin text-sm">2 Sec</span>
@@ -210,8 +249,8 @@
                 </div>
                 
                 
-                <!-- Gimme 5 main Round 2 -->
-                <div class=" w-full ">
+                
+                <div id="prog-one-round-two-banner" class=" w-full hidden ">
                   <div class="container  flex flex-col justify-center border-8 mt-5 rounded-3xl border-green-600 ">
                     <h1 class="text-9xl font-extrabold text-green-800 mt-20 mb-3 text-center">Round <span>2</span></h1>
                     <h3 class="text-5xl font-semibold text-center mb-16 font-serif  text-green-800">Final Round </h3>
@@ -220,11 +259,11 @@
                 
                 
                 <!-- Category -->
-                <div class=" container mt-5 w-full   ">
+                <div id="prog-one-round-two-category" class=" container mt-5 w-full hidden   ">
                     <h2 class="text-5xl text-center font-bold">Category </h2>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-5 px-2 py-2 mt-3 justify-items-center">
                         
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                        <div id="catTwo-one" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
                             <div class="flex justify-center overflow-hidden">
                                 <img src="../assets/main/library.webp" alt="Card image"  />
                             </div>
@@ -233,43 +272,28 @@
                             </div>
                         </div>
 
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
+                        <div id="catTwo-two" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 w-full ">
                             <div class=" overflow-hidden flex justify-center mt-2">
                                 <img src="../assets/main/cbsua.png" alt="Card image" />
                             </div>
                             <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">CBSUA</h4>     
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Fruits</h4>     
                             </div>
                         </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
+                        <div id="catTwo-three" class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
                             <div class=" overflow-hidden flex justify-center">
-                                <img src="../assets/main/science.png" alt="Card image" class="mt-2" style="width: 55%;" />
+                                <img src="../assets/main/places.png" alt="Card image" class="mt-2" style="width: 55%;" />
                             </div>
                             <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Science</h4>     
+                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Places</h4>     
                             </div>
                         </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
-                            <div class="flex justify-center overflow-hidden">
-                                <img src="../assets/main/agriculture.png" alt="Card image" class="object-contain" />
-                            </div>
-                            <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Agriculture</h4>     
-                            </div>
-                        </div>
-                        <div class="relative max-w-xs border border-solid border-black rounded-2xl transition-all duration-500 ">
-                            <div class="block overflow-hidden">
-                                <img src="../assets/main/astronomy.png" alt="Card image" />
-                            </div>
-                            <div class="p-4 flex justify-center text-center">
-                                <h4 class="text-5xl font-extrabold text-gray-900 mb-2 capitalize transition-all duration-500 ">Astronomy</h4>     
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
                 
-                <!-- Question -->
-                 <div class="w-full mt-3">
+                <!-- Question 2-->
+                <div id="prog-one-round-two-question" class="w-full mt-3 hidden">
                   <div class="w-full relative flex items-center justify-center h-auto">
                     <div
                       class="group bg-white shadow-lg shadow-gray-200 rounded-xl p-2.5 transition-all duration-500 w-1/2 hover:shadow-gray-300">
@@ -281,7 +305,7 @@
                       </div>
                       <div class="flex flex-col items-center justify-center py-6 px-4 gap-4 text-center">
                         <div class="flex items-center justify-between w-full mb-2">
-                          <h4 class="font-manrope font-bold text-4xl text-gray-900">Question</h4>
+                          <h4 class="font-manrope font-bold text-4xl text-gray-900">Question 2</h4>
                           <div class="flex items-center justify-end gap-3">
                             <svg
                               width="20"
@@ -311,12 +335,12 @@
                             <span class="text-md font-medium text-gray-800">Regulay Points</span>
                           </div>
                         </div>
-                        <p class="text-base font-medium text-gray-500 mb-4 text-left">
+                        <p id="qholdertwo" class="text-3xl font-extrabold text-gray-500 mb-4 text-left">
                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam deserunt iusto quos autem
                           dolorum possimus, laborum ad impedit, error, neque ducimus tenetur ea veniam perferendis
                           numquam illum.
                         </p>
-                        <div class="flex items-center justify-start w-full gap-4 mb-4">
+                        <div id="ansholdertwo" class="flex items-center justify-start w-full gap-4 mb-4">
                           <button
                             class="rounded-lg py-2.5 px-6 text-center w-full text-white bg-indigo-600 font-semibold text-lg transition-all duration-500 hover:bg-indigo-700">
                             Answer<br /><span class="font-thin text-sm">2 Sec</span>
@@ -349,8 +373,11 @@
 
                 <!-- Score -->
 
-                <div class="container mt-5">
-                  <h1 class="text-6xl text-center font-serif font-extrabold">Score Board</h1>
+                <div id="prog-one-score-board" class="container mt-5 hidden">
+                  <h1 class="text-6xl text-center font-serif font-extrabold mb-3">Score Board</h1>
+                  <div class="mb-2">
+                    <h1 class="text-center font-extrabold">Playing:<span id="player"></span></h1>
+                  </div>
                   <div class="flex flex-row justify-center gap-10">
 
                     <!-- col 1 -->
@@ -361,22 +388,20 @@
                      
                       </div>
                       <hr class="border-4 border-black mb-3">
+                      <h1 class="text-center font-bold">Round 1 Answer</h1>
                       <!--List-->
-                      <ul class="mb-12 space-y-6 text-left text-lg text-gray-500">
-                        <li class="flex items-center space-x-4">
-                          <!-- Icon -->
-                          <svg class="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          <span>Round 1 2nd</span>
-                        </li>
+                      <ul id="prog-one-team-one-ans" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
                        
                       </ul>
-                      <a href="javascript:;"
-                        class="py-4 px-8 bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-lg text-white font-semibold text-center w-full mx-auto hover:bg-indigo-700">Button</a> <!--List End-->
+                      <hr class="border-4 border-black mb-3">
+                      <h1 class="text-center font-bold">Round 2 Answer</h1>
+                      <ul id="prog-one-team-one-ans-two" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
+                       
+                      </ul>
+                       
+                      
                     </div>
 
                      <!-- col 2 -->
@@ -389,22 +414,17 @@
                       </div>
                       <hr class="border-4 border-black mb-3">
                       <!--List-->
-                      <ul class="mb-12 space-y-6 text-left text-lg text-gray-500">
-                        <li class="flex items-center space-x-4">
-                          <!-- Icon -->
-                          <svg class="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          <span>Round 1 Eleminated</span>
-                        </li>
+                      <h1 class="text-center font-bold">Round 1 Answer</h1>
+                      <ul id="prog-one-team-two-ans" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
                         
                       </ul>
-                      <a href="javascript:;"
-                        class="py-4 px-8 bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-lg text-white font-semibold text-center w-full mx-auto hover:bg-indigo-700">Button</a>
-                      <!--List End-->
+                      <hr class="border-4 border-black mb-3">
+                      <h1 class="text-center font-bold">Round 2 Answer</h1>
+                      <ul id="prog-one-team-two-ans-two" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
+                       
+                      </ul>
                     </div>
                     <!-- col 3 -->
                     <div
@@ -416,22 +436,17 @@
                       </div>
                       <hr class="border-4 border-black mb-3">
                       <!--List-->
-                      <ul class="mb-12 space-y-6 text-left text-lg text-gray-500">
-                        <li class="flex items-center space-x-4">
-                          <!-- Icon -->
-                          <svg class="flex-shrink-0 w-6 h-6 text-indigo-600" viewBox="0 0 30 30" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
-                              stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                          </svg>
-                          <span>Round 1 Winner</span>
-                        </li>
+                      <h1 class="text-center font-bold">Round 1 Answer</h1>
+                      <ul id="prog-one-team-three-ans" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
                        
                       </ul>
-                      <a href="javascript:;"
-                        class="py-4 px-8 w-full bg-indigo-600 shadow-sm rounded-full transition-all duration-500 text-lg text-white font-semibold text-center mx-auto hover:bg-indigo-700">Purchase
-                        Plan</a>
+                      <hr class="border-4 border-black mb-3">
+                      <h1 class="text-center font-bold">Round 2 Answer</h1>
+                      <ul id="prog-one-team-three-ans-two" class="mb-12 space-y-6 text-left text-lg text-gray-500">
+                        
+                       
+                      </ul>
                       <!--List End-->
                     </div>
 
@@ -445,13 +460,13 @@
 
             </div>
             <div id="prog2" class="border border-black w-full  hidden">
-              <div class=" ">
+              <div id="prog2-banner" class=" hidden ">
                 <div class="flex justify-center">
                   <img src="../assets/main/roleta.gif" alt="banner" class="object-fill" srcset="">  
                 </div>
               </div>
 
-                <div class="w-full ">
+                <div id="prog2-wheel" class="w-full ">
                     <!-- Header --> 
                     <div class="container w-full mx-auto mt-3">
                       <div class="flex w-full items-center rounded-full h-14">
@@ -471,17 +486,17 @@
                       </div>
                   </div>
                     <div class="flex justify-center ">
-                        <div  class="contain-content  " id="chart">                
+                        <div  class="contain-content  hidden" id="chart">                
                         </div>
                         <div id="question" class="grid justify-items-center  w-[600px] h-[600px] hidden " >
                             <div class="border-8 border-double border-green-900 w-20 h-20 flex justify-center items-center"> 
                                 <span id="numpic" class="h1 text-6xl">0</span>
                             </div>
                             <div  class="mt-1">
-                                <h3 class="text-3xl font-bold text-center" id="roletaQ"></h3>   
+                                <h3 class="text-5xl font-bold text-center" id="roletaQ"></h3>   
                             </div>
-                            <div class="  ">
-                              <h2 class="text-3xl font-bold r" id="roleteAns"></h2>       
+                            <div id="prog2-ans" class="  hidden">
+                              <h2 class="text-6xl font-bold r" id="roleteAns"></h2>       
                             </div>                            
                           
                         </div>
@@ -490,7 +505,7 @@
             </div>
             <div id="prog3" class="border border-black w-full hidden">
               <div class=" ">
-                <div id="p2banner" class="flex justify-center ">
+                <div  id="p2banner" class="flex justify-center hidden">
                   <img src="../assets/main/Q&A.gif" alt="banner" class="object-fill" srcset="">  
                 </div>
 
@@ -514,20 +529,20 @@
                     </div>
                   </div>
                 
-                  <div class="flex flex-row justify-center mt-3 gap-5 ">
+                  <div id="prog3-holder" class=" hidden flex flex-row justify-center mt-3 gap-5 ">
                     <div id="question " class=" bg-green-950 border-5 border-yellow-500 w-[90%] h-[500px] mb-5 ml-5 p-5">
                       <img src="../assets/qa/q1.png " alt="question" class="hidden">
                       <h1 class="text-white text-5xl font-bold">Question:</h1>
 
                       <div class="mt-5 p-10 border h-96 flex justify-center items-center">
-                        <h2 class="text-white text-5xl font-bold">What is 1 + 1?</h2>
+                        <h2 id="prog3qq" class="text-white text-5xl font-bold">What is 1 + 1?</h2>
                       </div>
                     </div>
                     <div id="answer" class="bg-green-950 border-5 border-yellow-500 w-[90%] h-[500px] mb-5 mr-5 p-5 hover:animate-fadeInRight">
                       <img src="../assets/qa/a1.png" alt="anser" class="hidden">
                       <h1 class="text-white text-5xl font-bold">Answer:</h1>
                       <div class="mt-5 p-10 flex justify-center items-center  border h-96">
-                        <h2 class="text-white text-6xl font-bold text-center">2</h2>
+                        <h2 id="prog3aa" class="text-white text-6xl font-bold text-center"></h2>
                       </div>
                     </div>
                   </div>
@@ -536,7 +551,7 @@
             </div>
             <div id="prog4" class="border w-full hidden">
 
-              <div class="">
+              <div  id="prog4-banner" class="hidden">
                 <div class="flex justify-center">
                   <img src="../assets/main/rainbow.gif" alt="banner" class="object-fill" srcset="">  
                 </div>
@@ -558,7 +573,7 @@
                     <div class="flex-1 border-b border-gray-950"></div>
                 </div>
 
-                <div class="w-full mt-5">
+                <div id="prog4-qq" class=" hidden w-full mt-5">
                     <div class="flex w-full items-center mb-4">
                         <div class="flex-1 border-b border-gray-900"></div>
                         <button class="px-6 py-3 flex items-center bg-sky-600 rounded-full shadow-sm border border-red-950">
@@ -582,7 +597,7 @@
 
                 </div>
                 <!-- Question-->
-                <div id="rumbleShowAnswer" class="w-full mt-5 hidden">
+                <div id="prog4-aa" class="w-full mt-5 hidden">
                   <div class="flex w-full items-center mb-4 mt-4">
                     <div class="flex-1 border-b border-gray-900"></div>
                     <button class="px-6 py-3 flex items-center bg-green-800 rounded-full shadow-sm border border-red-950">
@@ -611,15 +626,9 @@
 
                 <!-- Control-->
                 <div class="control mt-4">
-                  <div class="flex flex-row justify-center" >
-                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
-                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
-                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
-                    <button type='button' class='py-2.5 px-6 text-sm rounded-full border border-solid border-indigo-200 text-indigo-600 cursor-pointer font-semibold text-center shadow-xs transition-all duration-500 hover:bg-indigo-600 hover:text-white'>Button</button>
+                  
 
-                  </div>
-
-                  <div class="w-full relative">
+                  <div class="w-full relative hidden">
                     <div role="alert" tabindex="-1"
                       class="absolute bottom-0 left-0 z-50 flex flex-wrap gap-4 justify-between w-full py-4 px-11  bg-gray-50 ">
                       <div class="flex items-center ">
@@ -685,16 +694,16 @@
       const color = d3.scale.category20();
     
       const data = [
-        { label: "1", value: 1, question: "What CSS property is used for specifying the area between the content and its border?", answer: "padding", aud: "../assets/main/sound/kumpas.mp3" },
-        { label: "2", value: 2, question: "What CSS property is used for changing the font?", answer: "font-family", aud: "../assets/main/sound/kumpas.mp3"},
-        { label: "3", value: 3, question: "What CSS property is used for changing the color of text?", answer: "color", aud: "../assets/main/sound/kumpas.mp3" },
-        { label: "4", value: 4, question: "What CSS property is used for changing the boldness of text?", answer: "font-weight", aud: "../assets/main/sound/kumpas.mp3" },
-        { label: "5", value: 5, question: "What CSS property is used for changing the size of text?", answer: "font-size" , aud: "../assets/main/sound/kumpas.mp3"},
-        { label: "6", value: 6, question: "What CSS property is used for changing the background color of a box?", answer: "background-color", aud: "../assets/main/sound/kumpas.mp3" },
-        { label: "7", value: 7, question: "Which word is used for specifying an HTML tag that is inside another tag?", answer: "nesting" , aud: "../assets/main/sound/kumpas.mp3"},
-        { label: "8", value: 8, question: "Which side of the box is the third number in: margin:1px 1px 1px 1px; ?", answer: "bottom" , aud: "../assets/main/sound/kumpas.mp3"},
-        { label: "9", value: 9, question: "What are the fonts that don't have serifs at the ends of letters called?", answer: "sans-serif" , aud: "../assets/main/sound/kumpas.mp3"},
-        { label: "10", value: 10, question: "With CSS selectors, what character prefix should one use to specify a class?", answer: "padding" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "1", value: 1, question: "What is the Title of this Song?", answer: "Answer: Kumpas by Moira De la Torre", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "2", value: 2, question: "What is the Title of this Song?", answer: "Answer:Ere by Juan Karlos", aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "3", value: 3, question: "What is the Title of this Song?", answer: "Answer:Heaven Knows by Orange & Lemon", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "4", value: 4, question: "Gues the Lyrics", answer: "Giliw di mapigilan and bugso ng damdamin ko Mukhang mapapa amin, amin mo", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "5", value: 5, question: "What is the Title of this Song?", answer: "Answer:Palagi by Tj And KZ" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "6", value: 6, question: "Gues the Lyrics", answer: "Sasayaw sa kulog at buwan iikutin ang tala at buwan ", aud: "../assets/main/sound/kumpas.mp3" },
+        { label: "7", value: 7, question: "What is the Title of this Song?", answer: "Answer:Dito ka lang by Moira Dela torre" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "8", value: 8, question: "What is the Title of this Song?", answer: "Answer:Raining in Manila by Lola Amour" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "9", value: 9, question: "What is the Title of this Song?", answer: "Answer:Selos by Shaira" , aud: "../assets/main/sound/kumpas.mp3"},
+        { label: "10", value: 10, question: "What is the Title of this Song?", answer: "Answer:Sarong bilog by Diamond Agricula" , aud: "../assets/main/sound/kumpas.mp3"},
       ];
     
       const svg = d3
@@ -823,6 +832,10 @@
 
       
       SpinBtn.addEventListener('click' , () =>  spin() )
+
+      function SpinWheel(){
+        spin()
+      }
     </script>
     
     
